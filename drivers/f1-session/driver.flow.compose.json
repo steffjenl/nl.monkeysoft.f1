@@ -2,120 +2,88 @@
   "triggers": [
     {
       "id": "session_status_changed",
-      "title": { "en": "Session status changed" },
+      "title": { "en": "Session status changed", "nl": "Sessiestatus gewijzigd", "de": "Sessionstatus geändert", "da": "Sessionsstatus ændret", "es": "Estado de sesión cambiado", "fr": "Statut de session modifié", "it": "Stato sessione cambiato", "no": "Sesjonsstatus endret", "pl": "Status sesji zmieniony", "pt": "Estado da sessão alterado", "ru": "Статус сессии изменился", "sv": "Sessionsstatus ändrad" },
       "tokens": [
-        {
-          "name": "status",
-          "type": "string",
-          "title": { "en": "Status" }
-        }
+        { "name": "status", "type": "string", "title": { "en": "Status", "nl": "Status", "de": "Status", "da": "Status", "es": "Estado", "fr": "Statut", "it": "Stato", "no": "Status", "pl": "Status", "pt": "Estado", "ru": "Статус", "sv": "Status" } }
       ]
     },
     {
       "id": "session_started",
-      "title": { "en": "Session started" },
+      "title": { "en": "Session started", "nl": "Sessie gestart", "de": "Session gestartet", "da": "Session startet", "es": "Sesión iniciada", "fr": "Session démarrée", "it": "Sessione avviata", "no": "Sesjon startet", "pl": "Sesja rozpoczęta", "pt": "Sessão iniciada", "ru": "Сессия началась", "sv": "Session startad" },
       "highlight": true,
       "tokens": [
-        {
-          "name": "session_type",
-          "type": "string",
-          "title": { "en": "Session type" }
-        }
+        { "name": "session_type", "type": "string", "title": { "en": "Session type", "nl": "Sessietype", "de": "Sessiontyp", "da": "Sessionstype", "es": "Tipo de sesión", "fr": "Type de session", "it": "Tipo di sessione", "no": "Sesjonstype", "pl": "Typ sesji", "pt": "Tipo de sessão", "ru": "Тип сессии", "sv": "Sessionstyp" } }
       ]
     },
     {
       "id": "session_finished",
-      "title": { "en": "Session finished" }
+      "title": { "en": "Session finished", "nl": "Sessie beëindigd", "de": "Session beendet", "da": "Session afsluttet", "es": "Sesión finalizada", "fr": "Session terminée", "it": "Sessione terminata", "no": "Sesjon avsluttet", "pl": "Sesja zakończona", "pt": "Sessão terminada", "ru": "Сессия завершилась", "sv": "Session avslutad" }
     },
     {
       "id": "race_control_message_received",
-      "title": { "en": "Race control message received" },
+      "title": { "en": "Race control message received", "nl": "Race control-bericht ontvangen", "de": "Rennkontrollnachricht erhalten", "da": "Race control-besked modtaget", "es": "Mensaje de control de carrera recibido", "fr": "Message de la direction de course reçu", "it": "Messaggio dalla direzione gara ricevuto", "no": "Race control-melding mottatt", "pl": "Odebrano komunikat dyrekcji wyścigu", "pt": "Mensagem de controlo de corrida recebida", "ru": "Получено сообщение дирекции гонки", "sv": "Race control-meddelande mottaget" },
       "tokens": [
-        {
-          "name": "message",
-          "type": "string",
-          "title": { "en": "Message" }
-        },
-        {
-          "name": "flag",
-          "type": "string",
-          "title": { "en": "Flag" }
-        },
-        {
-          "name": "category",
-          "type": "string",
-          "title": { "en": "Category" }
-        }
+        { "name": "message", "type": "string", "title": { "en": "Message", "nl": "Bericht", "de": "Nachricht", "da": "Besked", "es": "Mensaje", "fr": "Message", "it": "Messaggio", "no": "Melding", "pl": "Komunikat", "pt": "Mensagem", "ru": "Сообщение", "sv": "Meddelande" } },
+        { "name": "flag", "type": "string", "title": { "en": "Flag", "nl": "Vlag", "de": "Flagge", "da": "Flag", "es": "Bandera", "fr": "Drapeau", "it": "Bandiera", "no": "Flagg", "pl": "Flaga", "pt": "Bandeira", "ru": "Флаг", "sv": "Flagga" } },
+        { "name": "category", "type": "string", "title": { "en": "Category", "nl": "Categorie", "de": "Kategorie", "da": "Kategori", "es": "Categoría", "fr": "Catégorie", "it": "Categoria", "no": "Kategori", "pl": "Kategoria", "pt": "Categoria", "ru": "Категория", "sv": "Kategori" } }
       ]
     },
     {
       "id": "qualifying_part_changed",
-      "title": { "en": "Qualifying part changed" },
+      "title": { "en": "Qualifying part changed", "nl": "Kwalificatiedeel gewijzigd", "de": "Qualifying-Teil geändert", "da": "Kvalifikationsdel ændret", "es": "Parte de clasificación cambiada", "fr": "Partie de qualification modifiée", "it": "Parte della qualifica cambiata", "no": "Kvalifiseringsdel endret", "pl": "Część kwalifikacji zmieniona", "pt": "Parte da qualificação alterada", "ru": "Часть квалификации изменилась", "sv": "Kvalificeringsdel ändrad" },
       "tokens": [
-        {
-          "name": "part",
-          "type": "string",
-          "title": { "en": "Qualifying part (Q1/Q2/Q3)" }
-        }
+        { "name": "part", "type": "string", "title": { "en": "Qualifying part (Q1/Q2/Q3)", "nl": "Kwalificatiedeel (Q1/Q2/Q3)", "de": "Qualifying-Teil (Q1/Q2/Q3)", "da": "Kvalifikationsdel (Q1/Q2/Q3)", "es": "Parte de clasificación (Q1/Q2/Q3)", "fr": "Partie de qualification (Q1/Q2/Q3)", "it": "Parte qualifica (Q1/Q2/Q3)", "no": "Kvalifiseringsdel (Q1/Q2/Q3)", "pl": "Część kwalifikacji (Q1/Q2/Q3)", "pt": "Parte da qualificação (Q1/Q2/Q3)", "ru": "Часть квалификации (Q1/Q2/Q3)", "sv": "Kvalificeringsdel (Q1/Q2/Q3)" } }
       ]
     },
     {
       "id": "fastest_lap_updated",
-      "title": { "en": "Fastest lap updated" },
+      "title": { "en": "Fastest lap updated", "nl": "Snelste ronde bijgewerkt", "de": "Schnellste Runde aktualisiert", "da": "Hurtigste omgang opdateret", "es": "Vuelta más rápida actualizada", "fr": "Meilleur tour mis à jour", "it": "Giro più veloce aggiornato", "no": "Raskeste runde oppdatert", "pl": "Najszybsze okrążenie zaktualizowane", "pt": "Volta mais rápida atualizada", "ru": "Быстрейший круг обновлён", "sv": "Snabbaste varv uppdaterat" },
       "tokens": [
-        {
-          "name": "driver",
-          "type": "string",
-          "title": { "en": "Driver" }
-        },
-        {
-          "name": "time",
-          "type": "string",
-          "title": { "en": "Lap time" }
-        }
+        { "name": "driver", "type": "string", "title": { "en": "Driver", "nl": "Coureur", "de": "Fahrer", "da": "Kører", "es": "Piloto", "fr": "Pilote", "it": "Pilota", "no": "Fører", "pl": "Kierowca", "pt": "Piloto", "ru": "Гонщик", "sv": "Förare" } },
+        { "name": "time", "type": "string", "title": { "en": "Lap time", "nl": "Rondetijd", "de": "Rundenzeit", "da": "Omgangstid", "es": "Tiempo de vuelta", "fr": "Temps au tour", "it": "Tempo sul giro", "no": "Rundetid", "pl": "Czas okrążenia", "pt": "Tempo de volta", "ru": "Время круга", "sv": "Varvtid" } }
       ]
     }
   ],
   "conditions": [
     {
       "id": "session_is_live",
-      "title": { "en": "Session !{{is|isn't}} live" }
+      "title": { "en": "Session !{{is|isn't}} live", "nl": "Sessie !{{is|is niet}} live", "de": "Session !{{ist|ist nicht}} live", "da": "Session !{{er|er ikke}} live", "es": "La sesión !{{está|no está}} en directo", "fr": "La session !{{est|n'est pas}} en direct", "it": "La sessione !{{is|isn't}} live", "no": "Sesjonen !{{er|er ikke}} live", "pl": "Sesja !{{jest|nie jest}} na żywo", "pt": "A sessão !{{is|isn't}} ao vivo", "ru": "Сессия !{{активна|не активна}}", "sv": "Session !{{is|isn't}} live" }
     },
     {
       "id": "session_type_is",
-      "title": { "en": "Session type !{{is|isn't}}" },
-      "titleFormatted": { "en": "Session type !{{is|isn't}} [[type]]" },
+      "title": { "en": "Session type !{{is|isn't}}", "nl": "Sessietype !{{is|is niet}}", "de": "Sessiontyp !{{ist|ist nicht}}", "da": "Sessionstype !{{er|er ikke}}", "es": "Tipo de sesión !{{es|no es}}", "fr": "Type de session !{{est|n'est pas}}", "it": "Tipo di sessione !{{is|isn't}}", "no": "Sesjonstype !{{er|er ikke}}", "pl": "Typ sesji !{{jest|nie jest}}", "pt": "Tipo de sessão !{{is|isn't}}", "ru": "Тип сессии !{{является|не является}}", "sv": "Sessionstyp !{{is|isn't}}" },
+      "titleFormatted": { "en": "Session type !{{is|isn't}} [[type]]", "nl": "Sessietype !{{is|is niet}} [[type]]", "de": "Sessiontyp !{{ist|ist nicht}} [[type]]", "da": "Sessionstype !{{er|er ikke}} [[type]]", "es": "Tipo !{{es|no es}} [[type]]", "fr": "Type !{{est|n'est pas}} [[type]]", "it": "Tipo !{{is|isn't}} [[type]]", "no": "Sesjonstype !{{er|er ikke}} [[type]]", "pl": "Typ !{{jest|nie jest}} [[type]]", "pt": "Tipo !{{is|isn't}} [[type]]", "ru": "Тип !{{является|не является}} [[type]]", "sv": "Sessionstyp !{{is|isn't}} [[type]]" },
       "args": [
         {
           "name": "type",
           "type": "dropdown",
           "values": [
-            { "id": "Race",         "label": { "en": "Race" } },
-            { "id": "Qualifying",   "label": { "en": "Qualifying" } },
-            { "id": "Practice 1",   "label": { "en": "Practice 1" } },
-            { "id": "Practice 2",   "label": { "en": "Practice 2" } },
-            { "id": "Practice 3",   "label": { "en": "Practice 3" } },
-            { "id": "Sprint",       "label": { "en": "Sprint" } },
-            { "id": "Sprint Qualifying", "label": { "en": "Sprint Qualifying" } }
+            { "id": "Race",               "label": { "en": "Race",               "nl": "Race",               "de": "Rennen",            "da": "Løb",               "es": "Carrera",           "fr": "Course",            "it": "Gara",              "no": "Løp",              "pl": "Wyścig",          "pt": "Corrida",          "ru": "Гонка",            "sv": "Lopp"              } },
+            { "id": "Qualifying",         "label": { "en": "Qualifying",         "nl": "Kwalificatie",       "de": "Qualifying",        "da": "Kvalifikation",     "es": "Clasificación",     "fr": "Qualifications",    "it": "Qualifiche",        "no": "Kvalifisering",    "pl": "Kwalifikacje",     "pt": "Qualificação",    "ru": "Квалификация",  "sv": "Kval"              } },
+            { "id": "Practice 1",         "label": { "en": "Practice 1",         "nl": "Vrije training 1",  "de": "Training 1",        "da": "Træning 1",         "es": "Práctica 1",        "fr": "Essais libres 1",   "it": "Prove libere 1",    "no": "Trening 1",        "pl": "Trening wolny 1",  "pt": "Treino livre 1",  "ru": "Св. практ. 1",   "sv": "Träning 1"         } },
+            { "id": "Practice 2",         "label": { "en": "Practice 2",         "nl": "Vrije training 2",  "de": "Training 2",        "da": "Træning 2",         "es": "Práctica 2",        "fr": "Essais libres 2",   "it": "Prove libere 2",    "no": "Trening 2",        "pl": "Trening wolny 2",  "pt": "Treino livre 2",  "ru": "Св. практ. 2",   "sv": "Träning 2"         } },
+            { "id": "Practice 3",         "label": { "en": "Practice 3",         "nl": "Vrije training 3",  "de": "Training 3",        "da": "Træning 3",         "es": "Práctica 3",        "fr": "Essais libres 3",   "it": "Prove libere 3",    "no": "Trening 3",        "pl": "Trening wolny 3",  "pt": "Treino livre 3",  "ru": "Св. практ. 3",   "sv": "Träning 3"         } },
+            { "id": "Sprint",             "label": { "en": "Sprint",             "nl": "Sprint",            "de": "Sprint",           "da": "Sprint",           "es": "Sprint",           "fr": "Sprint",           "it": "Sprint",           "no": "Sprint",          "pl": "Sprint",          "pt": "Sprint",         "ru": "Спринт",          "sv": "Sprint"            } },
+            { "id": "Sprint Qualifying",  "label": { "en": "Sprint Qualifying",  "nl": "Sprint kwalificatie", "de": "Sprint-Qualifying",  "da": "Sprint-kvalifikation", "es": "Clasificación Sprint", "fr": "Qualifications Sprint", "it": "Qualifiche Sprint", "no": "Sprint-kval.",     "pl": "Kwal. sprintu",   "pt": "Qual. Sprint",   "ru": "Кв. спринта",   "sv": "Sprint-kval."     } }
           ]
         }
       ]
     },
     {
       "id": "session_status_is",
-      "title": { "en": "Session status !{{is|isn't}}" },
-      "titleFormatted": { "en": "Session status !{{is|isn't}} [[status]]" },
+      "title": { "en": "Session status !{{is|isn't}}", "nl": "Sessiestatus !{{is|is niet}}", "de": "Sessionstatus !{{ist|ist nicht}}", "da": "Sessionsstatus !{{er|er ikke}}", "es": "Estado de sesión !{{es|no es}}", "fr": "Statut de session !{{est|n'est pas}}", "it": "Stato sessione !{{is|isn't}}", "no": "Sesjonsstatus !{{er|er ikke}}", "pl": "Status sesji !{{jest|nie jest}}", "pt": "Estado da sessão !{{is|isn't}}", "ru": "Статус сессии !{{является|не является}}", "sv": "Sessionsstatus !{{is|isn't}}" },
+      "titleFormatted": { "en": "Session status !{{is|isn't}} [[status]]", "nl": "Sessiestatus !{{is|is niet}} [[status]]", "de": "Sessionstatus !{{ist|ist nicht}} [[status]]", "da": "Sessionsstatus !{{er|er ikke}} [[status]]", "es": "Estado !{{es|no es}} [[status]]", "fr": "Statut !{{est|n'est pas}} [[status]]", "it": "Stato !{{is|isn't}} [[status]]", "no": "Sesjonsstatus !{{er|er ikke}} [[status]]", "pl": "Status !{{jest|nie jest}} [[status]]", "pt": "Estado !{{is|isn't}} [[status]]", "ru": "Статус !{{является|не является}} [[status]]", "sv": "Sessionsstatus !{{is|isn't}} [[status]]" },
       "args": [
         {
           "name": "status",
           "type": "dropdown",
           "values": [
-            { "id": "inactive",    "label": { "en": "Inactive" } },
-            { "id": "started",     "label": { "en": "Started" } },
-            { "id": "aborted",     "label": { "en": "Aborted" } },
-            { "id": "finished",    "label": { "en": "Finished" } },
-            { "id": "finalised",   "label": { "en": "Finalised" } },
-            { "id": "ends",        "label": { "en": "Ends" } }
+            { "id": "inactive",  "label": { "en": "Inactive",   "nl": "Inactief",      "de": "Inaktiv",       "da": "Inaktiv",       "es": "Inactiva",      "fr": "Inactive",      "it": "Inattiva",      "no": "Inaktiv",       "pl": "Nieaktywna",    "pt": "Inativa",       "ru": "Неактивна",    "sv": "Inaktiv"       } },
+            { "id": "started",   "label": { "en": "Started",    "nl": "Gestart",       "de": "Gestartet",     "da": "Startet",       "es": "Iniciada",      "fr": "Démarrée",      "it": "Avviata",       "no": "Startet",       "pl": "Rozpoczęta",   "pt": "Iniciada",      "ru": "Началась",     "sv": "Startad"       } },
+            { "id": "aborted",   "label": { "en": "Aborted",    "nl": "Afgebroken",    "de": "Abgebrochen",   "da": "Afbrudt",       "es": "Abortada",      "fr": "Interrompue",   "it": "Interrotta",    "no": "Avbrutt",       "pl": "Przerwana",     "pt": "Abortada",      "ru": "Прервана",     "sv": "Avbruten"      } },
+            { "id": "finished",  "label": { "en": "Finished",   "nl": "Beëindigd",     "de": "Beendet",       "da": "Afsluttet",     "es": "Finalizada",    "fr": "Terminée",      "it": "Terminata",     "no": "Avsluttet",     "pl": "Zakończona",    "pt": "Terminada",     "ru": "Завершена",    "sv": "Avslutad"      } },
+            { "id": "finalised", "label": { "en": "Finalised",  "nl": "Afgerond",      "de": "Finalisiert",   "da": "Færdiggjort",   "es": "Liquidada",     "fr": "Finalisée",     "it": "Finalizzata",   "no": "Ferdigstilt",   "pl": "Sfinalizowana", "pt": "Finalizada",    "ru": "Финализирована", "sv": "Slutförd"      } },
+            { "id": "ends",      "label": { "en": "Ended",      "nl": "Gestopt",       "de": "Gestoppt",      "da": "Stoppet",       "es": "Parada",        "fr": "Arrêtée",       "it": "Fermata",       "no": "Stoppet",       "pl": "Zatrzymana",    "pt": "Parada",        "ru": "Остановлена",  "sv": "Stoppad"       } }
           ]
         }
       ]

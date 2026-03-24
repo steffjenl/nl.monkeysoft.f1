@@ -2,69 +2,69 @@
   "triggers": [
     {
       "id": "driver_entered_pit",
-      "title": { "en": "Entered pit lane" }
+      "title": { "en": "Entered pit lane", "nl": "Pitstraat ingereden", "de": "Boxengasse betreten", "da": "Kørt ind i depotet", "es": "Entró a los boxes", "fr": "Entré dans la voie des stands", "it": "Entrata nella corsia dei box", "no": "Inn i depågaten", "pl": "Wjazd do alei pit", "pt": "Entrou na pit lane", "ru": "Въехал в пит-лейн", "sv": "Körde in i depågatan" }
     },
     {
       "id": "driver_exited_pit",
-      "title": { "en": "Exited pit lane" }
+      "title": { "en": "Exited pit lane", "nl": "Pitstraat verlaten", "de": "Boxengasse verlassen", "da": "Kørt ud af depotet", "es": "Salió de los boxes", "fr": "Sorti de la voie des stands", "it": "Uscita dalla corsia dei box", "no": "Ut av depågaten", "pl": "Wyjazd z alei pit", "pt": "Saiu da pit lane", "ru": "Выехал из пит-лейна", "sv": "Körde ut från depågatan" }
     },
     {
       "id": "driver_lap_completed",
-      "title": { "en": "Completed a lap" },
+      "title": { "en": "Completed a lap", "nl": "Ronde voltooid", "de": "Runde beendet", "da": "Omgang afsluttet", "es": "Completó una vuelta", "fr": "Tour terminé", "it": "Giro completato", "no": "Fullførte runde", "pl": "Okrążenie ukończone", "pt": "Completou uma volta", "ru": "Завершил круг", "sv": "Genomförde ett varv" },
       "tokens": [
-        { "name": "lap_time", "type": "string", "title": { "en": "Lap time" } },
-        { "name": "position", "type": "number", "title": { "en": "Position" } }
+        { "name": "lap_time", "type": "string", "title": { "en": "Lap time", "nl": "Rondetijd", "de": "Rundenzeit", "da": "Omgangstid", "es": "Tiempo de vuelta", "fr": "Temps au tour", "it": "Tempo sul giro", "no": "Rundetid", "pl": "Czas okrążenia", "pt": "Tempo de volta", "ru": "Время круга", "sv": "Varvtid" } },
+        { "name": "position", "type": "number", "title": { "en": "Position", "nl": "Positie", "de": "Position", "da": "Position", "es": "Posición", "fr": "Position", "it": "Posizione", "no": "Posisjon", "pl": "Pozycja", "pt": "Posição", "ru": "Позиция", "sv": "Position" } }
       ]
     },
     {
       "id": "driver_position_changed",
-      "title": { "en": "Position changed" },
+      "title": { "en": "Position changed", "nl": "Positie gewijzigd", "de": "Position geändert", "da": "Position ændret", "es": "Posición cambiada", "fr": "Position modifiée", "it": "Posizione cambiata", "no": "Posisjon endret", "pl": "Pozycja zmieniona", "pt": "Posição alterada", "ru": "Позиция изменилась", "sv": "Position ändrad" },
       "tokens": [
-        { "name": "position", "type": "number", "title": { "en": "New position" } }
+        { "name": "position", "type": "number", "title": { "en": "New position", "nl": "Nieuwe positie", "de": "Neue Position", "da": "Ny position", "es": "Nueva posición", "fr": "Nouvelle position", "it": "Nuova posizione", "no": "Ny posisjon", "pl": "Nowa pozycja", "pt": "Nova posição", "ru": "Новая позиция", "sv": "Ny position" } }
       ]
     },
     {
       "id": "driver_fastest_lap",
-      "title": { "en": "Set personal best lap" },
+      "title": { "en": "Set personal best lap", "nl": "Persoonlijk ronderecord gereden", "de": "Persönliche Bestzeit gefahren", "da": "Sæt personlig bedste omgang", "es": "Estableció su mejor vuelta personal", "fr": "Établi le meilleur tour personnel", "it": "Stabilito il personale miglior giro", "no": "Satte personlig beste runde", "pl": "Ustanowił osobisty rekord", "pt": "Estabeleceu a melhor volta pessoal", "ru": "Установил личный рекорд круга", "sv": "Sätte personbastid" },
       "tokens": [
-        { "name": "lap_time", "type": "string", "title": { "en": "Lap time" } }
+        { "name": "lap_time", "type": "string", "title": { "en": "Lap time", "nl": "Rondetijd", "de": "Rundenzeit", "da": "Omgangstid", "es": "Tiempo de vuelta", "fr": "Temps au tour", "it": "Tempo sul giro", "no": "Rundetid", "pl": "Czas okrążenia", "pt": "Tempo de volta", "ru": "Время круга", "sv": "Varvtid" } }
       ]
     }
   ],
   "conditions": [
     {
       "id": "driver_is_in_pit",
-      "title": { "en": "Driver !{{is|isn't}} in pit" }
+      "title": { "en": "Driver !{{is|isn't}} in pit", "nl": "Coureur !{{is|is niet}} in de pitstraat", "de": "Fahrer !{{ist|ist nicht}} in der Box", "da": "Kører !{{er|er ikke}} i depotet", "es": "Piloto !{{está|no está}} en el pit", "fr": "Pilote !{{est|n'est pas}} dans les stands", "it": "Pilota !{{is|isn't}} ai box", "no": "Fører !{{er|er ikke}} i depået", "pl": "Kierowca !{{jest|nie jest}} w boksach", "pt": "Piloto !{{está|não está}} nos boxes", "ru": "Гонщик !{{в|не в}} пит-лейне", "sv": "Förare !{{is|isn't}} i depån" }
     },
     {
       "id": "driver_tyre_compound_is",
-      "title": { "en": "Tyre compound !{{is|isn't}}" },
-      "titleFormatted": { "en": "Tyre compound !{{is|isn't}} [[compound]]" },
+      "title": { "en": "Tyre compound !{{is|isn't}}", "nl": "Bandensamenstelling !{{is|is niet}}", "de": "Reifenmischung !{{ist|ist nicht}}", "da": "Dæksammensætning !{{er|er ikke}}", "es": "Compuesto de neumáticos !{{es|no es}}", "fr": "Composé de pneus !{{est|n'est pas}}", "it": "Mescola pneumatici !{{is|isn't}}", "no": "Dekkmiks !{{er|er ikke}}", "pl": "Mieszanka opon !{{jest|nie jest}}", "pt": "Composto de pneus !{{is|isn't}}", "ru": "Состав шин !{{является|не является}}", "sv": "Däckblandning !{{is|isn't}}" },
+      "titleFormatted": { "en": "Tyre compound !{{is|isn't}} [[compound]]", "nl": "Bandensamenstelling !{{is|is niet}} [[compound]]", "de": "Reifenmischung !{{ist|ist nicht}} [[compound]]", "da": "Dæksammensætning !{{er|er ikke}} [[compound]]", "es": "Compuesto !{{es|no es}} [[compound]]", "fr": "Composé !{{est|n'est pas}} [[compound]]", "it": "Mescola !{{is|isn't}} [[compound]]", "no": "Dekkmiks !{{er|er ikke}} [[compound]]", "pl": "Mieszanka !{{jest|nie jest}} [[compound]]", "pt": "Composto !{{is|isn't}} [[compound]]", "ru": "Шины !{{являются|не являются}} [[compound]]", "sv": "Däck !{{is|isn't}} [[compound]]" },
       "args": [
         {
           "name": "compound",
           "type": "dropdown",
           "values": [
-            { "id": "SOFT",         "label": { "en": "Soft" } },
-            { "id": "MEDIUM",       "label": { "en": "Medium" } },
-            { "id": "HARD",         "label": { "en": "Hard" } },
-            { "id": "INTERMEDIATE", "label": { "en": "Intermediate" } },
-            { "id": "WET",          "label": { "en": "Wet" } }
+            { "id": "SOFT",         "label": { "en": "Soft",         "nl": "Zacht",         "de": "Weich",        "da": "Blød",         "es": "Blando",         "fr": "Tendre",       "it": "Morbida",      "no": "Myk",          "pl": "Miękka",       "pt": "Macio",        "ru": "Мягкая",       "sv": "Mjuk"         } },
+            { "id": "MEDIUM",       "label": { "en": "Medium",       "nl": "Medium",        "de": "Medium",       "da": "Medium",       "es": "Medio",         "fr": "Médium",       "it": "Media",        "no": "Medium",       "pl": "Średnia",      "pt": "Médio",        "ru": "Средняя",      "sv": "Medium"       } },
+            { "id": "HARD",         "label": { "en": "Hard",         "nl": "Hard",          "de": "Hart",         "da": "Hård",         "es": "Duro",          "fr": "Dur",          "it": "Dura",         "no": "Hard",         "pl": "Twarda",       "pt": "Duro",         "ru": "Жёсткая",      "sv": "Hård"         } },
+            { "id": "INTERMEDIATE", "label": { "en": "Intermediate",  "nl": "Intermediate",  "de": "Intermediate",  "da": "Intermediate",  "es": "Intermedio",    "fr": "Intermédiaire", "it": "Intermedia",   "no": "Intermediate",  "pl": "Przejściowa",  "pt": "Intermédio",   "ru": "Промежуточная", "sv": "Intermediate" } },
+            { "id": "WET",          "label": { "en": "Wet",          "nl": "Regen",         "de": "Regen",        "da": "Regn",         "es": "Lluvia",        "fr": "Pluie",        "it": "Wet",          "no": "Regn",         "pl": "Mokra",        "pt": "Chuva",        "ru": "Дождевая",     "sv": "Regn"         } }
           ]
         }
       ]
     },
     {
       "id": "driver_position_is_in_top",
-      "title": { "en": "Position !{{is|isn't}} in top" },
-      "titleFormatted": { "en": "Position !{{is|isn't}} in top [[top_n]]" },
+      "title": { "en": "Position !{{is|isn't}} in top", "nl": "Positie !{{is|is niet}} in top", "de": "Position !{{ist|ist nicht}} in Top", "da": "Position !{{er|er ikke}} i top", "es": "Posición !{{está|no está}} en el top", "fr": "Position !{{est|n'est pas}} dans le top", "it": "Posizione !{{is|isn't}} nella top", "no": "Posisjon !{{er|er ikke}} i topp", "pl": "Pozycja !{{jest|nie jest}} w top", "pt": "Posição !{{is|isn't}} no top", "ru": "Позиция !{{в|не в}} топе", "sv": "Position !{{is|isn't}} i topp" },
+      "titleFormatted": { "en": "Position !{{is|isn't}} in top [[top_n]]", "nl": "Positie !{{is|is niet}} in top [[top_n]]", "de": "Position !{{ist|ist nicht}} in Top [[top_n]]", "da": "Position !{{er|er ikke}} i top [[top_n]]", "es": "Posición !{{está|no está}} en top [[top_n]]", "fr": "Position !{{est|n'est pas}} dans le top [[top_n]]", "it": "Posizione !{{is|isn't}} nella top [[top_n]]", "no": "Posisjon !{{er|er ikke}} i topp [[top_n]]", "pl": "Pozycja !{{jest|nie jest}} w top [[top_n]]", "pt": "Posição !{{is|isn't}} no top [[top_n]]", "ru": "Позиция !{{в|не в}} топ [[top_n]]", "sv": "Position !{{is|isn't}} i topp [[top_n]]" },
       "args": [
         {
           "name": "top_n",
           "type": "number",
           "min": 1,
           "max": 20,
-          "placeholder": { "en": "e.g. 3" }
+          "placeholder": { "en": "e.g. 3", "nl": "bijv. 3", "de": "z.B. 3", "da": "fx 3", "es": "ej. 3", "fr": "ex. 3", "it": "es. 3", "no": "f.eks. 3", "pl": "np. 3", "pt": "ex. 3", "ru": "напр. 3", "sv": "t.ex. 3" }
         }
       ]
     }
