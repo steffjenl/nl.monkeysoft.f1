@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Total Laps" },
+  "title": {
+    "en": "Total Laps",
+    "nl": "Totaal ronden",
+    "de": "Gesamtrunden",
+    "da": "Totale omgange",
+    "es": "Vueltas totales",
+    "fr": "Tours totaux",
+    "it": "Giri totali",
+    "no": "Totale runder",
+    "pl": "Łączna liczba okrążeń",
+    "pt": "Total de voltas",
+    "ru": "Всего кругов",
+    "sv": "Totalt antal varv"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Pit Stops" },
+  "title": {
+    "en": "Pit Stops",
+    "nl": "Pitstops",
+    "de": "Boxenstopps",
+    "da": "Depotstopp",
+    "es": "Paradas en boxes",
+    "fr": "Arrêts aux stands",
+    "it": "Soste ai box",
+    "no": "Depåstopp",
+    "pl": "Pit stopy",
+    "pt": "Paragens nos boxes",
+    "ru": "Пит-стопы",
+    "sv": "Depåstopp"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

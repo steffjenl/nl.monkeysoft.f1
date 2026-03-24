@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Race Control Message" },
+  "title": {
+    "en": "Race Control Message",
+    "nl": "Race control-bericht",
+    "de": "Rennkontrollnachricht",
+    "da": "Race control-besked",
+    "es": "Mensaje de control de carrera",
+    "fr": "Message de la direction de course",
+    "it": "Messaggio della direzione gara",
+    "no": "Race control-melding",
+    "pl": "Komunikat dyrekcji wyścigu",
+    "pt": "Mensagem de controlo de corrida",
+    "ru": "Сообщение дирекции гонки",
+    "sv": "Race control-meddelande"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

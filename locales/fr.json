@@ -1,0 +1,6 @@
+{
+  "app": {
+    "name": "Formule 1 Live Timing",
+    "description": "Intégrez les données en direct de la Formule 1 dans votre maison : statut de la piste, direction de course, chrono des pilotes, arrêts aux stands et météo — tout en automatisations Homey."
+  }
+}

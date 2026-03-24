@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Fastest Lap Time" },
+  "title": {
+    "en": "Fastest Lap Time",
+    "nl": "Snelste rondetijd",
+    "de": "Schnellste Rundenzeit",
+    "da": "Hurtigste omgangstid",
+    "es": "Tiempo de la vuelta más rápida",
+    "fr": "Temps du meilleur tour",
+    "it": "Tempo del giro più veloce",
+    "no": "Raskeste rundetid",
+    "pl": "Czas najszybszego okrążenia",
+    "pt": "Tempo da volta mais rápida",
+    "ru": "Время быстрейшего круга",
+    "sv": "Snabbaste varvtid"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

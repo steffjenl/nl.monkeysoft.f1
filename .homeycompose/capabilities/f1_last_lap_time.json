@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Last Lap Time" },
+  "title": {
+    "en": "Last Lap Time",
+    "nl": "Laatste rondetijd",
+    "de": "Letzte Rundenzeit",
+    "da": "Sidste omgangstid",
+    "es": "Tiempo de la última vuelta",
+    "fr": "Temps du dernier tour",
+    "it": "Tempo dell'ultimo giro",
+    "no": "Siste rundetid",
+    "pl": "Czas ostatniego okrążenia",
+    "pt": "Tempo da última volta",
+    "ru": "Время последнего круга",
+    "sv": "Senaste varvtid"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

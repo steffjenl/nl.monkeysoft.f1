@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Tyre Laps" },
+  "title": {
+    "en": "Tyre Laps",
+    "nl": "Ronden op banden",
+    "de": "Runden auf Reifen",
+    "da": "Omgange på dæk",
+    "es": "Vueltas con neumáticos",
+    "fr": "Tours sur pneus",
+    "it": "Giri sulle gomme",
+    "no": "Runder på dekk",
+    "pl": "Okrążenia na oponach",
+    "pt": "Voltas nos pneus",
+    "ru": "Кругов на шинах",
+    "sv": "Varv på däck"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

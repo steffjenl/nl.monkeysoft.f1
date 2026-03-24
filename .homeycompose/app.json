@@ -4,10 +4,32 @@
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "name": {
-    "en": "Formula 1 Live Timing"
+    "en": "Formula 1 Live Timing",
+    "nl": "Formule 1 Live Timing",
+    "de": "Formel 1 Live Timing",
+    "da": "Formel 1 Live Timing",
+    "es": "Fórmula 1 Live Timing",
+    "fr": "Formule 1 Live Timing",
+    "it": "Formula 1 Live Timing",
+    "no": "Formel 1 Live Timing",
+    "pl": "Formuła 1 Live Timing",
+    "pt": "Fórmula 1 Live Timing",
+    "ru": "Формула 1 Live Timing",
+    "sv": "Formel 1 Live Timing"
   },
   "description": {
-    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations.",
+    "nl": "Haal Formule 1 live-data in huis: trackstatus, race control, coureurstijden, pitstops en weer — allemaal als Homey-automatiseringen.",
+    "de": "Hol dir Formel-1-Live-Daten ins Smarthome: Streckenstatus, Rennkontrolle, Fahrerzeiten, Boxenstopps und Wetter — alles als Homey-Automationen.",
+    "da": "Bring Formel 1 live-data hjem: banestatus, race control, kørertider, depotstopp og vejr — alt som Homey-automatiseringer.",
+    "es": "Lleva los datos en vivo de la Fórmula 1 a tu hogar: estado de la pista, control de carrera, tiempos de pilotos, paradas en boxes y tiempo meteorológico — todo como automatizaciones Homey.",
+    "fr": "Intégrez les données en direct de la Formule 1 dans votre maison : statut de la piste, direction de course, chrono des pilotes, arrêts aux stands et météo — tout en automatisations Homey.",
+    "it": "Porta i dati in diretta della Formula 1 in casa tua: stato della pista, direzione gara, tempi dei piloti, soste ai box e meteo — tutto come automazioni Homey.",
+    "no": "Bring Formel 1 live-data inn i hjemmet: banestatus, race control, førertider, depåstopp og vær — alt som Homey-automatiseringer.",
+    "pl": "Przenieś dane na żywo Formuły 1 do swojego domu: status toru, dyrekcja wyścigu, czasy kierowców, pit stopy i pogoda — wszystko jako automatyzacje Homey.",
+    "pt": "Leve os dados em direto da Fórmula 1 para a sua casa: estado da pista, direção de corrida, tempos dos pilotos, paragens nos boxes e tempo meteorológico — tudo como automatizações Homey.",
+    "ru": "Добавьте данные Формулы 1 в реальном времени в свой умный дом: статус трассы, дирекция гонки, хронометраж гонщиков, пит-стопы и погода — всё в виде автоматизаций Homey.",
+    "sv": "Ta in Formel 1-data i realtid i ditt smarta hem: banstatus, race control, förartider, depåstopp och väder — allt som Homey-automatiseringar."
   },
   "category": [
     "tools"
@@ -26,7 +48,18 @@
     "donate": {}
   },
   "tags": {
-    "en": ["formula1", "f1", "racing", "motorsport", "livetiming"]
+    "en": ["formula1", "f1", "racing", "motorsport", "livetiming"],
+    "nl": ["formule1", "f1", "racen", "motorsport", "livetiming"],
+    "de": ["formel1", "f1", "rennen", "motorsport", "livetiming"],
+    "da": ["formel1", "f1", "racing", "motorsport", "livetiming"],
+    "es": ["formula1", "f1", "carreras", "motorsport", "livetiming"],
+    "fr": ["formule1", "f1", "course", "motorsport", "livetiming"],
+    "it": ["formula1", "f1", "corsa", "motorsport", "livetiming"],
+    "no": ["formel1", "f1", "racing", "motorsport", "livetiming"],
+    "pl": ["formula1", "f1", "wyscigy", "motorsport", "livetiming"],
+    "pt": ["formula1", "f1", "corrida", "motorsport", "livetiming"],
+    "ru": ["formula1", "f1", "gonki", "motorsport", "livetiming"],
+    "sv": ["formel1", "f1", "racing", "motorsport", "livetiming"]
   },
   "homeyCommunityTopicId": 0
 }

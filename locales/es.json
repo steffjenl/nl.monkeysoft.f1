@@ -1,0 +1,6 @@
+{
+  "app": {
+    "name": "Fórmula 1 Live Timing",
+    "description": "Lleva los datos en vivo de la Fórmula 1 a tu hogar: estado de la pista, control de carrera, tiempos de pilotos, paradas en boxes y tiempo meteorológico — todo como automatizaciones Homey."
+  }
+}

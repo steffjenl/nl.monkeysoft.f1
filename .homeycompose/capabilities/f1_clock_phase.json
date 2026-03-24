@@ -1,13 +1,26 @@
 {
   "type": "enum",
-  "title": { "en": "Session Clock Phase" },
+  "title": {
+    "en": "Session Clock Phase",
+    "nl": "Sessieklokfase",
+    "de": "Sitzungsuhrphase",
+    "da": "Sessionursfase",
+    "es": "Fase del reloj de sesión",
+    "fr": "Phase de l'horloge de session",
+    "it": "Fase orologio sessione",
+    "no": "Sesjonsklokke fase",
+    "pl": "Faza zegara sesji",
+    "pt": "Fase do relógio de sessão",
+    "ru": "Фаза часов сессии",
+    "sv": "Sessionsklocka fas"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
   "values": [
-    { "id": "idle",     "title": { "en": "Idle"     } },
-    { "id": "running",  "title": { "en": "Running"  } },
-    { "id": "paused",   "title": { "en": "Paused"   } },
-    { "id": "finished", "title": { "en": "Finished" } }
+    { "id": "idle",     "title": { "en": "Idle",     "nl": "Inactief",   "de": "Inaktiv",    "da": "Inaktiv",    "es": "Inactivo",   "fr": "Inactif",    "it": "Inattivo",   "no": "Inaktiv",    "pl": "Bezczynny",  "pt": "Inativo",    "ru": "Ожидание",   "sv": "Inaktiv"    } },
+    { "id": "running",  "title": { "en": "Running",  "nl": "Lopend",     "de": "Läuft",      "da": "Kører",      "es": "En curso",   "fr": "En cours",   "it": "In corso",   "no": "Kjører",     "pl": "Działa",     "pt": "Em curso",   "ru": "Идёт",       "sv": "Kör"        } },
+    { "id": "paused",   "title": { "en": "Paused",   "nl": "Gepauzeerd", "de": "Pausiert",   "da": "Sat på pause", "es": "Pausado",    "fr": "En pause",   "it": "In pausa",   "no": "Satt på pause", "pl": "Wstrzymany", "pt": "Em pausa",   "ru": "На паузе",   "sv": "Pausad"     } },
+    { "id": "finished", "title": { "en": "Finished",  "nl": "Beëindigd",  "de": "Beendet",    "da": "Afsluttet",  "es": "Finalizado", "fr": "Terminé",    "it": "Terminato",  "no": "Avsluttet",  "pl": "Zakończony", "pt": "Terminado",  "ru": "Завершено",  "sv": "Avslutad"   } }
   ]
 }

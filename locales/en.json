@@ -1,0 +1,6 @@
+{
+  "app": {
+    "name": "Formula 1 Live Timing",
+    "description": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+  }
+}

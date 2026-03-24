@@ -1,0 +1,6 @@
+{
+  "app": {
+    "name": "Formule 1 Live Timing",
+    "description": "Haal Formule 1 live-data in huis: trackstatus, race control, coureurstijden, pitstops en weer — allemaal als Homey-automatiseringen."
+  }
+}

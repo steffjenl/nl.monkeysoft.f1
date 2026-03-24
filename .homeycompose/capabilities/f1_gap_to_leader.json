@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Gap to Leader" },
+  "title": {
+    "en": "Gap to Leader",
+    "nl": "Achterstand op leider",
+    "de": "Abstand zur Führung",
+    "da": "Forskel til lederen",
+    "es": "Diferencia con el líder",
+    "fr": "Écart avec le leader",
+    "it": "Distacco dal leader",
+    "no": "Gap til lederen",
+    "pl": "Strata do lidera",
+    "pt": "Diferença para o líder",
+    "ru": "Отставание от лидера",
+    "sv": "Gap till ledaren"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

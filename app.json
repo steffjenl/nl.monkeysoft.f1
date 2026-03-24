@@ -5,10 +5,32 @@
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "name": {
-    "en": "Formula 1 Live Timing"
+    "en": "Formula 1 Live Timing",
+    "nl": "Formule 1 Live Timing",
+    "de": "Formel 1 Live Timing",
+    "da": "Formel 1 Live Timing",
+    "es": "Fórmula 1 Live Timing",
+    "fr": "Formule 1 Live Timing",
+    "it": "Formula 1 Live Timing",
+    "no": "Formel 1 Live Timing",
+    "pl": "Formuła 1 Live Timing",
+    "pt": "Fórmula 1 Live Timing",
+    "ru": "Формула 1 Live Timing",
+    "sv": "Formel 1 Live Timing"
   },
   "description": {
-    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations.",
+    "nl": "Haal Formule 1 live-data in huis: trackstatus, race control, coureurstijden, pitstops en weer — allemaal als Homey-automatiseringen.",
+    "de": "Hol dir Formel-1-Live-Daten ins Smarthome: Streckenstatus, Rennkontrolle, Fahrerzeiten, Boxenstopps und Wetter — alles als Homey-Automationen.",
+    "da": "Bring Formel 1 live-data hjem: banestatus, race control, kørertider, depotstopp og vejr — alt som Homey-automatiseringer.",
+    "es": "Lleva los datos en vivo de la Fórmula 1 a tu hogar: estado de la pista, control de carrera, tiempos de pilotos, paradas en boxes y tiempo meteorológico — todo como automatizaciones Homey.",
+    "fr": "Intégrez les données en direct de la Formule 1 dans votre maison : statut de la piste, direction de course, chrono des pilotes, arrêts aux stands et météo — tout en automatisations Homey.",
+    "it": "Porta i dati in diretta della Formula 1 in casa tua: stato della pista, direzione gara, tempi dei piloti, soste ai box e meteo — tutto come automazioni Homey.",
+    "no": "Bring Formel 1 live-data inn i hjemmet: banestatus, race control, førertider, depåstopp og vær — alt som Homey-automatiseringer.",
+    "pl": "Przenieś dane na żywo Formuły 1 do swojego domu: status toru, dyrekcja wyścigu, czasy kierowców, pit stopy i pogoda — wszystko jako automatyzacje Homey.",
+    "pt": "Leve os dados em direto da Fórmula 1 para a sua casa: estado da pista, direção de corrida, tempos dos pilotos, paragens nos boxes e tempo meteorológico — tudo como automatizações Homey.",
+    "ru": "Добавьте данные Формулы 1 в реальном времени в свой умный дом: статус трассы, дирекция гонки, хронометраж гонщиков, пит-стопы и погода — всё в виде автоматизаций Homey.",
+    "sv": "Ta in Formel 1-data i realtid i ditt smarta hem: banstatus, race control, förartider, depåstopp och väder — allt som Homey-automatiseringar."
   },
   "category": [
     "tools"
@@ -29,6 +51,83 @@
   "tags": {
     "en": [
       "formula1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "nl": [
+      "formule1",
+      "f1",
+      "racen",
+      "motorsport",
+      "livetiming"
+    ],
+    "de": [
+      "formel1",
+      "f1",
+      "rennen",
+      "motorsport",
+      "livetiming"
+    ],
+    "da": [
+      "formel1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "es": [
+      "formula1",
+      "f1",
+      "carreras",
+      "motorsport",
+      "livetiming"
+    ],
+    "fr": [
+      "formule1",
+      "f1",
+      "course",
+      "motorsport",
+      "livetiming"
+    ],
+    "it": [
+      "formula1",
+      "f1",
+      "corsa",
+      "motorsport",
+      "livetiming"
+    ],
+    "no": [
+      "formel1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "pl": [
+      "formula1",
+      "f1",
+      "wyscigy",
+      "motorsport",
+      "livetiming"
+    ],
+    "pt": [
+      "formula1",
+      "f1",
+      "corrida",
+      "motorsport",
+      "livetiming"
+    ],
+    "ru": [
+      "formula1",
+      "f1",
+      "gonki",
+      "motorsport",
+      "livetiming"
+    ],
+    "sv": [
+      "formel1",
       "f1",
       "racing",
       "motorsport",
@@ -913,7 +1012,18 @@
     "f1_clock_elapsed": {
       "type": "number",
       "title": {
-        "en": "Session Time Elapsed"
+        "en": "Session Time Elapsed",
+        "nl": "Verstreken sessietijd",
+        "de": "Verstrichene Sitzungszeit",
+        "da": "Forløbet sessionstid",
+        "es": "Tiempo de sesión transcurrido",
+        "fr": "Temps de session écoulé",
+        "it": "Tempo sessione trascorso",
+        "no": "Forløpt sesjonstid",
+        "pl": "Upłynięty czas sesji",
+        "pt": "Tempo de sessão decorrido",
+        "ru": "Прошедшее время сессии",
+        "sv": "Förfluten sessionstid"
       },
       "getable": true,
       "setable": false,
@@ -928,7 +1038,18 @@
     "f1_clock_phase": {
       "type": "enum",
       "title": {
-        "en": "Session Clock Phase"
+        "en": "Session Clock Phase",
+        "nl": "Sessieklokfase",
+        "de": "Sitzungsuhrphase",
+        "da": "Sessionursfase",
+        "es": "Fase del reloj de sesión",
+        "fr": "Phase de l'horloge de session",
+        "it": "Fase orologio sessione",
+        "no": "Sesjonsklokke fase",
+        "pl": "Faza zegara sesji",
+        "pt": "Fase do relógio de sessão",
+        "ru": "Фаза часов сессии",
+        "sv": "Sessionsklocka fas"
       },
       "getable": true,
       "setable": false,
@@ -937,25 +1058,69 @@
         {
           "id": "idle",
           "title": {
-            "en": "Idle"
+            "en": "Idle",
+            "nl": "Inactief",
+            "de": "Inaktiv",
+            "da": "Inaktiv",
+            "es": "Inactivo",
+            "fr": "Inactif",
+            "it": "Inattivo",
+            "no": "Inaktiv",
+            "pl": "Bezczynny",
+            "pt": "Inativo",
+            "ru": "Ожидание",
+            "sv": "Inaktiv"
           }
         },
         {
           "id": "running",
           "title": {
-            "en": "Running"
+            "en": "Running",
+            "nl": "Lopend",
+            "de": "Läuft",
+            "da": "Kører",
+            "es": "En curso",
+            "fr": "En cours",
+            "it": "In corso",
+            "no": "Kjører",
+            "pl": "Działa",
+            "pt": "Em curso",
+            "ru": "Идёт",
+            "sv": "Kör"
           }
         },
         {
           "id": "paused",
           "title": {
-            "en": "Paused"
+            "en": "Paused",
+            "nl": "Gepauzeerd",
+            "de": "Pausiert",
+            "da": "Sat på pause",
+            "es": "Pausado",
+            "fr": "En pause",
+            "it": "In pausa",
+            "no": "Satt på pause",
+            "pl": "Wstrzymany",
+            "pt": "Em pausa",
+            "ru": "На паузе",
+            "sv": "Pausad"
           }
         },
         {
           "id": "finished",
           "title": {
-            "en": "Finished"
+            "en": "Finished",
+            "nl": "Beëindigd",
+            "de": "Beendet",
+            "da": "Afsluttet",
+            "es": "Finalizado",
+            "fr": "Terminé",
+            "it": "Terminato",
+            "no": "Avsluttet",
+            "pl": "Zakończony",
+            "pt": "Terminado",
+            "ru": "Завершено",
+            "sv": "Avslutad"
           }
         }
       ]
@@ -963,7 +1128,18 @@
     "f1_clock_remaining": {
       "type": "number",
       "title": {
-        "en": "Session Time Remaining"
+        "en": "Session Time Remaining",
+        "nl": "Resterende sessietijd",
+        "de": "Verbleibende Sitzungszeit",
+        "da": "Resterende sessionstid",
+        "es": "Tiempo de sesión restante",
+        "fr": "Temps de session restant",
+        "it": "Tempo sessione rimanente",
+        "no": "Gjenstående sesjonstid",
+        "pl": "Pozostały czas sesji",
+        "pt": "Tempo de sessão restante",
+        "ru": "Оставшееся время сессии",
+        "sv": "Återstående sessionstid"
       },
       "getable": true,
       "setable": false,
@@ -978,7 +1154,18 @@
     "f1_drivers_json": {
       "type": "string",
       "title": {
-        "en": "Drivers State (JSON)"
+        "en": "Drivers State (JSON)",
+        "nl": "Coureursstatus (JSON)",
+        "de": "Fahrerstatus (JSON)",
+        "da": "Kørerstatus (JSON)",
+        "es": "Estado de pilotos (JSON)",
+        "fr": "État des pilotes (JSON)",
+        "it": "Stato dei piloti (JSON)",
+        "no": "Førerstatus (JSON)",
+        "pl": "Stan kierowców (JSON)",
+        "pt": "Estado dos pilotos (JSON)",
+        "ru": "Состояние гонщиков (JSON)",
+        "sv": "Förarstatus (JSON)"
       },
       "getable": true,
       "setable": false,
@@ -987,7 +1174,18 @@
     "f1_fastest_lap_driver": {
       "type": "string",
       "title": {
-        "en": "Fastest Lap Driver"
+        "en": "Fastest Lap Driver",
+        "nl": "Snelste ronde coureur",
+        "de": "Fahrer mit schnellster Runde",
+        "da": "Hurtigste omgang kører",
+        "es": "Piloto de la vuelta más rápida",
+        "fr": "Pilote du meilleur tour",
+        "it": "Pilota del giro più veloce",
+        "no": "Raskeste runde fører",
+        "pl": "Kierowca najszybszego okrążenia",
+        "pt": "Piloto da volta mais rápida",
+        "ru": "Гонщик быстрейшего круга",
+        "sv": "Förare med snabbaste varvet"
       },
       "getable": true,
       "setable": false,
@@ -997,7 +1195,18 @@
     "f1_fastest_lap_time": {
       "type": "string",
       "title": {
-        "en": "Fastest Lap Time"
+        "en": "Fastest Lap Time",
+        "nl": "Snelste rondetijd",
+        "de": "Schnellste Rundenzeit",
+        "da": "Hurtigste omgangstid",
+        "es": "Tiempo de la vuelta más rápida",
+        "fr": "Temps du meilleur tour",
+        "it": "Tempo del giro più veloce",
+        "no": "Raskeste rundetid",
+        "pl": "Czas najszybszego okrążenia",
+        "pt": "Tempo da volta mais rápida",
+        "ru": "Время быстрейшего круга",
+        "sv": "Snabbaste varvtid"
       },
       "getable": true,
       "setable": false,
@@ -1007,7 +1216,18 @@
     "f1_gap_to_leader": {
       "type": "string",
       "title": {
-        "en": "Gap to Leader"
+        "en": "Gap to Leader",
+        "nl": "Achterstand op leider",
+        "de": "Abstand zur Führung",
+        "da": "Forskel til lederen",
+        "es": "Diferencia con el líder",
+        "fr": "Écart avec le leader",
+        "it": "Distacco dal leader",
+        "no": "Gap til lederen",
+        "pl": "Strata do lidera",
+        "pt": "Diferença para o líder",
+        "ru": "Отставание от лидера",
+        "sv": "Gap till ledaren"
       },
       "getable": true,
       "setable": false,
@@ -1017,7 +1237,18 @@
     "f1_lap_count": {
       "type": "number",
       "title": {
-        "en": "Current Lap"
+        "en": "Current Lap",
+        "nl": "Huidige ronde",
+        "de": "Aktuelle Runde",
+        "da": "Aktuel omgang",
+        "es": "Vuelta actual",
+        "fr": "Tour actuel",
+        "it": "Giro attuale",
+        "no": "Nåværende runde",
+        "pl": "Bieżące okrążenie",
+        "pt": "Volta atual",
+        "ru": "Текущий круг",
+        "sv": "Aktuellt varv"
       },
       "getable": true,
       "setable": false,
@@ -1032,7 +1263,18 @@
     "f1_lap_total": {
       "type": "number",
       "title": {
-        "en": "Total Laps"
+        "en": "Total Laps",
+        "nl": "Totaal ronden",
+        "de": "Gesamtrunden",
+        "da": "Totale omgange",
+        "es": "Vueltas totales",
+        "fr": "Tours totaux",
+        "it": "Giri totali",
+        "no": "Totale runder",
+        "pl": "Łączna liczba okrążeń",
+        "pt": "Total de voltas",
+        "ru": "Всего кругов",
+        "sv": "Totalt antal varv"
       },
       "getable": true,
       "setable": false,
@@ -1047,7 +1289,18 @@
     "f1_last_lap_time": {
       "type": "string",
       "title": {
-        "en": "Last Lap Time"
+        "en": "Last Lap Time",
+        "nl": "Laatste rondetijd",
+        "de": "Letzte Rundenzeit",
+        "da": "Sidste omgangstid",
+        "es": "Tiempo de la última vuelta",
+        "fr": "Temps du dernier tour",
+        "it": "Tempo dell'ultimo giro",
+        "no": "Siste rundetid",
+        "pl": "Czas ostatniego okrążenia",
+        "pt": "Tempo da última volta",
+        "ru": "Время последнего круга",
+        "sv": "Senaste varvtid"
       },
       "getable": true,
       "setable": false,
@@ -1057,7 +1310,18 @@
     "f1_pit_count": {
       "type": "number",
       "title": {
-        "en": "Pit Stops"
+        "en": "Pit Stops",
+        "nl": "Pitstops",
+        "de": "Boxenstopps",
+        "da": "Depotstopp",
+        "es": "Paradas en boxes",
+        "fr": "Arrêts aux stands",
+        "it": "Soste ai box",
+        "no": "Depåstopp",
+        "pl": "Pit stopy",
+        "pt": "Paragens nos boxes",
+        "ru": "Пит-стопы",
+        "sv": "Depåstopp"
       },
       "getable": true,
       "setable": false,
@@ -1070,7 +1334,18 @@
     "f1_position": {
       "type": "number",
       "title": {
-        "en": "Race Position"
+        "en": "Race Position",
+        "nl": "Racepositie",
+        "de": "Rennposition",
+        "da": "Raceposition",
+        "es": "Posición en carrera",
+        "fr": "Position en course",
+        "it": "Posizione in gara",
+        "no": "Løpsposisjon",
+        "pl": "Pozycja w wyścigu",
+        "pt": "Posição na corrida",
+        "ru": "Позиция в гонке",
+        "sv": "Loppsposition"
       },
       "getable": true,
       "setable": false,
@@ -1083,7 +1358,18 @@
     "f1_race_control_category": {
       "type": "string",
       "title": {
-        "en": "Race Control Category"
+        "en": "Race Control Category",
+        "nl": "Race control-categorie",
+        "de": "Rennkontrollkategorie",
+        "da": "Race control-kategori",
+        "es": "Categoría de control de carrera",
+        "fr": "Catégorie de la direction de course",
+        "it": "Categoria della direzione gara",
+        "no": "Race control-kategori",
+        "pl": "Kategoria dyrekcji wyścigu",
+        "pt": "Categoria de controlo de corrida",
+        "ru": "Категория дирекции гонки",
+        "sv": "Race control-kategori"
       },
       "getable": true,
       "setable": false,
@@ -1093,7 +1379,18 @@
     "f1_race_control_flag": {
       "type": "string",
       "title": {
-        "en": "Race Control Flag"
+        "en": "Race Control Flag",
+        "nl": "Race control-vlag",
+        "de": "Rennkontrollflagge",
+        "da": "Race control-flag",
+        "es": "Bandera de control de carrera",
+        "fr": "Drapeau de la direction de course",
+        "it": "Bandiera della direzione gara",
+        "no": "Race control-flagg",
+        "pl": "Flaga dyrekcji wyścigu",
+        "pt": "Bandeira de controlo de corrida",
+        "ru": "Флаг дирекции гонки",
+        "sv": "Race control-flagga"
       },
       "getable": true,
       "setable": false,
@@ -1103,7 +1400,18 @@
     "f1_race_control_message": {
       "type": "string",
       "title": {
-        "en": "Race Control Message"
+        "en": "Race Control Message",
+        "nl": "Race control-bericht",
+        "de": "Rennkontrollnachricht",
+        "da": "Race control-besked",
+        "es": "Mensaje de control de carrera",
+        "fr": "Message de la direction de course",
+        "it": "Messaggio della direzione gara",
+        "no": "Race control-melding",
+        "pl": "Komunikat dyrekcji wyścigu",
+        "pt": "Mensagem de controlo de corrida",
+        "ru": "Сообщение дирекции гонки",
+        "sv": "Race control-meddelande"
       },
       "getable": true,
       "setable": false,
@@ -1113,7 +1421,18 @@
     "f1_session_status": {
       "type": "enum",
       "title": {
-        "en": "Session Status"
+        "en": "Session Status",
+        "nl": "Sessiestatus",
+        "de": "Sessionstatus",
+        "da": "Sessionsstatus",
+        "es": "Estado de sesión",
+        "fr": "Statut de session",
+        "it": "Stato sessione",
+        "no": "Sesjonsstatus",
+        "pl": "Status sesji",
+        "pt": "Estado da sessão",
+        "ru": "Статус сессии",
+        "sv": "Sessionsstatus"
       },
       "getable": true,
       "setable": false,
@@ -1123,37 +1442,103 @@
         {
           "id": "inactive",
           "title": {
-            "en": "Inactive"
+            "en": "Inactive",
+            "nl": "Inactief",
+            "de": "Inaktiv",
+            "da": "Inaktiv",
+            "es": "Inactiva",
+            "fr": "Inactive",
+            "it": "Inattiva",
+            "no": "Inaktiv",
+            "pl": "Nieaktywna",
+            "pt": "Inativa",
+            "ru": "Неактивна",
+            "sv": "Inaktiv"
           }
         },
         {
           "id": "started",
           "title": {
-            "en": "Started"
+            "en": "Started",
+            "nl": "Gestart",
+            "de": "Gestartet",
+            "da": "Startet",
+            "es": "Iniciada",
+            "fr": "Démarrée",
+            "it": "Avviata",
+            "no": "Startet",
+            "pl": "Rozpoczęta",
+            "pt": "Iniciada",
+            "ru": "Началась",
+            "sv": "Startad"
           }
         },
         {
           "id": "aborted",
           "title": {
-            "en": "Aborted"
+            "en": "Aborted",
+            "nl": "Afgebroken",
+            "de": "Abgebrochen",
+            "da": "Afbrudt",
+            "es": "Abortada",
+            "fr": "Interrompue",
+            "it": "Interrotta",
+            "no": "Avbrutt",
+            "pl": "Przerwana",
+            "pt": "Abortada",
+            "ru": "Прервана",
+            "sv": "Avbruten"
           }
         },
         {
           "id": "finished",
           "title": {
-            "en": "Finished"
+            "en": "Finished",
+            "nl": "Beëindigd",
+            "de": "Beendet",
+            "da": "Afsluttet",
+            "es": "Finalizada",
+            "fr": "Terminée",
+            "it": "Terminata",
+            "no": "Avsluttet",
+            "pl": "Zakończona",
+            "pt": "Terminada",
+            "ru": "Завершена",
+            "sv": "Avslutad"
           }
         },
         {
           "id": "finalised",
           "title": {
-            "en": "Finalised"
+            "en": "Finalised",
+            "nl": "Afgerond",
+            "de": "Finalisiert",
+            "da": "Færdiggjort",
+            "es": "Liquidada",
+            "fr": "Finalisée",
+            "it": "Finalizzata",
+            "no": "Ferdigstilt",
+            "pl": "Sfinalizowana",
+            "pt": "Finalizada",
+            "ru": "Финализирована",
+            "sv": "Slutförd"
           }
         },
         {
           "id": "ends",
           "title": {
-            "en": "Ended"
+            "en": "Ended",
+            "nl": "Gestopt",
+            "de": "Gestoppt",
+            "da": "Stoppet",
+            "es": "Parada",
+            "fr": "Arrêtée",
+            "it": "Fermata",
+            "no": "Stoppet",
+            "pl": "Zatrzymana",
+            "pt": "Parada",
+            "ru": "Остановлена",
+            "sv": "Stoppad"
           }
         }
       ]
@@ -1161,7 +1546,18 @@
     "f1_session_type": {
       "type": "string",
       "title": {
-        "en": "Session Type"
+        "en": "Session Type",
+        "nl": "Sessietype",
+        "de": "Sessiontyp",
+        "da": "Sessionstype",
+        "es": "Tipo de sesión",
+        "fr": "Type de session",
+        "it": "Tipo di sessione",
+        "no": "Sesjonstype",
+        "pl": "Typ sesji",
+        "pt": "Tipo de sessão",
+        "ru": "Тип сессии",
+        "sv": "Sessionstyp"
       },
       "getable": true,
       "setable": false,
@@ -1171,7 +1567,18 @@
     "f1_track_status": {
       "type": "enum",
       "title": {
-        "en": "Track Status"
+        "en": "Track Status",
+        "nl": "Trackstatus",
+        "de": "Streckenstatus",
+        "da": "Banestatus",
+        "es": "Estado de la pista",
+        "fr": "Statut de la piste",
+        "it": "Stato della pista",
+        "no": "Banestatus",
+        "pl": "Status toru",
+        "pt": "Estado da pista",
+        "ru": "Статус трассы",
+        "sv": "Banstatus"
       },
       "getable": true,
       "setable": false,
@@ -1181,37 +1588,103 @@
         {
           "id": "CLEAR",
           "title": {
-            "en": "Clear"
+            "en": "Clear",
+            "nl": "Vrij",
+            "de": "Frei",
+            "da": "Fri",
+            "es": "Libre",
+            "fr": "Libre",
+            "it": "Libera",
+            "no": "Fri",
+            "pl": "Wolny",
+            "pt": "Livre",
+            "ru": "Свободно",
+            "sv": "Fri"
           }
         },
         {
           "id": "YELLOW",
           "title": {
-            "en": "Yellow Flag"
+            "en": "Yellow Flag",
+            "nl": "Gele vlag",
+            "de": "Gelbe Flagge",
+            "da": "Gult flag",
+            "es": "Bandera amarilla",
+            "fr": "Drapeau jaune",
+            "it": "Bandiera gialla",
+            "no": "Gult flagg",
+            "pl": "Żółta flaga",
+            "pt": "Bandeira amarela",
+            "ru": "Жёлтый флаг",
+            "sv": "Gul flagg"
           }
         },
         {
           "id": "SC",
           "title": {
-            "en": "Safety Car"
+            "en": "Safety Car",
+            "nl": "Veiligheidswagen",
+            "de": "Safety Car",
+            "da": "Sikkerhedsbil",
+            "es": "Coche de seguridad",
+            "fr": "Voiture de sécurité",
+            "it": "Safety Car",
+            "no": "Sikkerhetsbil",
+            "pl": "Samochód bezp.",
+            "pt": "Carro de segurança",
+            "ru": "Машина безопасности",
+            "sv": "Säkerhetsbil"
           }
         },
         {
           "id": "RED",
           "title": {
-            "en": "Red Flag"
+            "en": "Red Flag",
+            "nl": "Rode vlag",
+            "de": "Rote Flagge",
+            "da": "Rødt flag",
+            "es": "Bandera roja",
+            "fr": "Drapeau rouge",
+            "it": "Bandiera rossa",
+            "no": "Rødt flagg",
+            "pl": "Czerwona flaga",
+            "pt": "Bandeira vermelha",
+            "ru": "Красный флаг",
+            "sv": "Röd flagg"
           }
         },
         {
           "id": "VSC",
           "title": {
-            "en": "Virtual Safety Car"
+            "en": "Virtual Safety Car",
+            "nl": "Virtuele veiligheidswagen",
+            "de": "Virtuelles Safety Car",
+            "da": "Virtuel sikkerhedsbil",
+            "es": "VSC",
+            "fr": "Voiture de sécurité virtuelle",
+            "it": "Virtual Safety Car",
+            "no": "Virtuell sikkerhetsbil",
+            "pl": "Wirtualny SC",
+            "pt": "Carro de segurança virtual",
+            "ru": "Виртуальная машина безопасности",
+            "sv": "Virtuell säkerhetsbil"
           }
         },
         {
           "id": "UNKNOWN",
           "title": {
-            "en": "Unknown"
+            "en": "Unknown",
+            "nl": "Onbekend",
+            "de": "Unbekannt",
+            "da": "Ukendt",
+            "es": "Desconocido",
+            "fr": "Inconnu",
+            "it": "Sconosciuto",
+            "no": "Ukjent",
+            "pl": "Nieznany",
+            "pt": "Desconhecido",
+            "ru": "Неизвестно",
+            "sv": "Okänd"
           }
         }
       ]
@@ -1219,7 +1692,18 @@
     "f1_tyre_compound": {
       "type": "enum",
       "title": {
-        "en": "Tyre Compound"
+        "en": "Tyre Compound",
+        "nl": "Bandensamenstelling",
+        "de": "Reifenmischung",
+        "da": "Dæksammensætning",
+        "es": "Compuesto de neumáticos",
+        "fr": "Composé de pneus",
+        "it": "Mescola pneumatici",
+        "no": "Dekkmiks",
+        "pl": "Mieszanka opon",
+        "pt": "Composto de pneus",
+        "ru": "Состав шин",
+        "sv": "Däckblandning"
       },
       "getable": true,
       "setable": false,
@@ -1229,37 +1713,103 @@
         {
           "id": "SOFT",
           "title": {
-            "en": "Soft"
+            "en": "Soft",
+            "nl": "Zacht",
+            "de": "Weich",
+            "da": "Blød",
+            "es": "Blando",
+            "fr": "Tendre",
+            "it": "Morbida",
+            "no": "Myk",
+            "pl": "Miękka",
+            "pt": "Macio",
+            "ru": "Мягкая",
+            "sv": "Mjuk"
           }
         },
         {
           "id": "MEDIUM",
           "title": {
-            "en": "Medium"
+            "en": "Medium",
+            "nl": "Medium",
+            "de": "Medium",
+            "da": "Medium",
+            "es": "Medio",
+            "fr": "Médium",
+            "it": "Media",
+            "no": "Medium",
+            "pl": "Średnia",
+            "pt": "Médio",
+            "ru": "Средняя",
+            "sv": "Medium"
           }
         },
         {
           "id": "HARD",
           "title": {
-            "en": "Hard"
+            "en": "Hard",
+            "nl": "Hard",
+            "de": "Hart",
+            "da": "Hård",
+            "es": "Duro",
+            "fr": "Dur",
+            "it": "Dura",
+            "no": "Hard",
+            "pl": "Twarda",
+            "pt": "Duro",
+            "ru": "Жёсткая",
+            "sv": "Hård"
           }
         },
         {
           "id": "INTERMEDIATE",
           "title": {
-            "en": "Intermediate"
+            "en": "Intermediate",
+            "nl": "Intermediate",
+            "de": "Intermediate",
+            "da": "Intermediate",
+            "es": "Intermedio",
+            "fr": "Intermédiaire",
+            "it": "Intermedia",
+            "no": "Intermediate",
+            "pl": "Przejściowa",
+            "pt": "Intermédio",
+            "ru": "Промежуточная",
+            "sv": "Intermediate"
           }
         },
         {
           "id": "WET",
           "title": {
-            "en": "Wet"
+            "en": "Wet",
+            "nl": "Regen",
+            "de": "Regen",
+            "da": "Regn",
+            "es": "Lluvia",
+            "fr": "Pluie",
+            "it": "Wet",
+            "no": "Regn",
+            "pl": "Mokra",
+            "pt": "Chuva",
+            "ru": "Дождевая",
+            "sv": "Regn"
           }
         },
         {
           "id": "UNKNOWN",
           "title": {
-            "en": "Unknown"
+            "en": "Unknown",
+            "nl": "Onbekend",
+            "de": "Unbekannt",
+            "da": "Ukendt",
+            "es": "Desconocido",
+            "fr": "Inconnu",
+            "it": "Sconosciuta",
+            "no": "Ukjent",
+            "pl": "Nieznana",
+            "pt": "Desconhecido",
+            "ru": "Неизвестно",
+            "sv": "Okänd"
           }
         }
       ]
@@ -1267,7 +1817,18 @@
     "f1_tyre_laps": {
       "type": "number",
       "title": {
-        "en": "Tyre Laps"
+        "en": "Tyre Laps",
+        "nl": "Ronden op banden",
+        "de": "Runden auf Reifen",
+        "da": "Omgange på dæk",
+        "es": "Vueltas con neumáticos",
+        "fr": "Tours sur pneus",
+        "it": "Giri sulle gomme",
+        "no": "Runder på dekk",
+        "pl": "Okrążenia na oponach",
+        "pt": "Voltas nos pneus",
+        "ru": "Кругов на шинах",
+        "sv": "Varv på däck"
       },
       "getable": true,
       "setable": false,
@@ -1280,7 +1841,18 @@
     "f1_wind_direction": {
       "type": "number",
       "title": {
-        "en": "Wind Direction"
+        "en": "Wind Direction",
+        "nl": "Windrichting",
+        "de": "Windrichtung",
+        "da": "Vindretning",
+        "es": "Dirección del viento",
+        "fr": "Direction du vent",
+        "it": "Direzione del vento",
+        "no": "Vindretning",
+        "pl": "Kierunek wiatru",
+        "pt": "Direção do vento",
+        "ru": "Направление ветра",
+        "sv": "Vindriktning"
       },
       "getable": true,
       "setable": false,

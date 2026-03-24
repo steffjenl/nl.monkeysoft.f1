@@ -1,16 +1,29 @@
 {
   "type": "enum",
-  "title": { "en": "Session Status" },
+  "title": {
+    "en": "Session Status",
+    "nl": "Sessiestatus",
+    "de": "Sessionstatus",
+    "da": "Sessionsstatus",
+    "es": "Estado de sesión",
+    "fr": "Statut de session",
+    "it": "Stato sessione",
+    "no": "Sesjonsstatus",
+    "pl": "Status sesji",
+    "pt": "Estado da sessão",
+    "ru": "Статус сессии",
+    "sv": "Sessionsstatus"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
   "icon": "/assets/capabilities/f1_session_status.svg",
   "values": [
-    { "id": "inactive",  "title": { "en": "Inactive"   } },
-    { "id": "started",   "title": { "en": "Started"    } },
-    { "id": "aborted",   "title": { "en": "Aborted"    } },
-    { "id": "finished",  "title": { "en": "Finished"   } },
-    { "id": "finalised", "title": { "en": "Finalised"  } },
-    { "id": "ends",      "title": { "en": "Ended"      } }
+    { "id": "inactive",  "title": { "en": "Inactive",   "nl": "Inactief",      "de": "Inaktiv",       "da": "Inaktiv",       "es": "Inactiva",      "fr": "Inactive",      "it": "Inattiva",      "no": "Inaktiv",       "pl": "Nieaktywna",    "pt": "Inativa",       "ru": "Неактивна",    "sv": "Inaktiv"       } },
+    { "id": "started",   "title": { "en": "Started",    "nl": "Gestart",       "de": "Gestartet",     "da": "Startet",       "es": "Iniciada",      "fr": "Démarrée",      "it": "Avviata",       "no": "Startet",       "pl": "Rozpoczęta",   "pt": "Iniciada",      "ru": "Началась",     "sv": "Startad"       } },
+    { "id": "aborted",   "title": { "en": "Aborted",    "nl": "Afgebroken",    "de": "Abgebrochen",   "da": "Afbrudt",       "es": "Abortada",      "fr": "Interrompue",   "it": "Interrotta",    "no": "Avbrutt",       "pl": "Przerwana",     "pt": "Abortada",      "ru": "Прервана",     "sv": "Avbruten"      } },
+    { "id": "finished",  "title": { "en": "Finished",   "nl": "Beëindigd",     "de": "Beendet",       "da": "Afsluttet",     "es": "Finalizada",    "fr": "Terminée",      "it": "Terminata",     "no": "Avsluttet",     "pl": "Zakończona",    "pt": "Terminada",     "ru": "Завершена",    "sv": "Avslutad"      } },
+    { "id": "finalised", "title": { "en": "Finalised",  "nl": "Afgerond",      "de": "Finalisiert",   "da": "Færdiggjort",   "es": "Liquidada",     "fr": "Finalisée",     "it": "Finalizzata",   "no": "Ferdigstilt",   "pl": "Sfinalizowana", "pt": "Finalizada",    "ru": "Финализирована", "sv": "Slutförd"      } },
+    { "id": "ends",      "title": { "en": "Ended",      "nl": "Gestopt",       "de": "Gestoppt",      "da": "Stoppet",       "es": "Parada",        "fr": "Arrêtée",       "it": "Fermata",       "no": "Stoppet",       "pl": "Zatrzymana",    "pt": "Parada",        "ru": "Остановлена",  "sv": "Stoppad"       } }
   ]
 }

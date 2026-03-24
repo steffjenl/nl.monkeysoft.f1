@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Drivers State (JSON)" },
+  "title": {
+    "en": "Drivers State (JSON)",
+    "nl": "Coureursstatus (JSON)",
+    "de": "Fahrerstatus (JSON)",
+    "da": "Kørerstatus (JSON)",
+    "es": "Estado de pilotos (JSON)",
+    "fr": "État des pilotes (JSON)",
+    "it": "Stato dei piloti (JSON)",
+    "no": "Førerstatus (JSON)",
+    "pl": "Stan kierowców (JSON)",
+    "pt": "Estado dos pilotos (JSON)",
+    "ru": "Состояние гонщиков (JSON)",
+    "sv": "Förarstatus (JSON)"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": null

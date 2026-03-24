@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Session Type" },
+  "title": {
+    "en": "Session Type",
+    "nl": "Sessietype",
+    "de": "Sessiontyp",
+    "da": "Sessionstype",
+    "es": "Tipo de sesión",
+    "fr": "Type de session",
+    "it": "Tipo di sessione",
+    "no": "Sesjonstype",
+    "pl": "Typ sesji",
+    "pt": "Tipo de sessão",
+    "ru": "Тип сессии",
+    "sv": "Sessionstyp"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

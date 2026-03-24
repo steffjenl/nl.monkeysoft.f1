@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Race Control Category" },
+  "title": {
+    "en": "Race Control Category",
+    "nl": "Race control-categorie",
+    "de": "Rennkontrollkategorie",
+    "da": "Race control-kategori",
+    "es": "Categoría de control de carrera",
+    "fr": "Catégorie de la direction de course",
+    "it": "Categoria della direzione gara",
+    "no": "Race control-kategori",
+    "pl": "Kategoria dyrekcji wyścigu",
+    "pt": "Categoria de controlo de corrida",
+    "ru": "Категория дирекции гонки",
+    "sv": "Race control-kategori"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

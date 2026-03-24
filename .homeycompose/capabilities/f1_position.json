@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Race Position" },
+  "title": {
+    "en": "Race Position",
+    "nl": "Racepositie",
+    "de": "Rennposition",
+    "da": "Raceposition",
+    "es": "Posición en carrera",
+    "fr": "Position en course",
+    "it": "Posizione in gara",
+    "no": "Løpsposisjon",
+    "pl": "Pozycja w wyścigu",
+    "pt": "Posição na corrida",
+    "ru": "Позиция в гонке",
+    "sv": "Loppsposition"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

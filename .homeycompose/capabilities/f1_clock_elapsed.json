@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Session Time Elapsed" },
+  "title": {
+    "en": "Session Time Elapsed",
+    "nl": "Verstreken sessietijd",
+    "de": "Verstrichene Sitzungszeit",
+    "da": "Forløbet sessionstid",
+    "es": "Tiempo de sesión transcurrido",
+    "fr": "Temps de session écoulé",
+    "it": "Tempo sessione trascorso",
+    "no": "Forløpt sesjonstid",
+    "pl": "Upłynięty czas sesji",
+    "pt": "Tempo de sessão decorrido",
+    "ru": "Прошедшее время сессии",
+    "sv": "Förfluten sessionstid"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

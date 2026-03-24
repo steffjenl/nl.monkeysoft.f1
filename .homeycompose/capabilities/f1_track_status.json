@@ -1,16 +1,29 @@
 {
   "type": "enum",
-  "title": { "en": "Track Status" },
+  "title": {
+    "en": "Track Status",
+    "nl": "Trackstatus",
+    "de": "Streckenstatus",
+    "da": "Banestatus",
+    "es": "Estado de la pista",
+    "fr": "Statut de la piste",
+    "it": "Stato della pista",
+    "no": "Banestatus",
+    "pl": "Status toru",
+    "pt": "Estado da pista",
+    "ru": "Статус трассы",
+    "sv": "Banstatus"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "picker",
   "icon": "/assets/capabilities/f1_track_status.svg",
   "values": [
-    { "id": "CLEAR",   "title": { "en": "Clear"              } },
-    { "id": "YELLOW",  "title": { "en": "Yellow Flag"        } },
-    { "id": "SC",      "title": { "en": "Safety Car"         } },
-    { "id": "RED",     "title": { "en": "Red Flag"           } },
-    { "id": "VSC",     "title": { "en": "Virtual Safety Car" } },
-    { "id": "UNKNOWN", "title": { "en": "Unknown"            } }
+    { "id": "CLEAR",   "title": { "en": "Clear",              "nl": "Vrij",                    "de": "Frei",                  "da": "Fri",                    "es": "Libre",               "fr": "Libre",               "it": "Libera",              "no": "Fri",                    "pl": "Wolny",               "pt": "Livre",               "ru": "Свободно",           "sv": "Fri"                } },
+    { "id": "YELLOW",  "title": { "en": "Yellow Flag",        "nl": "Gele vlag",                "de": "Gelbe Flagge",          "da": "Gult flag",              "es": "Bandera amarilla",    "fr": "Drapeau jaune",        "it": "Bandiera gialla",      "no": "Gult flagg",              "pl": "Żółta flaga",        "pt": "Bandeira amarela",    "ru": "Жёлтый флаг",       "sv": "Gul flagg"          } },
+    { "id": "SC",      "title": { "en": "Safety Car",         "nl": "Veiligheidswagen",          "de": "Safety Car",            "da": "Sikkerhedsbil",          "es": "Coche de seguridad",  "fr": "Voiture de sécurité",  "it": "Safety Car",          "no": "Sikkerhetsbil",          "pl": "Samochód bezp.",    "pt": "Carro de segurança",  "ru": "Машина безопасности", "sv": "Säkerhetsbil"       } },
+    { "id": "RED",     "title": { "en": "Red Flag",           "nl": "Rode vlag",                "de": "Rote Flagge",           "da": "Rødt flag",             "es": "Bandera roja",        "fr": "Drapeau rouge",        "it": "Bandiera rossa",      "no": "Rødt flagg",             "pl": "Czerwona flaga",    "pt": "Bandeira vermelha",   "ru": "Красный флаг",      "sv": "Röd flagg"          } },
+    { "id": "VSC",     "title": { "en": "Virtual Safety Car", "nl": "Virtuele veiligheidswagen", "de": "Virtuelles Safety Car",  "da": "Virtuel sikkerhedsbil", "es": "VSC",                 "fr": "Voiture de sécurité virtuelle", "it": "Virtual Safety Car", "no": "Virtuell sikkerhetsbil", "pl": "Wirtualny SC",     "pt": "Carro de segurança virtual", "ru": "Виртуальная машина безопасности", "sv": "Virtuell säkerhetsbil" } },
+    { "id": "UNKNOWN", "title": { "en": "Unknown",            "nl": "Onbekend",                "de": "Unbekannt",            "da": "Ukendt",                "es": "Desconocido",         "fr": "Inconnu",             "it": "Sconosciuto",         "no": "Ukjent",                 "pl": "Nieznany",          "pt": "Desconhecido",        "ru": "Неизвестно",         "sv": "Okänd"              } }
   ]
 }

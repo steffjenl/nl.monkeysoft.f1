@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Wind Direction" },
+  "title": {
+    "en": "Wind Direction",
+    "nl": "Windrichting",
+    "de": "Windrichtung",
+    "da": "Vindretning",
+    "es": "Dirección del viento",
+    "fr": "Direction du vent",
+    "it": "Direzione del vento",
+    "no": "Vindretning",
+    "pl": "Kierunek wiatru",
+    "pt": "Direção do vento",
+    "ru": "Направление ветра",
+    "sv": "Vindriktning"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

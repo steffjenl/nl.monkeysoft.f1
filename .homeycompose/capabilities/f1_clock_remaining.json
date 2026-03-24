@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Session Time Remaining" },
+  "title": {
+    "en": "Session Time Remaining",
+    "nl": "Resterende sessietijd",
+    "de": "Verbleibende Sitzungszeit",
+    "da": "Resterende sessionstid",
+    "es": "Tiempo de sesión restante",
+    "fr": "Temps de session restant",
+    "it": "Tempo sessione rimanente",
+    "no": "Gjenstående sesjonstid",
+    "pl": "Pozostały czas sesji",
+    "pt": "Tempo de sessão restante",
+    "ru": "Оставшееся время сессии",
+    "sv": "Återstående sessionstid"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Fastest Lap Driver" },
+  "title": {
+    "en": "Fastest Lap Driver",
+    "nl": "Snelste ronde coureur",
+    "de": "Fahrer mit schnellster Runde",
+    "da": "Hurtigste omgang kører",
+    "es": "Piloto de la vuelta más rápida",
+    "fr": "Pilote du meilleur tour",
+    "it": "Pilota del giro più veloce",
+    "no": "Raskeste runde fører",
+    "pl": "Kierowca najszybszego okrążenia",
+    "pt": "Piloto da volta mais rápida",
+    "ru": "Гонщик быстрейшего круга",
+    "sv": "Förare med snabbaste varvet"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

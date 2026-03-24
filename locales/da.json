@@ -1,0 +1,6 @@
+{
+  "app": {
+    "name": "Formel 1 Live Timing",
+    "description": "Bring Formel 1 live-data hjem: banestatus, race control, kørertider, depotstopp og vejr — alt som Homey-automatiseringer."
+  }
+}

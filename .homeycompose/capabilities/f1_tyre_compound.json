@@ -1,16 +1,29 @@
 {
   "type": "enum",
-  "title": { "en": "Tyre Compound" },
+  "title": {
+    "en": "Tyre Compound",
+    "nl": "Bandensamenstelling",
+    "de": "Reifenmischung",
+    "da": "Dæksammensætning",
+    "es": "Compuesto de neumáticos",
+    "fr": "Composé de pneus",
+    "it": "Mescola pneumatici",
+    "no": "Dekkmiks",
+    "pl": "Mieszanka opon",
+    "pt": "Composto de pneus",
+    "ru": "Состав шин",
+    "sv": "Däckblandning"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "picker",
   "icon": "/assets/capabilities/f1_tyre_compound.svg",
   "values": [
-    { "id": "SOFT",         "title": { "en": "Soft"              } },
-    { "id": "MEDIUM",       "title": { "en": "Medium"            } },
-    { "id": "HARD",         "title": { "en": "Hard"              } },
-    { "id": "INTERMEDIATE", "title": { "en": "Intermediate"      } },
-    { "id": "WET",          "title": { "en": "Wet"               } },
-    { "id": "UNKNOWN",      "title": { "en": "Unknown"           } }
+    { "id": "SOFT",         "title": { "en": "Soft",         "nl": "Zacht",         "de": "Weich",        "da": "Blød",         "es": "Blando",         "fr": "Tendre",       "it": "Morbida",      "no": "Myk",          "pl": "Miękka",       "pt": "Macio",        "ru": "Мягкая",       "sv": "Mjuk"         } },
+    { "id": "MEDIUM",       "title": { "en": "Medium",       "nl": "Medium",        "de": "Medium",       "da": "Medium",       "es": "Medio",         "fr": "Médium",       "it": "Media",        "no": "Medium",       "pl": "Średnia",      "pt": "Médio",        "ru": "Средняя",      "sv": "Medium"       } },
+    { "id": "HARD",         "title": { "en": "Hard",         "nl": "Hard",          "de": "Hart",         "da": "Hård",         "es": "Duro",          "fr": "Dur",          "it": "Dura",         "no": "Hard",         "pl": "Twarda",       "pt": "Duro",         "ru": "Жёсткая",      "sv": "Hård"         } },
+    { "id": "INTERMEDIATE", "title": { "en": "Intermediate",  "nl": "Intermediate",  "de": "Intermediate",  "da": "Intermediate",  "es": "Intermedio",    "fr": "Intermédiaire", "it": "Intermedia",   "no": "Intermediate",  "pl": "Przejściowa",  "pt": "Intermédio",   "ru": "Промежуточная", "sv": "Intermediate" } },
+    { "id": "WET",          "title": { "en": "Wet",          "nl": "Regen",         "de": "Regen",        "da": "Regn",         "es": "Lluvia",        "fr": "Pluie",        "it": "Wet",          "no": "Regn",         "pl": "Mokra",        "pt": "Chuva",        "ru": "Дождевая",     "sv": "Regn"         } },
+    { "id": "UNKNOWN",      "title": { "en": "Unknown",      "nl": "Onbekend",      "de": "Unbekannt",    "da": "Ukendt",       "es": "Desconocido",   "fr": "Inconnu",      "it": "Sconosciuta",  "no": "Ukjent",       "pl": "Nieznana",     "pt": "Desconhecido", "ru": "Неизвестно",   "sv": "Okänd"        } }
   ]
 }

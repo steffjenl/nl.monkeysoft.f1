@@ -1,6 +1,19 @@
 {
   "type": "number",
-  "title": { "en": "Current Lap" },
+  "title": {
+    "en": "Current Lap",
+    "nl": "Huidige ronde",
+    "de": "Aktuelle Runde",
+    "da": "Aktuel omgang",
+    "es": "Vuelta actual",
+    "fr": "Tour actuel",
+    "it": "Giro attuale",
+    "no": "Nåværende runde",
+    "pl": "Bieżące okrążenie",
+    "pt": "Volta atual",
+    "ru": "Текущий круг",
+    "sv": "Aktuellt varv"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",

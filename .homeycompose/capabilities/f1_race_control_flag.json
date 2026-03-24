@@ -1,6 +1,19 @@
 {
   "type": "string",
-  "title": { "en": "Race Control Flag" },
+  "title": {
+    "en": "Race Control Flag",
+    "nl": "Race control-vlag",
+    "de": "Rennkontrollflagge",
+    "da": "Race control-flag",
+    "es": "Bandera de control de carrera",
+    "fr": "Drapeau de la direction de course",
+    "it": "Bandiera della direzione gara",
+    "no": "Race control-flagg",
+    "pl": "Flaga dyrekcji wyścigu",
+    "pt": "Bandeira de controlo de corrida",
+    "ru": "Флаг дирекции гонки",
+    "sv": "Race control-flagga"
+  },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
