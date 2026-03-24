@@ -34,10 +34,13 @@ class F1SessionDriver extends Homey.Driver {
   async onPair(session) {
     session.setHandler('list_devices', async () => {
       return [
-        {
-          name: 'F1 Session',
-          data: { id: 'f1-session' },
-        },
+        { name: 'Race',              data: { id: 'f1-session-race',              sessionType: 'Race' } },
+        { name: 'Qualifying',        data: { id: 'f1-session-qualifying',        sessionType: 'Qualifying' } },
+        { name: 'Practice 1',        data: { id: 'f1-session-practice-1',        sessionType: 'Practice 1' } },
+        { name: 'Practice 2',        data: { id: 'f1-session-practice-2',        sessionType: 'Practice 2' } },
+        { name: 'Practice 3',        data: { id: 'f1-session-practice-3',        sessionType: 'Practice 3' } },
+        { name: 'Sprint',            data: { id: 'f1-session-sprint',            sessionType: 'Sprint' } },
+        { name: 'Sprint Qualifying', data: { id: 'f1-session-sprint-qualifying', sessionType: 'Sprint Qualifying' } },
       ];
     });
   }

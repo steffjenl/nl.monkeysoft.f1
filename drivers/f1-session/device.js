@@ -9,7 +9,9 @@ const CLOCK_INTERVAL_MS = 1000;
 class F1SessionDevice extends Homey.Device {
 
   async onInit() {
-    this.log('F1SessionDevice onInit');
+    this.log('F1SessionDevice onInit — sessionType:', this.getData().sessionType ?? 'generic');
+    this._targetType     = this.getData().sessionType || null;  // null = generic device, no filter
+    this._liveSessionType = null;
     this._unsubs         = [];
     this._prevStatus     = null;
     this._prevQualPart   = null;
@@ -42,6 +44,7 @@ class F1SessionDevice extends Homey.Device {
 
   async _onSessionStatus(data) {
     if (!data) return;
+    if (this._targetType && this._liveSessionType !== this._targetType) return;
     const raw = data.Status ?? data.SessionStatus?.Status;
     if (!raw) return;
 
@@ -73,13 +76,20 @@ class F1SessionDevice extends Homey.Device {
     if (!data) return;
     const info = data.SessionInfo ?? data;
     const type = info.Type ?? info.Name;
-    if (type) await this._setCapSafe('f1_session_type', String(type));
+    if (type) {
+      this._liveSessionType = String(type);
+      // Only update capability if this device matches the session type (or is generic)
+      if (!this._targetType || this._liveSessionType === this._targetType) {
+        await this._setCapSafe('f1_session_type', this._liveSessionType);
+      }
+    }
   }
 
   // ─── ExtrapolatedClock ───────────────────────────────────────────────────────
 
   async _onExtrapolatedClock(data) {
     if (!data) return;
+    if (this._targetType && this._liveSessionType !== this._targetType) return;
     const ec = data.ExtrapolatedClock ?? data;
 
     const remaining = ec.Remaining; // "HH:MM:SS" string
@@ -137,6 +147,7 @@ class F1SessionDevice extends Homey.Device {
 
   async _onRaceControlMessages(data) {
     if (!data) return;
+    if (this._targetType && this._liveSessionType !== this._targetType) return;
     // Data is a dict keyed by numeric string index, newest = highest key
     const msgs = data.Messages ?? data;
     if (typeof msgs !== 'object') return;
@@ -172,6 +183,7 @@ class F1SessionDevice extends Homey.Device {
 
   async _onTimingDataForFastestLap(data) {
     if (!data) return;
+    if (this._targetType && this._liveSessionType !== this._targetType) return;
     const td = data.TimingData ?? data;
     const bestTimes = td.BestLapTimes;
     if (!bestTimes) return;

@@ -118,3 +118,5 @@ class F1CarDevice extends Homey.Device {
 
 }
 
+module.exports = F1CarDevice;
+
