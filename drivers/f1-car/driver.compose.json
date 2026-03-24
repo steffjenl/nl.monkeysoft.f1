@@ -1,6 +1,17 @@
 {
   "name": {
-    "en": "F1 Driver"
+    "en": "F1 Driver",
+    "nl": "F1 Coureur",
+    "de": "F1 Fahrer",
+    "da": "F1 Kører",
+    "es": "Piloto de F1",
+    "fr": "Pilote F1",
+    "it": "Pilota F1",
+    "no": "F1 Fører",
+    "pl": "Kierowca F1",
+    "pt": "Piloto de F1",
+    "ru": "Гонщик Ф-1",
+    "sv": "F1 Förare"
   },
   "class": "sensor",
   "capabilities": [
@@ -15,16 +26,16 @@
   ],
   "capabilitiesOptions": {
     "alarm_generic.pit_active": {
-      "title": { "en": "In Pit Lane" }
+      "title": { "en": "In Pit Lane", "nl": "In de pitstraat", "de": "In der Boxengasse", "da": "I depotet", "es": "En el pit lane", "fr": "Dans la voie des stands", "it": "Nella corsia dei box", "no": "I depågaten", "pl": "W alei pit", "pt": "Na pit lane", "ru": "В пит-лейне", "sv": "I depågatan" }
     },
     "f1_tyre_compound": {
-      "title": { "en": "Current Tyre" }
+      "title": { "en": "Current Tyre", "nl": "Huidige band", "de": "Aktueller Reifen", "da": "Nuværende dæk", "es": "Neumático actual", "fr": "Pneu actuel", "it": "Gomma attuale", "no": "Nåværende dekk", "pl": "Bieżąca opona", "pt": "Pneu atual", "ru": "Текущая шина", "sv": "Aktuellt däck" }
     },
     "f1_tyre_laps": {
-      "title": { "en": "Laps on Tyre" }
+      "title": { "en": "Laps on Tyre", "nl": "Ronden op band", "de": "Runden auf Reifen", "da": "Omgange på dæk", "es": "Vueltas con el neumático", "fr": "Tours sur le pneu", "it": "Giri sulla gomma", "no": "Runder på dekk", "pl": "Okrążenia na oponie", "pt": "Voltas com o pneu", "ru": "Круги на шинах", "sv": "Varv på däcket" }
     },
     "f1_fastest_lap_time": {
-      "title": { "en": "Best Lap" }
+      "title": { "en": "Best Lap", "nl": "Beste ronde", "de": "Beste Runde", "da": "Bedste omgang", "es": "Mejor vuelta", "fr": "Meilleur tour", "it": "Miglior giro", "no": "Beste runde", "pl": "Najlepsze okrążenie", "pt": "Melhor volta", "ru": "Лучший круг", "sv": "Bästa varv" }
     }
   },
   "images": {

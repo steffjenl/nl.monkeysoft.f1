@@ -1,6 +1,17 @@
 {
   "name": {
-    "en": "F1 Session"
+    "en": "F1 Session",
+    "nl": "F1 Sessie",
+    "de": "F1 Session",
+    "da": "F1 Session",
+    "es": "Sesión F1",
+    "fr": "Session F1",
+    "it": "Sessione F1",
+    "no": "F1 Sesjon",
+    "pl": "Sesja F1",
+    "pt": "Sessão F1",
+    "ru": "Сессия Ф-1",
+    "sv": "F1 Session"
   },
   "class": "sensor",
   "capabilities": [
@@ -17,19 +28,19 @@
   ],
   "capabilitiesOptions": {
     "f1_clock_remaining": {
-      "title": { "en": "Time Remaining" }
+      "title": { "en": "Time Remaining", "nl": "Resterende tijd", "de": "Verbleibende Zeit", "da": "Resterende tid", "es": "Tiempo restante", "fr": "Temps restant", "it": "Tempo rimanente", "no": "Gjenstående tid", "pl": "Pozostały czas", "pt": "Tempo restante", "ru": "Оставшееся время", "sv": "Återstående tid" }
     },
     "f1_clock_elapsed": {
-      "title": { "en": "Time Elapsed" }
+      "title": { "en": "Time Elapsed", "nl": "Verstreken tijd", "de": "Verstrichene Zeit", "da": "Forløbet tid", "es": "Tiempo transcurrido", "fr": "Temps écoulé", "it": "Tempo trascorso", "no": "Forløpt tid", "pl": "Upłynięty czas", "pt": "Tempo decorrido", "ru": "Прошедшее время", "sv": "Förfluten tid" }
     },
     "f1_race_control_message": {
-      "title": { "en": "Last Race Control Message" }
+      "title": { "en": "Last Race Control Message", "nl": "Laatste race control-bericht", "de": "Letzte Rennkontrollnachricht", "da": "Seneste race control-besked", "es": "Último mensaje de control de carrera", "fr": "Dernier message de la direction de course", "it": "Ultimo messaggio della direzione gara", "no": "Siste race control-melding", "pl": "Ostatni komunikat dyrekcji wyścigu", "pt": "Nova mensagem de controlo de corrida", "ru": "Последнее сообщение дирекции гонки", "sv": "Senaste race control-meddelande" }
     },
     "f1_race_control_flag": {
-      "title": { "en": "Race Control Flag" }
+      "title": { "en": "Race Control Flag", "nl": "Race control-vlag", "de": "Rennkontrollflagge", "da": "Race control-flag", "es": "Bandera de control de carrera", "fr": "Drapeau de la direction de course", "it": "Bandiera della direzione gara", "no": "Race control-flagg", "pl": "Flaga dyrekcji wyścigu", "pt": "Bandeira de controlo de corrida", "ru": "Флаг дирекции гонки", "sv": "Race control-flagga" }
     },
     "f1_race_control_category": {
-      "title": { "en": "Race Control Category" }
+      "title": { "en": "Race Control Category", "nl": "Race control-categorie", "de": "Rennkontrollkategorie", "da": "Race control-kategori", "es": "Categoría de control de carrera", "fr": "Catégorie de la direction de course", "it": "Categoria della direzione gara", "no": "Race control-kategori", "pl": "Kategoria dyrekcji wyścigu", "pt": "Categoria de controlo de corrida", "ru": "Категория дирекции гонки", "sv": "Race control-kategori" }
     }
   },
   "images": {

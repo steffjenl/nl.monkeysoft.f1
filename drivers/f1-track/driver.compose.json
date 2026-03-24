@@ -1,6 +1,17 @@
 {
   "name": {
-    "en": "F1 Track"
+    "en": "F1 Track",
+    "nl": "F1 Baan",
+    "de": "F1 Strecke",
+    "da": "F1 Bane",
+    "es": "Circuito F1",
+    "fr": "Circuit F1",
+    "it": "Pista F1",
+    "no": "F1 Bane",
+    "pl": "Tor F1",
+    "pt": "Pista F1",
+    "ru": "Трасса Ф-1",
+    "sv": "F1 Bana"
   },
   "class": "sensor",
   "capabilities": [
@@ -19,22 +30,22 @@
   ],
   "capabilitiesOptions": {
     "alarm_generic.safety_car": {
-      "title": { "en": "Safety Car" }
+      "title": { "en": "Safety Car", "nl": "Veiligheidswagen", "de": "Safety Car", "da": "Sikkerhedsbil", "es": "Coche de seguridad", "fr": "Voiture de sécurité", "it": "Safety Car", "no": "Sikkerhetsbil", "pl": "Samochód bezpieczeństwa", "pt": "Carro de segurança", "ru": "Машина безопасности", "sv": "Säkerhetsbil" }
     },
     "alarm_generic.vsc": {
-      "title": { "en": "Virtual Safety Car" }
+      "title": { "en": "Virtual Safety Car", "nl": "Virtuele veiligheidswagen", "de": "Virtuelles Safety Car", "da": "Virtuel sikkerhedsbil", "es": "Coche de seguridad virtual", "fr": "Voiture de sécurité virtuelle", "it": "Virtual Safety Car", "no": "Virtuell sikkerhetsbil", "pl": "Wirtualny samochód bezpieczeństwa", "pt": "Carro de segurança virtual", "ru": "Виртуальная машина безопасности", "sv": "Virtuell säkerhetsbil" }
     },
     "alarm_generic.red_flag": {
-      "title": { "en": "Red Flag" }
+      "title": { "en": "Red Flag", "nl": "Rode vlag", "de": "Rote Flagge", "da": "Rødt flag", "es": "Bandera roja", "fr": "Drapeau rouge", "it": "Bandiera rossa", "no": "Rødt flagg", "pl": "Czerwona flaga", "pt": "Bandeira vermelha", "ru": "Красный флаг", "sv": "Röd flagg" }
     },
     "alarm_generic.rainfall": {
-      "title": { "en": "Rainfall at Track" }
+      "title": { "en": "Rainfall at Track", "nl": "Neerslag op het circuit", "de": "Niederschlag an der Strecke", "da": "Nedbør på banen", "es": "Lluvia en la pista", "fr": "Pluie sur la piste", "it": "Pioggia sulla pista", "no": "Nedbør på banen", "pl": "Deszcz na torze", "pt": "Chuva na pista", "ru": "Дождь на трассе", "sv": "Regn på banan" }
     },
     "measure_temperature.track": {
-      "title": { "en": "Track Temperature" }
+      "title": { "en": "Track Temperature", "nl": "Baantemperatuur", "de": "Streckentemperatur", "da": "Banetemperatur", "es": "Temperatura de la pista", "fr": "Température de la piste", "it": "Temperatura della pista", "no": "Banetemperatur", "pl": "Temperatura toru", "pt": "Temperatura da pista", "ru": "Температура трассы", "sv": "Bantemperatur" }
     },
     "measure_temperature.air": {
-      "title": { "en": "Air Temperature" }
+      "title": { "en": "Air Temperature", "nl": "Luchttemperatuur", "de": "Lufttemperatur", "da": "Lufttemperatur", "es": "Temperatura del aire", "fr": "Température de l'air", "it": "Temperatura dell'aria", "no": "Lufttemperatur", "pl": "Temperatura powietrza", "pt": "Temperatura do ar", "ru": "Температура воздуха", "sv": "Lufttemperatur" }
     }
   },
   "images": {
