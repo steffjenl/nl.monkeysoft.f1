@@ -1,0 +1,32 @@
+{
+  "id": "nl.monkeysoft.f1",
+  "version": "1.0.0",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Formula 1 Live Timing"
+  },
+  "description": {
+    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+  },
+  "category": [
+    "tools"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "brandColor": "#E10600",
+  "author": {
+    "name": "MonkeySoft",
+    "email": "info@monkeysoft.nl"
+  },
+  "contributing": {
+    "donate": {}
+  },
+  "tags": {
+    "en": ["formula1", "f1", "racing", "motorsport", "livetiming"]
+  },
+  "homeyCommunityTopicId": 0
+}

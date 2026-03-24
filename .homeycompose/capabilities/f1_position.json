@@ -1,0 +1,11 @@
+{
+  "type": "number",
+  "title": { "en": "Race Position" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_position.svg",
+  "min": 0,
+  "max": 20,
+  "step": 1
+}

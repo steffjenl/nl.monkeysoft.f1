@@ -1,0 +1,125 @@
+{
+  "triggers": [
+    {
+      "id": "session_status_changed",
+      "title": { "en": "Session status changed" },
+      "tokens": [
+        {
+          "name": "status",
+          "type": "string",
+          "title": { "en": "Status" }
+        }
+      ]
+    },
+    {
+      "id": "session_started",
+      "title": { "en": "Session started" },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "session_type",
+          "type": "string",
+          "title": { "en": "Session type" }
+        }
+      ]
+    },
+    {
+      "id": "session_finished",
+      "title": { "en": "Session finished" }
+    },
+    {
+      "id": "race_control_message_received",
+      "title": { "en": "Race control message received" },
+      "tokens": [
+        {
+          "name": "message",
+          "type": "string",
+          "title": { "en": "Message" }
+        },
+        {
+          "name": "flag",
+          "type": "string",
+          "title": { "en": "Flag" }
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "title": { "en": "Category" }
+        }
+      ]
+    },
+    {
+      "id": "qualifying_part_changed",
+      "title": { "en": "Qualifying part changed" },
+      "tokens": [
+        {
+          "name": "part",
+          "type": "string",
+          "title": { "en": "Qualifying part (Q1/Q2/Q3)" }
+        }
+      ]
+    },
+    {
+      "id": "fastest_lap_updated",
+      "title": { "en": "Fastest lap updated" },
+      "tokens": [
+        {
+          "name": "driver",
+          "type": "string",
+          "title": { "en": "Driver" }
+        },
+        {
+          "name": "time",
+          "type": "string",
+          "title": { "en": "Lap time" }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "session_is_live",
+      "title": { "en": "Session !{{is|isn't}} live" }
+    },
+    {
+      "id": "session_type_is",
+      "title": { "en": "Session type !{{is|isn't}}" },
+      "titleFormatted": { "en": "Session type !{{is|isn't}} [[type]]" },
+      "args": [
+        {
+          "name": "type",
+          "type": "dropdown",
+          "values": [
+            { "id": "Race",         "label": { "en": "Race" } },
+            { "id": "Qualifying",   "label": { "en": "Qualifying" } },
+            { "id": "Practice 1",   "label": { "en": "Practice 1" } },
+            { "id": "Practice 2",   "label": { "en": "Practice 2" } },
+            { "id": "Practice 3",   "label": { "en": "Practice 3" } },
+            { "id": "Sprint",       "label": { "en": "Sprint" } },
+            { "id": "Sprint Qualifying", "label": { "en": "Sprint Qualifying" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session_status_is",
+      "title": { "en": "Session status !{{is|isn't}}" },
+      "titleFormatted": { "en": "Session status !{{is|isn't}} [[status]]" },
+      "args": [
+        {
+          "name": "status",
+          "type": "dropdown",
+          "values": [
+            { "id": "inactive",    "label": { "en": "Inactive" } },
+            { "id": "started",     "label": { "en": "Started" } },
+            { "id": "aborted",     "label": { "en": "Aborted" } },
+            { "id": "finished",    "label": { "en": "Finished" } },
+            { "id": "finalised",   "label": { "en": "Finalised" } },
+            { "id": "ends",        "label": { "en": "Ends" } }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

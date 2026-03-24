@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Session Type" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_session_type.svg"
+}

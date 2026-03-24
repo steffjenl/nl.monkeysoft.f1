@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Last Lap Time" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_last_lap_time.svg"
+}

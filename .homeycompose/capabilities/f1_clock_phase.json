@@ -1,0 +1,13 @@
+{
+  "type": "enum",
+  "title": { "en": "Session Clock Phase" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "values": [
+    { "id": "idle",     "title": { "en": "Idle"     } },
+    { "id": "running",  "title": { "en": "Running"  } },
+    { "id": "paused",   "title": { "en": "Paused"   } },
+    { "id": "finished", "title": { "en": "Finished" } }
+  ]
+}

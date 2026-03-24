@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": { "en": "Session Status" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_session_status.svg",
+  "values": [
+    { "id": "inactive",  "title": { "en": "Inactive"   } },
+    { "id": "started",   "title": { "en": "Started"    } },
+    { "id": "aborted",   "title": { "en": "Aborted"    } },
+    { "id": "finished",  "title": { "en": "Finished"   } },
+    { "id": "finalised", "title": { "en": "Finalised"  } },
+    { "id": "ends",      "title": { "en": "Ended"      } }
+  ]
+}

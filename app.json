@@ -1,0 +1,1296 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.monkeysoft.f1",
+  "version": "1.0.0",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Formula 1 Live Timing"
+  },
+  "description": {
+    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+  },
+  "category": [
+    "tools"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "brandColor": "#E10600",
+  "author": {
+    "name": "MonkeySoft",
+    "email": "info@monkeysoft.nl"
+  },
+  "contributing": {
+    "donate": {}
+  },
+  "tags": {
+    "en": [
+      "formula1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ]
+  },
+  "homeyCommunityTopicId": 0,
+  "flow": {
+    "triggers": [
+      {
+        "id": "driver_entered_pit",
+        "title": {
+          "en": "Entered pit lane"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "driver_exited_pit",
+        "title": {
+          "en": "Exited pit lane"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "driver_lap_completed",
+        "title": {
+          "en": "Completed a lap"
+        },
+        "tokens": [
+          {
+            "name": "lap_time",
+            "type": "string",
+            "title": {
+              "en": "Lap time"
+            }
+          },
+          {
+            "name": "position",
+            "type": "number",
+            "title": {
+              "en": "Position"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "driver_position_changed",
+        "title": {
+          "en": "Position changed"
+        },
+        "tokens": [
+          {
+            "name": "position",
+            "type": "number",
+            "title": {
+              "en": "New position"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "driver_fastest_lap",
+        "title": {
+          "en": "Set personal best lap"
+        },
+        "tokens": [
+          {
+            "name": "lap_time",
+            "type": "string",
+            "title": {
+              "en": "Lap time"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "session_status_changed",
+        "title": {
+          "en": "Session status changed"
+        },
+        "tokens": [
+          {
+            "name": "status",
+            "type": "string",
+            "title": {
+              "en": "Status"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "session_started",
+        "title": {
+          "en": "Session started"
+        },
+        "highlight": true,
+        "tokens": [
+          {
+            "name": "session_type",
+            "type": "string",
+            "title": {
+              "en": "Session type"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "session_finished",
+        "title": {
+          "en": "Session finished"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "race_control_message_received",
+        "title": {
+          "en": "Race control message received"
+        },
+        "tokens": [
+          {
+            "name": "message",
+            "type": "string",
+            "title": {
+              "en": "Message"
+            }
+          },
+          {
+            "name": "flag",
+            "type": "string",
+            "title": {
+              "en": "Flag"
+            }
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "title": {
+              "en": "Category"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "qualifying_part_changed",
+        "title": {
+          "en": "Qualifying part changed"
+        },
+        "tokens": [
+          {
+            "name": "part",
+            "type": "string",
+            "title": {
+              "en": "Qualifying part (Q1/Q2/Q3)"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "fastest_lap_updated",
+        "title": {
+          "en": "Fastest lap updated"
+        },
+        "tokens": [
+          {
+            "name": "driver",
+            "type": "string",
+            "title": {
+              "en": "Driver"
+            }
+          },
+          {
+            "name": "time",
+            "type": "string",
+            "title": {
+              "en": "Lap time"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "track_status_changed",
+        "title": {
+          "en": "Track status changed"
+        },
+        "tokens": [
+          {
+            "name": "status",
+            "type": "string",
+            "title": {
+              "en": "Status"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "safety_car_deployed",
+        "title": {
+          "en": "Safety car deployed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "safety_car_recalled",
+        "title": {
+          "en": "Safety car recalled"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "vsc_deployed",
+        "title": {
+          "en": "Virtual safety car deployed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "vsc_recalled",
+        "title": {
+          "en": "Virtual safety car recalled"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "red_flag_shown",
+        "title": {
+          "en": "Red flag shown"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "green_flag",
+        "title": {
+          "en": "Green flag — track clear"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "new_lap_started",
+        "title": {
+          "en": "New lap started"
+        },
+        "tokens": [
+          {
+            "name": "lap_number",
+            "type": "number",
+            "title": {
+              "en": "Lap number"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "driver_is_in_pit",
+        "title": {
+          "en": "Driver !{{is|isn't}} in pit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          }
+        ]
+      },
+      {
+        "id": "driver_tyre_compound_is",
+        "title": {
+          "en": "Tyre compound !{{is|isn't}}"
+        },
+        "titleFormatted": {
+          "en": "Tyre compound !{{is|isn't}} [[compound]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          },
+          {
+            "name": "compound",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "SOFT",
+                "label": {
+                  "en": "Soft"
+                }
+              },
+              {
+                "id": "MEDIUM",
+                "label": {
+                  "en": "Medium"
+                }
+              },
+              {
+                "id": "HARD",
+                "label": {
+                  "en": "Hard"
+                }
+              },
+              {
+                "id": "INTERMEDIATE",
+                "label": {
+                  "en": "Intermediate"
+                }
+              },
+              {
+                "id": "WET",
+                "label": {
+                  "en": "Wet"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "driver_position_is_in_top",
+        "title": {
+          "en": "Position !{{is|isn't}} in top"
+        },
+        "titleFormatted": {
+          "en": "Position !{{is|isn't}} in top [[top_n]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-car"
+          },
+          {
+            "name": "top_n",
+            "type": "number",
+            "min": 1,
+            "max": 20,
+            "placeholder": {
+              "en": "e.g. 3"
+            }
+          }
+        ]
+      },
+      {
+        "id": "session_is_live",
+        "title": {
+          "en": "Session !{{is|isn't}} live"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          }
+        ]
+      },
+      {
+        "id": "session_type_is",
+        "title": {
+          "en": "Session type !{{is|isn't}}"
+        },
+        "titleFormatted": {
+          "en": "Session type !{{is|isn't}} [[type]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          },
+          {
+            "name": "type",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Race",
+                "label": {
+                  "en": "Race"
+                }
+              },
+              {
+                "id": "Qualifying",
+                "label": {
+                  "en": "Qualifying"
+                }
+              },
+              {
+                "id": "Practice 1",
+                "label": {
+                  "en": "Practice 1"
+                }
+              },
+              {
+                "id": "Practice 2",
+                "label": {
+                  "en": "Practice 2"
+                }
+              },
+              {
+                "id": "Practice 3",
+                "label": {
+                  "en": "Practice 3"
+                }
+              },
+              {
+                "id": "Sprint",
+                "label": {
+                  "en": "Sprint"
+                }
+              },
+              {
+                "id": "Sprint Qualifying",
+                "label": {
+                  "en": "Sprint Qualifying"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "session_status_is",
+        "title": {
+          "en": "Session status !{{is|isn't}}"
+        },
+        "titleFormatted": {
+          "en": "Session status !{{is|isn't}} [[status]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          },
+          {
+            "name": "status",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "inactive",
+                "label": {
+                  "en": "Inactive"
+                }
+              },
+              {
+                "id": "started",
+                "label": {
+                  "en": "Started"
+                }
+              },
+              {
+                "id": "aborted",
+                "label": {
+                  "en": "Aborted"
+                }
+              },
+              {
+                "id": "finished",
+                "label": {
+                  "en": "Finished"
+                }
+              },
+              {
+                "id": "finalised",
+                "label": {
+                  "en": "Finalised"
+                }
+              },
+              {
+                "id": "ends",
+                "label": {
+                  "en": "Ends"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "track_status_is",
+        "title": {
+          "en": "Track status !{{is|isn't}}"
+        },
+        "titleFormatted": {
+          "en": "Track status !{{is|isn't}} [[status]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          },
+          {
+            "name": "status",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "CLEAR",
+                "label": {
+                  "en": "Clear (green flag)"
+                }
+              },
+              {
+                "id": "YELLOW",
+                "label": {
+                  "en": "Yellow flag"
+                }
+              },
+              {
+                "id": "SC",
+                "label": {
+                  "en": "Safety Car"
+                }
+              },
+              {
+                "id": "VSC",
+                "label": {
+                  "en": "Virtual Safety Car"
+                }
+              },
+              {
+                "id": "RED",
+                "label": {
+                  "en": "Red Flag"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "safety_car_is_active",
+        "title": {
+          "en": "Safety car !{{is|isn't}} active"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "is_raining_at_track",
+        "title": {
+          "en": "It !{{is|isn't}} raining at the track"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "F1 Driver"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "f1_position",
+        "f1_last_lap_time",
+        "f1_fastest_lap_time",
+        "f1_gap_to_leader",
+        "f1_tyre_compound",
+        "f1_tyre_laps",
+        "alarm_generic.pit_active",
+        "f1_pit_count"
+      ],
+      "capabilitiesOptions": {
+        "alarm_generic.pit_active": {
+          "title": {
+            "en": "In Pit Lane"
+          }
+        },
+        "f1_tyre_compound": {
+          "title": {
+            "en": "Current Tyre"
+          }
+        },
+        "f1_tyre_laps": {
+          "title": {
+            "en": "Laps on Tyre"
+          }
+        },
+        "f1_fastest_lap_time": {
+          "title": {
+            "en": "Best Lap"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/f1-car/assets/images/small.png",
+        "large": "/drivers/f1-car/assets/images/large.png",
+        "xlarge": "/drivers/f1-car/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "f1-car"
+    },
+    {
+      "name": {
+        "en": "F1 Session"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "f1_session_status",
+        "f1_session_type",
+        "f1_clock_remaining",
+        "f1_clock_elapsed",
+        "f1_clock_phase",
+        "f1_race_control_message",
+        "f1_race_control_flag",
+        "f1_race_control_category",
+        "f1_fastest_lap_time",
+        "f1_fastest_lap_driver"
+      ],
+      "capabilitiesOptions": {
+        "f1_clock_remaining": {
+          "title": {
+            "en": "Time Remaining"
+          }
+        },
+        "f1_clock_elapsed": {
+          "title": {
+            "en": "Time Elapsed"
+          }
+        },
+        "f1_race_control_message": {
+          "title": {
+            "en": "Last Race Control Message"
+          }
+        },
+        "f1_race_control_flag": {
+          "title": {
+            "en": "Race Control Flag"
+          }
+        },
+        "f1_race_control_category": {
+          "title": {
+            "en": "Race Control Category"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/f1-session/assets/images/small.png",
+        "large": "/drivers/f1-session/assets/images/large.png",
+        "xlarge": "/drivers/f1-session/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "f1-session"
+    },
+    {
+      "name": {
+        "en": "F1 Track"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "f1_track_status",
+        "alarm_generic.safety_car",
+        "alarm_generic.vsc",
+        "alarm_generic.red_flag",
+        "alarm_generic.rainfall",
+        "f1_lap_count",
+        "f1_lap_total",
+        "measure_temperature.track",
+        "measure_temperature.air",
+        "measure_humidity",
+        "measure_wind_strength",
+        "f1_wind_direction"
+      ],
+      "capabilitiesOptions": {
+        "alarm_generic.safety_car": {
+          "title": {
+            "en": "Safety Car"
+          }
+        },
+        "alarm_generic.vsc": {
+          "title": {
+            "en": "Virtual Safety Car"
+          }
+        },
+        "alarm_generic.red_flag": {
+          "title": {
+            "en": "Red Flag"
+          }
+        },
+        "alarm_generic.rainfall": {
+          "title": {
+            "en": "Rainfall at Track"
+          }
+        },
+        "measure_temperature.track": {
+          "title": {
+            "en": "Track Temperature"
+          }
+        },
+        "measure_temperature.air": {
+          "title": {
+            "en": "Air Temperature"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/f1-track/assets/images/small.png",
+        "large": "/drivers/f1-track/assets/images/large.png",
+        "xlarge": "/drivers/f1-track/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "f1-track"
+    }
+  ],
+  "capabilities": {
+    "f1_clock_elapsed": {
+      "type": "number",
+      "title": {
+        "en": "Session Time Elapsed"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "s"
+      },
+      "min": 0,
+      "max": 14400,
+      "step": 1
+    },
+    "f1_clock_phase": {
+      "type": "enum",
+      "title": {
+        "en": "Session Clock Phase"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "values": [
+        {
+          "id": "idle",
+          "title": {
+            "en": "Idle"
+          }
+        },
+        {
+          "id": "running",
+          "title": {
+            "en": "Running"
+          }
+        },
+        {
+          "id": "paused",
+          "title": {
+            "en": "Paused"
+          }
+        },
+        {
+          "id": "finished",
+          "title": {
+            "en": "Finished"
+          }
+        }
+      ]
+    },
+    "f1_clock_remaining": {
+      "type": "number",
+      "title": {
+        "en": "Session Time Remaining"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "s"
+      },
+      "min": 0,
+      "max": 14400,
+      "step": 1
+    },
+    "f1_drivers_json": {
+      "type": "string",
+      "title": {
+        "en": "Drivers State (JSON)"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null
+    },
+    "f1_fastest_lap_driver": {
+      "type": "string",
+      "title": {
+        "en": "Fastest Lap Driver"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_fastest_lap_driver.svg"
+    },
+    "f1_fastest_lap_time": {
+      "type": "string",
+      "title": {
+        "en": "Fastest Lap Time"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_fastest_lap_time.svg"
+    },
+    "f1_gap_to_leader": {
+      "type": "string",
+      "title": {
+        "en": "Gap to Leader"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_gap_to_leader.svg"
+    },
+    "f1_lap_count": {
+      "type": "number",
+      "title": {
+        "en": "Current Lap"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": ""
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    "f1_lap_total": {
+      "type": "number",
+      "title": {
+        "en": "Total Laps"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": ""
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    "f1_last_lap_time": {
+      "type": "string",
+      "title": {
+        "en": "Last Lap Time"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_last_lap_time.svg"
+    },
+    "f1_pit_count": {
+      "type": "number",
+      "title": {
+        "en": "Pit Stops"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_pit_count.svg",
+      "min": 0,
+      "max": 10,
+      "step": 1
+    },
+    "f1_position": {
+      "type": "number",
+      "title": {
+        "en": "Race Position"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_position.svg",
+      "min": 0,
+      "max": 20,
+      "step": 1
+    },
+    "f1_race_control_category": {
+      "type": "string",
+      "title": {
+        "en": "Race Control Category"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_race_control_category.svg"
+    },
+    "f1_race_control_flag": {
+      "type": "string",
+      "title": {
+        "en": "Race Control Flag"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_race_control_flag.svg"
+    },
+    "f1_race_control_message": {
+      "type": "string",
+      "title": {
+        "en": "Race Control Message"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_race_control_message.svg"
+    },
+    "f1_session_status": {
+      "type": "enum",
+      "title": {
+        "en": "Session Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_session_status.svg",
+      "values": [
+        {
+          "id": "inactive",
+          "title": {
+            "en": "Inactive"
+          }
+        },
+        {
+          "id": "started",
+          "title": {
+            "en": "Started"
+          }
+        },
+        {
+          "id": "aborted",
+          "title": {
+            "en": "Aborted"
+          }
+        },
+        {
+          "id": "finished",
+          "title": {
+            "en": "Finished"
+          }
+        },
+        {
+          "id": "finalised",
+          "title": {
+            "en": "Finalised"
+          }
+        },
+        {
+          "id": "ends",
+          "title": {
+            "en": "Ended"
+          }
+        }
+      ]
+    },
+    "f1_session_type": {
+      "type": "string",
+      "title": {
+        "en": "Session Type"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_session_type.svg"
+    },
+    "f1_track_status": {
+      "type": "enum",
+      "title": {
+        "en": "Track Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/f1_track_status.svg",
+      "values": [
+        {
+          "id": "CLEAR",
+          "title": {
+            "en": "Clear"
+          }
+        },
+        {
+          "id": "YELLOW",
+          "title": {
+            "en": "Yellow Flag"
+          }
+        },
+        {
+          "id": "SC",
+          "title": {
+            "en": "Safety Car"
+          }
+        },
+        {
+          "id": "RED",
+          "title": {
+            "en": "Red Flag"
+          }
+        },
+        {
+          "id": "VSC",
+          "title": {
+            "en": "Virtual Safety Car"
+          }
+        },
+        {
+          "id": "UNKNOWN",
+          "title": {
+            "en": "Unknown"
+          }
+        }
+      ]
+    },
+    "f1_tyre_compound": {
+      "type": "enum",
+      "title": {
+        "en": "Tyre Compound"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/f1_tyre_compound.svg",
+      "values": [
+        {
+          "id": "SOFT",
+          "title": {
+            "en": "Soft"
+          }
+        },
+        {
+          "id": "MEDIUM",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "HARD",
+          "title": {
+            "en": "Hard"
+          }
+        },
+        {
+          "id": "INTERMEDIATE",
+          "title": {
+            "en": "Intermediate"
+          }
+        },
+        {
+          "id": "WET",
+          "title": {
+            "en": "Wet"
+          }
+        },
+        {
+          "id": "UNKNOWN",
+          "title": {
+            "en": "Unknown"
+          }
+        }
+      ]
+    },
+    "f1_tyre_laps": {
+      "type": "number",
+      "title": {
+        "en": "Tyre Laps"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_tyre_laps.svg",
+      "min": 0,
+      "max": 80,
+      "step": 1
+    },
+    "f1_wind_direction": {
+      "type": "number",
+      "title": {
+        "en": "Wind Direction"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "°"
+      },
+      "min": 0,
+      "max": 360,
+      "step": 1
+    }
+  }
+}

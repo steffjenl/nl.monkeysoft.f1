@@ -1,0 +1,51 @@
+{
+  "name": {
+    "en": "F1 Session"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "f1_session_status",
+    "f1_session_type",
+    "f1_clock_remaining",
+    "f1_clock_elapsed",
+    "f1_clock_phase",
+    "f1_race_control_message",
+    "f1_race_control_flag",
+    "f1_race_control_category",
+    "f1_fastest_lap_time",
+    "f1_fastest_lap_driver"
+  ],
+  "capabilitiesOptions": {
+    "f1_clock_remaining": {
+      "title": { "en": "Time Remaining" }
+    },
+    "f1_clock_elapsed": {
+      "title": { "en": "Time Elapsed" }
+    },
+    "f1_race_control_message": {
+      "title": { "en": "Last Race Control Message" }
+    },
+    "f1_race_control_flag": {
+      "title": { "en": "Race Control Flag" }
+    },
+    "f1_race_control_category": {
+      "title": { "en": "Race Control Category" }
+    }
+  },
+  "images": {
+    "small":  "/drivers/f1-session/assets/images/small.png",
+    "large":  "/drivers/f1-session/assets/images/large.png",
+    "xlarge": "/drivers/f1-session/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

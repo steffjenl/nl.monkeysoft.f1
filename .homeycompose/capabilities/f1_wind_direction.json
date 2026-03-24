@@ -1,0 +1,11 @@
+{
+  "type": "number",
+  "title": { "en": "Wind Direction" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": { "en": "°" },
+  "min": 0,
+  "max": 360,
+  "step": 1
+}

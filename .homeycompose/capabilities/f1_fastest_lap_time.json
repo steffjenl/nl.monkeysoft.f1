@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Fastest Lap Time" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_fastest_lap_time.svg"
+}

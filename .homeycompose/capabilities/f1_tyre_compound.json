@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": { "en": "Tyre Compound" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/f1_tyre_compound.svg",
+  "values": [
+    { "id": "SOFT",         "title": { "en": "Soft"              } },
+    { "id": "MEDIUM",       "title": { "en": "Medium"            } },
+    { "id": "HARD",         "title": { "en": "Hard"              } },
+    { "id": "INTERMEDIATE", "title": { "en": "Intermediate"      } },
+    { "id": "WET",          "title": { "en": "Wet"               } },
+    { "id": "UNKNOWN",      "title": { "en": "Unknown"           } }
+  ]
+}

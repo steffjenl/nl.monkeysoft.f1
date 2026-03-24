@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "title": { "en": "Drivers State (JSON)" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": null
+}

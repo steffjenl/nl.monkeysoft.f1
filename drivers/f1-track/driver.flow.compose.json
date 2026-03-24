@@ -1,0 +1,83 @@
+{
+  "triggers": [
+    {
+      "id": "track_status_changed",
+      "title": { "en": "Track status changed" },
+      "tokens": [
+        {
+          "name": "status",
+          "type": "string",
+          "title": { "en": "Status" }
+        }
+      ]
+    },
+    {
+      "id": "safety_car_deployed",
+      "title": { "en": "Safety car deployed" },
+      "highlight": true
+    },
+    {
+      "id": "safety_car_recalled",
+      "title": { "en": "Safety car recalled" },
+      "highlight": true
+    },
+    {
+      "id": "vsc_deployed",
+      "title": { "en": "Virtual safety car deployed" },
+      "highlight": true
+    },
+    {
+      "id": "vsc_recalled",
+      "title": { "en": "Virtual safety car recalled" }
+    },
+    {
+      "id": "red_flag_shown",
+      "title": { "en": "Red flag shown" },
+      "highlight": true
+    },
+    {
+      "id": "green_flag",
+      "title": { "en": "Green flag — track clear" }
+    },
+    {
+      "id": "new_lap_started",
+      "title": { "en": "New lap started" },
+      "tokens": [
+        {
+          "name": "lap_number",
+          "type": "number",
+          "title": { "en": "Lap number" }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "track_status_is",
+      "title": { "en": "Track status !{{is|isn't}}" },
+      "titleFormatted": { "en": "Track status !{{is|isn't}} [[status]]" },
+      "args": [
+        {
+          "name": "status",
+          "type": "dropdown",
+          "values": [
+            { "id": "CLEAR",  "label": { "en": "Clear (green flag)" } },
+            { "id": "YELLOW", "label": { "en": "Yellow flag" } },
+            { "id": "SC",     "label": { "en": "Safety Car" } },
+            { "id": "VSC",    "label": { "en": "Virtual Safety Car" } },
+            { "id": "RED",    "label": { "en": "Red Flag" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safety_car_is_active",
+      "title": { "en": "Safety car !{{is|isn't}} active" }
+    },
+    {
+      "id": "is_raining_at_track",
+      "title": { "en": "It !{{is|isn't}} raining at the track" }
+    }
+  ],
+  "actions": []
+}

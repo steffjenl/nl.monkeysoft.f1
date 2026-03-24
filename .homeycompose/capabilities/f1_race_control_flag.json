@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Race Control Flag" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_race_control_flag.svg"
+}

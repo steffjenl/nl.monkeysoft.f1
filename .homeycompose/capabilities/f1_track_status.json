@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": { "en": "Track Status" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/f1_track_status.svg",
+  "values": [
+    { "id": "CLEAR",   "title": { "en": "Clear"              } },
+    { "id": "YELLOW",  "title": { "en": "Yellow Flag"        } },
+    { "id": "SC",      "title": { "en": "Safety Car"         } },
+    { "id": "RED",     "title": { "en": "Red Flag"           } },
+    { "id": "VSC",     "title": { "en": "Virtual Safety Car" } },
+    { "id": "UNKNOWN", "title": { "en": "Unknown"            } }
+  ]
+}

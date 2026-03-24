@@ -1,0 +1,73 @@
+{
+  "triggers": [
+    {
+      "id": "driver_entered_pit",
+      "title": { "en": "Entered pit lane" }
+    },
+    {
+      "id": "driver_exited_pit",
+      "title": { "en": "Exited pit lane" }
+    },
+    {
+      "id": "driver_lap_completed",
+      "title": { "en": "Completed a lap" },
+      "tokens": [
+        { "name": "lap_time", "type": "string", "title": { "en": "Lap time" } },
+        { "name": "position", "type": "number", "title": { "en": "Position" } }
+      ]
+    },
+    {
+      "id": "driver_position_changed",
+      "title": { "en": "Position changed" },
+      "tokens": [
+        { "name": "position", "type": "number", "title": { "en": "New position" } }
+      ]
+    },
+    {
+      "id": "driver_fastest_lap",
+      "title": { "en": "Set personal best lap" },
+      "tokens": [
+        { "name": "lap_time", "type": "string", "title": { "en": "Lap time" } }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "driver_is_in_pit",
+      "title": { "en": "Driver !{{is|isn't}} in pit" }
+    },
+    {
+      "id": "driver_tyre_compound_is",
+      "title": { "en": "Tyre compound !{{is|isn't}}" },
+      "titleFormatted": { "en": "Tyre compound !{{is|isn't}} [[compound]]" },
+      "args": [
+        {
+          "name": "compound",
+          "type": "dropdown",
+          "values": [
+            { "id": "SOFT",         "label": { "en": "Soft" } },
+            { "id": "MEDIUM",       "label": { "en": "Medium" } },
+            { "id": "HARD",         "label": { "en": "Hard" } },
+            { "id": "INTERMEDIATE", "label": { "en": "Intermediate" } },
+            { "id": "WET",          "label": { "en": "Wet" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "driver_position_is_in_top",
+      "title": { "en": "Position !{{is|isn't}} in top" },
+      "titleFormatted": { "en": "Position !{{is|isn't}} in top [[top_n]]" },
+      "args": [
+        {
+          "name": "top_n",
+          "type": "number",
+          "min": 1,
+          "max": 20,
+          "placeholder": { "en": "e.g. 3" }
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

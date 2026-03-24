@@ -1,0 +1,56 @@
+{
+  "name": {
+    "en": "F1 Track"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "f1_track_status",
+    "alarm_generic.safety_car",
+    "alarm_generic.vsc",
+    "alarm_generic.red_flag",
+    "alarm_generic.rainfall",
+    "f1_lap_count",
+    "f1_lap_total",
+    "measure_temperature.track",
+    "measure_temperature.air",
+    "measure_humidity",
+    "measure_wind_strength",
+    "f1_wind_direction"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic.safety_car": {
+      "title": { "en": "Safety Car" }
+    },
+    "alarm_generic.vsc": {
+      "title": { "en": "Virtual Safety Car" }
+    },
+    "alarm_generic.red_flag": {
+      "title": { "en": "Red Flag" }
+    },
+    "alarm_generic.rainfall": {
+      "title": { "en": "Rainfall at Track" }
+    },
+    "measure_temperature.track": {
+      "title": { "en": "Track Temperature" }
+    },
+    "measure_temperature.air": {
+      "title": { "en": "Air Temperature" }
+    }
+  },
+  "images": {
+    "small":  "/drivers/f1-track/assets/images/small.png",
+    "large":  "/drivers/f1-track/assets/images/large.png",
+    "xlarge": "/drivers/f1-track/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

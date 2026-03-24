@@ -1,0 +1,27 @@
+{
+  "name": "nl.monkeysoft.f1",
+  "version": "1.0.0",
+  "description": "Formula 1 live data integration for Homey. Track status, race control, driver telemetry, weather and automations powered by F1 Live Timing.",
+  "main": "app.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "lint": "homey app validate"
+  },
+  "dependencies": {
+    "signalr-no-jquery": "^0.1.2"
+  },
+  "devDependencies": {
+    "homey": "latest"
+  },
+  "keywords": [
+    "homey",
+    "formula1",
+    "f1",
+    "racing",
+    "livetiming"
+  ],
+  "author": "MonkeySoft",
+  "license": "MIT"
+}

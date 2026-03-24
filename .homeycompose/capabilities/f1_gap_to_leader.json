@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "title": { "en": "Gap to Leader" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_gap_to_leader.svg"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "number",
+  "title": { "en": "Tyre Laps" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_tyre_laps.svg",
+  "min": 0,
+  "max": 80,
+  "step": 1
+}

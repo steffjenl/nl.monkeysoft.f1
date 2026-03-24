@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "F1 Driver"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "f1_position",
+    "f1_last_lap_time",
+    "f1_fastest_lap_time",
+    "f1_gap_to_leader",
+    "f1_tyre_compound",
+    "f1_tyre_laps",
+    "alarm_generic.pit_active",
+    "f1_pit_count"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic.pit_active": {
+      "title": { "en": "In Pit Lane" }
+    },
+    "f1_tyre_compound": {
+      "title": { "en": "Current Tyre" }
+    },
+    "f1_tyre_laps": {
+      "title": { "en": "Laps on Tyre" }
+    },
+    "f1_fastest_lap_time": {
+      "title": { "en": "Best Lap" }
+    }
+  },
+  "images": {
+    "small":  "/drivers/f1-car/assets/images/small.png",
+    "large":  "/drivers/f1-car/assets/images/large.png",
+    "xlarge": "/drivers/f1-car/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

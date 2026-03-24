@@ -1,0 +1,11 @@
+{
+  "type": "number",
+  "title": { "en": "Session Time Remaining" },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": { "en": "s" },
+  "min": 0,
+  "max": 14400,
+  "step": 1
+}
