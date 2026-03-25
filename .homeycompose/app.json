@@ -1,6 +1,6 @@
 {
   "id": "nl.monkeysoft.f1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "name": {
@@ -48,18 +48,90 @@
     "donate": {}
   },
   "tags": {
-    "en": ["formula1", "f1", "racing", "motorsport", "livetiming"],
-    "nl": ["formule1", "f1", "racen", "motorsport", "livetiming"],
-    "de": ["formel1", "f1", "rennen", "motorsport", "livetiming"],
-    "da": ["formel1", "f1", "racing", "motorsport", "livetiming"],
-    "es": ["formula1", "f1", "carreras", "motorsport", "livetiming"],
-    "fr": ["formule1", "f1", "course", "motorsport", "livetiming"],
-    "it": ["formula1", "f1", "corsa", "motorsport", "livetiming"],
-    "no": ["formel1", "f1", "racing", "motorsport", "livetiming"],
-    "pl": ["formula1", "f1", "wyscigy", "motorsport", "livetiming"],
-    "pt": ["formula1", "f1", "corrida", "motorsport", "livetiming"],
-    "ru": ["formula1", "f1", "gonki", "motorsport", "livetiming"],
-    "sv": ["formel1", "f1", "racing", "motorsport", "livetiming"]
+    "en": [
+      "formula1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "nl": [
+      "formule1",
+      "f1",
+      "racen",
+      "motorsport",
+      "livetiming"
+    ],
+    "de": [
+      "formel1",
+      "f1",
+      "rennen",
+      "motorsport",
+      "livetiming"
+    ],
+    "da": [
+      "formel1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "es": [
+      "formula1",
+      "f1",
+      "carreras",
+      "motorsport",
+      "livetiming"
+    ],
+    "fr": [
+      "formule1",
+      "f1",
+      "course",
+      "motorsport",
+      "livetiming"
+    ],
+    "it": [
+      "formula1",
+      "f1",
+      "corsa",
+      "motorsport",
+      "livetiming"
+    ],
+    "no": [
+      "formel1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ],
+    "pl": [
+      "formula1",
+      "f1",
+      "wyscigy",
+      "motorsport",
+      "livetiming"
+    ],
+    "pt": [
+      "formula1",
+      "f1",
+      "corrida",
+      "motorsport",
+      "livetiming"
+    ],
+    "ru": [
+      "formula1",
+      "f1",
+      "gonki",
+      "motorsport",
+      "livetiming"
+    ],
+    "sv": [
+      "formel1",
+      "f1",
+      "racing",
+      "motorsport",
+      "livetiming"
+    ]
   },
   "homeyCommunityTopicId": 0
 }
