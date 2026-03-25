@@ -15,6 +15,8 @@ class F1TrackDriver extends Homey.Driver {
     this._vscRecalled        = this.homey.flow.getDeviceTriggerCard('vsc_recalled');
     this._redFlagShown       = this.homey.flow.getDeviceTriggerCard('red_flag_shown');
     this._greenFlag          = this.homey.flow.getDeviceTriggerCard('green_flag');
+    this._yellowFlagShown    = this.homey.flow.getDeviceTriggerCard('yellow_flag_shown');
+    this._yellowFlagEnded    = this.homey.flow.getDeviceTriggerCard('yellow_flag_ended');
 
     // Lap
     this._newLapStarted = this.homey.flow.getDeviceTriggerCard('new_lap_started');

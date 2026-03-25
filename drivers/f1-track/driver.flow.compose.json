@@ -32,6 +32,15 @@
       "highlight": true
     },
     {
+      "id": "yellow_flag_shown",
+      "title": { "en": "Yellow flag shown", "nl": "Gele vlag getoond", "de": "Gelbe Flagge gezeigt", "da": "Gult flag vist", "es": "Bandera amarilla mostrada", "fr": "Drapeau jaune montré", "it": "Bandiera gialla mostrata", "no": "Gult flagg vist", "pl": "Pokazano żółtą flagę", "pt": "Bandeira amarela mostrada", "ru": "Показан жёлтый флаг", "sv": "Gul flagg visad" },
+      "highlight": true
+    },
+    {
+      "id": "yellow_flag_ended",
+      "title": { "en": "Yellow flag ended", "nl": "Gele vlag beëindigd", "de": "Gelbe Flagge beendet", "da": "Gult flag afsluttet", "es": "Bandera amarilla finalizada", "fr": "Drapeau jaune terminé", "it": "Bandiera gialla terminata", "no": "Gult flagg avsluttet", "pl": "Żółta flaga zakończona", "pt": "Bandeira amarela terminada", "ru": "Жёлтый флаг снят", "sv": "Gul flagg avslutad" }
+    },
+    {
       "id": "green_flag",
       "title": { "en": "Green flag \u2014 track clear", "nl": "Groene vlag \u2014 baan vrij", "de": "Grüne Flagge \u2014 Strecke frei", "da": "Grønt flag \u2014 banen fri", "es": "Bandera verde \u2014 pista libre", "fr": "Drapeau vert \u2014 piste libre", "it": "Bandiera verde \u2014 pista libera", "no": "Grønt flagg \u2014 banen fri", "pl": "Zielona flaga \u2014 tor wolny", "pt": "Bandeira verde \u2014 pista livre", "ru": "Зелёный флаг \u2014 трасса свободна", "sv": "Grön flagg \u2014 banan fri" }
     },

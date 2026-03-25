@@ -38,20 +38,23 @@ class F1TrackDevice extends Homey.Device {
     const prev   = this._prevStatus;
 
     await this._setCapSafe('f1_track_status', status);
-    await this._setCapSafe('alarm_generic.safety_car', status === 'SC');
-    await this._setCapSafe('alarm_generic.vsc',        status === 'VSC');
-    await this._setCapSafe('alarm_generic.red_flag',   status === 'RED');
+    await this._setCapSafe('alarm_generic.safety_car',  status === 'SC');
+    await this._setCapSafe('alarm_generic.vsc',         status === 'VSC');
+    await this._setCapSafe('alarm_generic.yellow_flag', status === 'YELLOW');
+    await this._setCapSafe('alarm_generic.red_flag',    status === 'RED');
 
     const driver = this.driver;
 
     if (status !== prev) {
       await driver._trackStatusChanged.trigger(this, { status }, {});
 
-      if (status === 'SC'  && prev !== 'SC')  await driver._safetyCarDeployed.trigger(this, {}, {});
-      if (prev  === 'SC'  && status !== 'SC') await driver._safetyCarRecalled.trigger(this, {}, {});
-      if (status === 'VSC' && prev !== 'VSC') await driver._vscDeployed.trigger(this, {}, {});
-      if (prev  === 'VSC' && status !== 'VSC') await driver._vscRecalled.trigger(this, {}, {});
-      if (status === 'RED') await driver._redFlagShown.trigger(this, {}, {});
+      if (status === 'SC'     && prev !== 'SC')     await driver._safetyCarDeployed.trigger(this, {}, {});
+      if (prev  === 'SC'     && status !== 'SC')   await driver._safetyCarRecalled.trigger(this, {}, {});
+      if (status === 'VSC'   && prev !== 'VSC')    await driver._vscDeployed.trigger(this, {}, {});
+      if (prev  === 'VSC'    && status !== 'VSC')  await driver._vscRecalled.trigger(this, {}, {});
+      if (status === 'YELLOW' && prev !== 'YELLOW') await driver._yellowFlagShown.trigger(this, {}, {});
+      if (prev  === 'YELLOW' && status !== 'YELLOW') await driver._yellowFlagEnded.trigger(this, {}, {});
+      if (status === 'RED')  await driver._redFlagShown.trigger(this, {}, {});
       if (status === 'CLEAR' && prev !== null) await driver._greenFlag.trigger(this, {}, {});
 
       this._prevStatus = status;
