@@ -14,6 +14,7 @@ class F1TrackDevice extends Homey.Device {
     const lc = this.homey.app.getLiveTimingClient();
 
     this._unsubs.push(
+      lc.subscribe('SessionInfo',  this._onSessionInfo.bind(this)),
       lc.subscribe('TrackStatus', this._onTrackStatus.bind(this)),
       lc.subscribe('WeatherData', this._onWeatherData.bind(this)),
       lc.subscribe('LapCount',    this._onLapCount.bind(this)),
@@ -24,6 +25,19 @@ class F1TrackDevice extends Homey.Device {
     for (const unsub of this._unsubs) unsub();
     this._unsubs = [];
     await this.homey.app.deviceDisconnected();
+  }
+
+  // ─── SessionInfo ─────────────────────────────────────────────────────────────
+
+  async _onSessionInfo(data) {
+    if (!data) return;
+    const info = data.SessionInfo ?? data;
+
+    const circuit = info.Circuit?.ShortName;
+    const meeting = info.Meeting?.Name;
+
+    if (circuit) await this._setCapSafe('f1_circuit_name', circuit);
+    if (meeting) await this._setCapSafe('f1_meeting_name', meeting);
   }
 
   // ─── TrackStatus ────────────────────────────────────────────────────────────

@@ -1,0 +1,21 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Grand Prix",
+    "nl": "Grand Prix",
+    "de": "Grand Prix",
+    "da": "Grand Prix",
+    "es": "Gran Premio",
+    "fr": "Grand Prix",
+    "it": "Gran Premio",
+    "no": "Grand Prix",
+    "pl": "Grand Prix",
+    "pt": "Grande Prémio",
+    "ru": "Гран-При",
+    "sv": "Grand Prix"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_meeting_name.svg"
+}

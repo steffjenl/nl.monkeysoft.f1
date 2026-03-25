@@ -1,0 +1,21 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Circuit",
+    "nl": "Circuit",
+    "de": "Rennstrecke",
+    "da": "Bane",
+    "es": "Circuito",
+    "fr": "Circuit",
+    "it": "Circuito",
+    "no": "Bane",
+    "pl": "Tor",
+    "pt": "Circuito",
+    "ru": "Трасса",
+    "sv": "Bana"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_circuit_name.svg"
+}

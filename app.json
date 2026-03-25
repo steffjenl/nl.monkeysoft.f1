@@ -803,6 +803,55 @@
         ]
       },
       {
+        "id": "yellow_flag_shown",
+        "title": {
+          "en": "Yellow flag shown",
+          "nl": "Gele vlag getoond",
+          "de": "Gelbe Flagge gezeigt",
+          "da": "Gult flag vist",
+          "es": "Bandera amarilla mostrada",
+          "fr": "Drapeau jaune montré",
+          "it": "Bandiera gialla mostrata",
+          "no": "Gult flagg vist",
+          "pl": "Pokazano żółtą flagę",
+          "pt": "Bandeira amarela mostrada",
+          "ru": "Показан жёлтый флаг",
+          "sv": "Gul flagg visad"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
+        "id": "yellow_flag_ended",
+        "title": {
+          "en": "Yellow flag ended",
+          "nl": "Gele vlag beëindigd",
+          "de": "Gelbe Flagge beendet",
+          "da": "Gult flag afsluttet",
+          "es": "Bandera amarilla finalizada",
+          "fr": "Drapeau jaune terminé",
+          "it": "Bandiera gialla terminata",
+          "no": "Gult flagg avsluttet",
+          "pl": "Żółta flaga zakończona",
+          "pt": "Bandeira amarela terminada",
+          "ru": "Жёлтый флаг снят",
+          "sv": "Gul flagg avslutad"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-track"
+          }
+        ]
+      },
+      {
         "id": "green_flag",
         "title": {
           "en": "Green flag — track clear",
@@ -1855,9 +1904,12 @@
       },
       "class": "sensor",
       "capabilities": [
+        "f1_meeting_name",
+        "f1_circuit_name",
         "f1_track_status",
         "alarm_generic.safety_car",
         "alarm_generic.vsc",
+        "alarm_generic.yellow_flag",
         "alarm_generic.red_flag",
         "alarm_generic.rainfall",
         "f1_lap_count",
@@ -1899,6 +1951,22 @@
             "pt": "Carro de segurança virtual",
             "ru": "Виртуальная машина безопасности",
             "sv": "Virtuell säkerhetsbil"
+          }
+        },
+        "alarm_generic.yellow_flag": {
+          "title": {
+            "en": "Yellow Flag",
+            "nl": "Gele vlag",
+            "de": "Gelbe Flagge",
+            "da": "Gult flag",
+            "es": "Bandera amarilla",
+            "fr": "Drapeau jaune",
+            "it": "Bandiera gialla",
+            "no": "Gult flagg",
+            "pl": "Żółta flaga",
+            "pt": "Bandeira amarela",
+            "ru": "Жёлтый флаг",
+            "sv": "Gul flagg"
           }
         },
         "alarm_generic.red_flag": {
@@ -1988,6 +2056,27 @@
     }
   ],
   "capabilities": {
+    "f1_circuit_name": {
+      "type": "string",
+      "title": {
+        "en": "Circuit",
+        "nl": "Circuit",
+        "de": "Rennstrecke",
+        "da": "Bane",
+        "es": "Circuito",
+        "fr": "Circuit",
+        "it": "Circuito",
+        "no": "Bane",
+        "pl": "Tor",
+        "pt": "Circuito",
+        "ru": "Трасса",
+        "sv": "Bana"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_circuit_name.svg"
+    },
     "f1_clock_elapsed": {
       "type": "number",
       "title": {
@@ -2285,6 +2374,27 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/f1_last_lap_time.svg"
+    },
+    "f1_meeting_name": {
+      "type": "string",
+      "title": {
+        "en": "Grand Prix",
+        "nl": "Grand Prix",
+        "de": "Grand Prix",
+        "da": "Grand Prix",
+        "es": "Gran Premio",
+        "fr": "Grand Prix",
+        "it": "Gran Premio",
+        "no": "Grand Prix",
+        "pl": "Grand Prix",
+        "pt": "Grande Prémio",
+        "ru": "Гран-При",
+        "sv": "Grand Prix"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_meeting_name.svg"
     },
     "f1_pit_count": {
       "type": "number",
