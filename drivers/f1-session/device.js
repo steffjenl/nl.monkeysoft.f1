@@ -15,6 +15,7 @@ class F1SessionDevice extends Homey.Device {
     this._unsubs         = [];
     this._prevStatus     = null;
     this._prevQualPart   = null;
+    this._circuitName    = '';
     this._clockTimer     = null;
     this._clockRunning   = false;
     this._clockRemaining = 0;   // seconds
@@ -55,15 +56,15 @@ class F1SessionDevice extends Homey.Device {
 
     if (status !== prev) {
       const driver = this.driver;
-      await driver._sessionStatusChanged.trigger(this, { status }, {});
+      await driver._sessionStatusChanged.trigger(this, { status, circuit_name: this._circuitName }, {});
 
       if (status === 'started') {
         const sessionType = this.getCapabilityValue('f1_session_type') ?? '';
-        await driver._sessionStarted.trigger(this, { session_type: sessionType }, {});
+        await driver._sessionStarted.trigger(this, { session_type: sessionType, circuit_name: this._circuitName }, {});
       }
 
       if (status === 'finished' || status === 'finalised') {
-        await driver._sessionFinished.trigger(this, {}, {});
+        await driver._sessionFinished.trigger(this, { circuit_name: this._circuitName }, {});
       }
 
       this._prevStatus = status;
@@ -83,6 +84,8 @@ class F1SessionDevice extends Homey.Device {
         await this._setCapSafe('f1_session_type', this._liveSessionType);
       }
     }
+    const circuit = info.Circuit?.ShortName;
+    if (circuit) this._circuitName = circuit;
   }
 
   // ─── ExtrapolatedClock ───────────────────────────────────────────────────────
@@ -166,7 +169,7 @@ class F1SessionDevice extends Homey.Device {
     await this._setCapSafe('f1_race_control_flag',     flag);
     await this._setCapSafe('f1_race_control_category', category);
 
-    await this.driver._raceControlMessageRcvd.trigger(this, { message, flag, category }, {});
+    await this.driver._raceControlMessageRcvd.trigger(this, { message, flag, category, circuit_name: this._circuitName }, {});
 
     // Detect qualifying part changes from messages like "Q1 PERIOD STARTED"
     const qMatch = message.match(/^(Q[123])\s+PERIOD\s+STARTED/i);
@@ -174,7 +177,7 @@ class F1SessionDevice extends Homey.Device {
       const part = qMatch[1];
       if (part !== this._prevQualPart) {
         this._prevQualPart = part;
-        await this.driver._qualifyingPartChanged.trigger(this, { part }, {});
+        await this.driver._qualifyingPartChanged.trigger(this, { part, circuit_name: this._circuitName }, {});
       }
     }
   }
@@ -210,8 +213,9 @@ class F1SessionDevice extends Homey.Device {
 
       if (bestTime !== prevTime || bestDriver !== prevDriver) {
         await this.driver._fastestLapUpdated.trigger(this, {
-          driver: bestDriver ?? '',
-          time:   bestTime,
+          driver:       bestDriver ?? '',
+          time:         bestTime,
+          circuit_name: this._circuitName,
         }, {});
       }
     }

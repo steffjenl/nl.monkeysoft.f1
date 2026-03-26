@@ -2,82 +2,574 @@
   "triggers": [
     {
       "id": "track_status_changed",
-      "title": { "en": "Track status changed", "nl": "Trackstatus gewijzigd", "de": "Streckenstatus geändert", "da": "Banestatus ændret", "es": "Estado de la pista cambiado", "fr": "Statut de la piste modifié", "it": "Stato della pista cambiato", "no": "Banestatus endret", "pl": "Status toru zmieniony", "pt": "Estado da pista alterado", "ru": "Статус трассы изменился", "sv": "Banstatus ändrad" },
+      "title": {
+        "en": "Track status changed",
+        "nl": "Trackstatus gewijzigd",
+        "de": "Streckenstatus geändert",
+        "da": "Banestatus ændret",
+        "es": "Estado de la pista cambiado",
+        "fr": "Statut de la piste modifié",
+        "it": "Stato della pista cambiato",
+        "no": "Banestatus endret",
+        "pl": "Status toru zmieniony",
+        "pt": "Estado da pista alterado",
+        "ru": "Статус трассы изменился",
+        "sv": "Banstatus ändrad"
+      },
       "tokens": [
-        { "name": "status", "type": "string", "title": { "en": "Status", "nl": "Status", "de": "Status", "da": "Status", "es": "Estado", "fr": "Statut", "it": "Stato", "no": "Status", "pl": "Status", "pt": "Estado", "ru": "Статус", "sv": "Status" } }
+        {
+          "name": "status",
+          "type": "string",
+          "title": {
+            "en": "Status",
+            "nl": "Status",
+            "de": "Status",
+            "da": "Status",
+            "es": "Estado",
+            "fr": "Statut",
+            "it": "Stato",
+            "no": "Status",
+            "pl": "Status",
+            "pt": "Estado",
+            "ru": "Статус",
+            "sv": "Status"
+          }
+        },
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
       ]
     },
     {
       "id": "safety_car_deployed",
-      "title": { "en": "Safety car deployed", "nl": "Veiligheidswagen ingezet", "de": "Safety Car eingesetzt", "da": "Sikkerhedsbil udsendt", "es": "Coche de seguridad desplegado", "fr": "Voiture de sécurité déployée", "it": "Safety Car schierata", "no": "Sikkerhetsbil utplassert", "pl": "Samochód bezpieczeństwa wyjeżdża", "pt": "Carro de segurança lançado", "ru": "Машина безопасности выехала", "sv": "Säkerhetsbil utplacerad" },
-      "highlight": true
+      "title": {
+        "en": "Safety car deployed",
+        "nl": "Veiligheidswagen ingezet",
+        "de": "Safety Car eingesetzt",
+        "da": "Sikkerhedsbil udsendt",
+        "es": "Coche de seguridad desplegado",
+        "fr": "Voiture de sécurité déployée",
+        "it": "Safety Car schierata",
+        "no": "Sikkerhetsbil utplassert",
+        "pl": "Samochód bezpieczeństwa wyjeżdża",
+        "pt": "Carro de segurança lançado",
+        "ru": "Машина безопасности выехала",
+        "sv": "Säkerhetsbil utplacerad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "safety_car_recalled",
-      "title": { "en": "Safety car recalled", "nl": "Veiligheidswagen teruggeroepen", "de": "Safety Car zurückgezogen", "da": "Sikkerhedsbil tilbagekaldt", "es": "Coche de seguridad retirado", "fr": "Voiture de sécurité rappelée", "it": "Safety Car ritirata", "no": "Sikkerhetsbil tilbakekalt", "pl": "Samochód bezpieczeństwa wraca", "pt": "Carro de segurança recolhido", "ru": "Машина безопасности вернулась", "sv": "Säkerhetsbil återkallad" },
-      "highlight": true
+      "title": {
+        "en": "Safety car recalled",
+        "nl": "Veiligheidswagen teruggeroepen",
+        "de": "Safety Car zurückgezogen",
+        "da": "Sikkerhedsbil tilbagekaldt",
+        "es": "Coche de seguridad retirado",
+        "fr": "Voiture de sécurité rappelée",
+        "it": "Safety Car ritirata",
+        "no": "Sikkerhetsbil tilbakekalt",
+        "pl": "Samochód bezpieczeństwa wraca",
+        "pt": "Carro de segurança recolhido",
+        "ru": "Машина безопасности вернулась",
+        "sv": "Säkerhetsbil återkallad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "vsc_deployed",
-      "title": { "en": "Virtual safety car deployed", "nl": "Virtuele veiligheidswagen ingezet", "de": "Virtuelles Safety Car eingesetzt", "da": "Virtuel sikkerhedsbil udsendt", "es": "Coche de seguridad virtual desplegado", "fr": "Voiture de sécurité virtuelle déployée", "it": "Virtual Safety Car schierata", "no": "Virtuell sikkerhetsbil utplassert", "pl": "Wirtualny samochód bezpieczeństwa wyjeżdża", "pt": "Carro de segurança virtual lançado", "ru": "Виртуальная машина безопасности выехала", "sv": "Virtuell säkerhetsbil utplacerad" },
-      "highlight": true
+      "title": {
+        "en": "Virtual safety car deployed",
+        "nl": "Virtuele veiligheidswagen ingezet",
+        "de": "Virtuelles Safety Car eingesetzt",
+        "da": "Virtuel sikkerhedsbil udsendt",
+        "es": "Coche de seguridad virtual desplegado",
+        "fr": "Voiture de sécurité virtuelle déployée",
+        "it": "Virtual Safety Car schierata",
+        "no": "Virtuell sikkerhetsbil utplassert",
+        "pl": "Wirtualny samochód bezpieczeństwa wyjeżdża",
+        "pt": "Carro de segurança virtual lançado",
+        "ru": "Виртуальная машина безопасности выехала",
+        "sv": "Virtuell säkerhetsbil utplacerad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "vsc_recalled",
-      "title": { "en": "Virtual safety car recalled", "nl": "Virtuele veiligheidswagen teruggeroepen", "de": "Virtuelles Safety Car zurückgezogen", "da": "Virtuel sikkerhedsbil tilbagekaldt", "es": "Coche de seguridad virtual retirado", "fr": "Voiture de sécurité virtuelle rappelée", "it": "Virtual Safety Car ritirata", "no": "Virtuell sikkerhetsbil tilbakekalt", "pl": "Wirtualny samochód bezpieczeństwa wraca", "pt": "Carro de segurança virtual recolhido", "ru": "Виртуальная машина безопасности вернулась", "sv": "Virtuell säkerhetsbil återkallad" }
+      "title": {
+        "en": "Virtual safety car recalled",
+        "nl": "Virtuele veiligheidswagen teruggeroepen",
+        "de": "Virtuelles Safety Car zurückgezogen",
+        "da": "Virtuel sikkerhedsbil tilbagekaldt",
+        "es": "Coche de seguridad virtual retirado",
+        "fr": "Voiture de sécurité virtuelle rappelée",
+        "it": "Virtual Safety Car ritirata",
+        "no": "Virtuell sikkerhetsbil tilbakekalt",
+        "pl": "Wirtualny samochód bezpieczeństwa wraca",
+        "pt": "Carro de segurança virtual recolhido",
+        "ru": "Виртуальная машина безопасности вернулась",
+        "sv": "Virtuell säkerhetsbil återkallad"
+      },
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "red_flag_shown",
-      "title": { "en": "Red flag shown", "nl": "Rode vlag getoond", "de": "Rote Flagge gezeigt", "da": "Rødt flag vist", "es": "Bandera roja mostrada", "fr": "Drapeau rouge montré", "it": "Bandiera rossa mostrata", "no": "Rødt flagg vist", "pl": "Pokazano czerwoną flagę", "pt": "Bandeira vermelha mostrada", "ru": "Показан красный флаг", "sv": "Röd flagg visad" },
-      "highlight": true
+      "title": {
+        "en": "Red flag shown",
+        "nl": "Rode vlag getoond",
+        "de": "Rote Flagge gezeigt",
+        "da": "Rødt flag vist",
+        "es": "Bandera roja mostrada",
+        "fr": "Drapeau rouge montré",
+        "it": "Bandiera rossa mostrata",
+        "no": "Rødt flagg vist",
+        "pl": "Pokazano czerwoną flagę",
+        "pt": "Bandeira vermelha mostrada",
+        "ru": "Показан красный флаг",
+        "sv": "Röd flagg visad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "yellow_flag_shown",
-      "title": { "en": "Yellow flag shown", "nl": "Gele vlag getoond", "de": "Gelbe Flagge gezeigt", "da": "Gult flag vist", "es": "Bandera amarilla mostrada", "fr": "Drapeau jaune montré", "it": "Bandiera gialla mostrata", "no": "Gult flagg vist", "pl": "Pokazano żółtą flagę", "pt": "Bandeira amarela mostrada", "ru": "Показан жёлтый флаг", "sv": "Gul flagg visad" },
-      "highlight": true
+      "title": {
+        "en": "Yellow flag shown",
+        "nl": "Gele vlag getoond",
+        "de": "Gelbe Flagge gezeigt",
+        "da": "Gult flag vist",
+        "es": "Bandera amarilla mostrada",
+        "fr": "Drapeau jaune montré",
+        "it": "Bandiera gialla mostrata",
+        "no": "Gult flagg vist",
+        "pl": "Pokazano żółtą flagę",
+        "pt": "Bandeira amarela mostrada",
+        "ru": "Показан жёлтый флаг",
+        "sv": "Gul flagg visad"
+      },
+      "highlight": true,
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "yellow_flag_ended",
-      "title": { "en": "Yellow flag ended", "nl": "Gele vlag beëindigd", "de": "Gelbe Flagge beendet", "da": "Gult flag afsluttet", "es": "Bandera amarilla finalizada", "fr": "Drapeau jaune terminé", "it": "Bandiera gialla terminata", "no": "Gult flagg avsluttet", "pl": "Żółta flaga zakończona", "pt": "Bandeira amarela terminada", "ru": "Жёлтый флаг снят", "sv": "Gul flagg avslutad" }
+      "title": {
+        "en": "Yellow flag ended",
+        "nl": "Gele vlag beëindigd",
+        "de": "Gelbe Flagge beendet",
+        "da": "Gult flag afsluttet",
+        "es": "Bandera amarilla finalizada",
+        "fr": "Drapeau jaune terminé",
+        "it": "Bandiera gialla terminata",
+        "no": "Gult flagg avsluttet",
+        "pl": "Żółta flaga zakończona",
+        "pt": "Bandeira amarela terminada",
+        "ru": "Жёлтый флаг снят",
+        "sv": "Gul flagg avslutad"
+      },
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "green_flag",
-      "title": { "en": "Green flag \u2014 track clear", "nl": "Groene vlag \u2014 baan vrij", "de": "Grüne Flagge \u2014 Strecke frei", "da": "Grønt flag \u2014 banen fri", "es": "Bandera verde \u2014 pista libre", "fr": "Drapeau vert \u2014 piste libre", "it": "Bandiera verde \u2014 pista libera", "no": "Grønt flagg \u2014 banen fri", "pl": "Zielona flaga \u2014 tor wolny", "pt": "Bandeira verde \u2014 pista livre", "ru": "Зелёный флаг \u2014 трасса свободна", "sv": "Grön flagg \u2014 banan fri" }
+      "title": {
+        "en": "Green flag — track clear",
+        "nl": "Groene vlag — baan vrij",
+        "de": "Grüne Flagge — Strecke frei",
+        "da": "Grønt flag — banen fri",
+        "es": "Bandera verde — pista libre",
+        "fr": "Drapeau vert — piste libre",
+        "it": "Bandiera verde — pista libera",
+        "no": "Grønt flagg — banen fri",
+        "pl": "Zielona flaga — tor wolny",
+        "pt": "Bandeira verde — pista livre",
+        "ru": "Зелёный флаг — трасса свободна",
+        "sv": "Grön flagg — banan fri"
+      },
+      "tokens": [
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
+      ]
     },
     {
       "id": "new_lap_started",
-      "title": { "en": "New lap started", "nl": "Nieuwe ronde gestart", "de": "Neue Runde gestartet", "da": "Ny omgang startet", "es": "Nueva vuelta iniciada", "fr": "Nouveau tour démarré", "it": "Nuovo giro iniziato", "no": "Ny runde startet", "pl": "Nowe okrążenie rozpoczęte", "pt": "Nova volta iniciada", "ru": "Новый круг начался", "sv": "Nytt varv startat" },
+      "title": {
+        "en": "New lap started",
+        "nl": "Nieuwe ronde gestart",
+        "de": "Neue Runde gestartet",
+        "da": "Ny omgang startet",
+        "es": "Nueva vuelta iniciada",
+        "fr": "Nouveau tour démarré",
+        "it": "Nuovo giro iniziato",
+        "no": "Ny runde startet",
+        "pl": "Nowe okrążenie rozpoczęte",
+        "pt": "Nova volta iniciada",
+        "ru": "Новый круг начался",
+        "sv": "Nytt varv startat"
+      },
       "tokens": [
-        { "name": "lap_number", "type": "number", "title": { "en": "Lap number", "nl": "Rondenummer", "de": "Rundennummer", "da": "Omgangsnummer", "es": "Número de vuelta", "fr": "Numéro de tour", "it": "Numero del giro", "no": "Rundenummer", "pl": "Numer okrążenia", "pt": "Número da volta", "ru": "Номер круга", "sv": "Varvnummer" } }
+        {
+          "name": "lap_number",
+          "type": "number",
+          "title": {
+            "en": "Lap number",
+            "nl": "Rondenummer",
+            "de": "Rundennummer",
+            "da": "Omgangsnummer",
+            "es": "Número de vuelta",
+            "fr": "Numéro de tour",
+            "it": "Numero del giro",
+            "no": "Rundenummer",
+            "pl": "Numer okrążenia",
+            "pt": "Número da volta",
+            "ru": "Номер круга",
+            "sv": "Varvnummer"
+          }
+        },
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        }
       ]
     }
   ],
   "conditions": [
     {
       "id": "track_status_is",
-      "title": { "en": "Track status !{{is|isn't}}", "nl": "Trackstatus !{{is|is niet}}", "de": "Streckenstatus !{{ist|ist nicht}}", "da": "Banestatus !{{er|er ikke}}", "es": "Estado de la pista !{{es|no es}}", "fr": "Statut de la piste !{{est|n'est pas}}", "it": "Stato della pista !{{is|isn't}}", "no": "Banestatus !{{er|er ikke}}", "pl": "Status toru !{{jest|nie jest}}", "pt": "Estado da pista !{{is|isn't}}", "ru": "Статус трассы !{{является|не является}}", "sv": "Banstatus !{{is|isn't}}" },
-      "titleFormatted": { "en": "Track status !{{is|isn't}} [[status]]", "nl": "Trackstatus !{{is|is niet}} [[status]]", "de": "Streckenstatus !{{ist|ist nicht}} [[status]]", "da": "Banestatus !{{er|er ikke}} [[status]]", "es": "Estado !{{es|no es}} [[status]]", "fr": "Statut !{{est|n'est pas}} [[status]]", "it": "Stato !{{is|isn't}} [[status]]", "no": "Banestatus !{{er|er ikke}} [[status]]", "pl": "Status !{{jest|nie jest}} [[status]]", "pt": "Estado !{{is|isn't}} [[status]]", "ru": "Статус !{{является|не является}} [[status]]", "sv": "Banstatus !{{is|isn't}} [[status]]" },
+      "title": {
+        "en": "Track status !{{is|isn't}}",
+        "nl": "Trackstatus !{{is|is niet}}",
+        "de": "Streckenstatus !{{ist|ist nicht}}",
+        "da": "Banestatus !{{er|er ikke}}",
+        "es": "Estado de la pista !{{es|no es}}",
+        "fr": "Statut de la piste !{{est|n'est pas}}",
+        "it": "Stato della pista !{{is|isn't}}",
+        "no": "Banestatus !{{er|er ikke}}",
+        "pl": "Status toru !{{jest|nie jest}}",
+        "pt": "Estado da pista !{{is|isn't}}",
+        "ru": "Статус трассы !{{является|не является}}",
+        "sv": "Banstatus !{{is|isn't}}"
+      },
+      "titleFormatted": {
+        "en": "Track status !{{is|isn't}} [[status]]",
+        "nl": "Trackstatus !{{is|is niet}} [[status]]",
+        "de": "Streckenstatus !{{ist|ist nicht}} [[status]]",
+        "da": "Banestatus !{{er|er ikke}} [[status]]",
+        "es": "Estado !{{es|no es}} [[status]]",
+        "fr": "Statut !{{est|n'est pas}} [[status]]",
+        "it": "Stato !{{is|isn't}} [[status]]",
+        "no": "Banestatus !{{er|er ikke}} [[status]]",
+        "pl": "Status !{{jest|nie jest}} [[status]]",
+        "pt": "Estado !{{is|isn't}} [[status]]",
+        "ru": "Статус !{{является|не является}} [[status]]",
+        "sv": "Banstatus !{{is|isn't}} [[status]]"
+      },
       "args": [
         {
           "name": "status",
           "type": "dropdown",
           "values": [
-            { "id": "CLEAR",   "label": { "en": "Clear (green flag)",    "nl": "Vrij (groene vlag)",   "de": "Frei (grüne Flagge)",  "da": "Fri (grønt flag)",    "es": "Libre (bandera verde)", "fr": "Libre (drapeau vert)",  "it": "Libera (bandiera verde)", "no": "Fri (grønt flagg)",  "pl": "Wolny (zielona flaga)", "pt": "Livre (bandeira verde)", "ru": "Свободно (зелёный флаг)", "sv": "Fri (grön flagg)" } },
-            { "id": "YELLOW",  "label": { "en": "Yellow flag",          "nl": "Gele vlag",            "de": "Gelbe Flagge",         "da": "Gult flag",           "es": "Bandera amarilla",     "fr": "Drapeau jaune",        "it": "Bandiera gialla",     "no": "Gult flagg",         "pl": "Żółta flaga",          "pt": "Bandeira amarela",     "ru": "Жёлтый флаг",       "sv": "Gul flagg" } },
-            { "id": "SC",      "label": { "en": "Safety Car",           "nl": "Veiligheidswagen",      "de": "Safety Car",           "da": "Sikkerhedsbil",        "es": "Coche de seguridad",   "fr": "Voiture de sécurité",  "it": "Safety Car",         "no": "Sikkerhetsbil",       "pl": "Samochód bezp.",       "pt": "Carro de segurança",  "ru": "Машина безопасности", "sv": "Säkerhetsbil" } },
-            { "id": "VSC",     "label": { "en": "Virtual Safety Car",    "nl": "Virtuele veiligheidswagen", "de": "Virtuelles Safety Car", "da": "Virtuel sikkerhedsbil", "es": "Coche de seg. virtual", "fr": "V. de sécurité virtuelle", "it": "Virtual Safety Car", "no": "Virtuell SC",        "pl": "Wirtualny SC",         "pt": "Carro de seg. virtual", "ru": "Вирт. машина безоп.", "sv": "Virtuell SC" } },
-            { "id": "RED",     "label": { "en": "Red Flag",             "nl": "Rode vlag",             "de": "Rote Flagge",          "da": "Rødt flag",           "es": "Bandera roja",         "fr": "Drapeau rouge",        "it": "Bandiera rossa",     "no": "Rødt flagg",         "pl": "Czerwona flaga",       "pt": "Bandeira vermelha",    "ru": "Красный флаг",      "sv": "Röd flagg" } }
+            {
+              "id": "CLEAR",
+              "label": {
+                "en": "Clear (green flag)",
+                "nl": "Vrij (groene vlag)",
+                "de": "Frei (grüne Flagge)",
+                "da": "Fri (grønt flag)",
+                "es": "Libre (bandera verde)",
+                "fr": "Libre (drapeau vert)",
+                "it": "Libera (bandiera verde)",
+                "no": "Fri (grønt flagg)",
+                "pl": "Wolny (zielona flaga)",
+                "pt": "Livre (bandeira verde)",
+                "ru": "Свободно (зелёный флаг)",
+                "sv": "Fri (grön flagg)"
+              }
+            },
+            {
+              "id": "YELLOW",
+              "label": {
+                "en": "Yellow flag",
+                "nl": "Gele vlag",
+                "de": "Gelbe Flagge",
+                "da": "Gult flag",
+                "es": "Bandera amarilla",
+                "fr": "Drapeau jaune",
+                "it": "Bandiera gialla",
+                "no": "Gult flagg",
+                "pl": "Żółta flaga",
+                "pt": "Bandeira amarela",
+                "ru": "Жёлтый флаг",
+                "sv": "Gul flagg"
+              }
+            },
+            {
+              "id": "SC",
+              "label": {
+                "en": "Safety Car",
+                "nl": "Veiligheidswagen",
+                "de": "Safety Car",
+                "da": "Sikkerhedsbil",
+                "es": "Coche de seguridad",
+                "fr": "Voiture de sécurité",
+                "it": "Safety Car",
+                "no": "Sikkerhetsbil",
+                "pl": "Samochód bezp.",
+                "pt": "Carro de segurança",
+                "ru": "Машина безопасности",
+                "sv": "Säkerhetsbil"
+              }
+            },
+            {
+              "id": "VSC",
+              "label": {
+                "en": "Virtual Safety Car",
+                "nl": "Virtuele veiligheidswagen",
+                "de": "Virtuelles Safety Car",
+                "da": "Virtuel sikkerhedsbil",
+                "es": "Coche de seg. virtual",
+                "fr": "V. de sécurité virtuelle",
+                "it": "Virtual Safety Car",
+                "no": "Virtuell SC",
+                "pl": "Wirtualny SC",
+                "pt": "Carro de seg. virtual",
+                "ru": "Вирт. машина безоп.",
+                "sv": "Virtuell SC"
+              }
+            },
+            {
+              "id": "RED",
+              "label": {
+                "en": "Red Flag",
+                "nl": "Rode vlag",
+                "de": "Rote Flagge",
+                "da": "Rødt flag",
+                "es": "Bandera roja",
+                "fr": "Drapeau rouge",
+                "it": "Bandiera rossa",
+                "no": "Rødt flagg",
+                "pl": "Czerwona flaga",
+                "pt": "Bandeira vermelha",
+                "ru": "Красный флаг",
+                "sv": "Röd flagg"
+              }
+            }
           ]
         }
       ]
     },
     {
       "id": "safety_car_is_active",
-      "title": { "en": "Safety car !{{is|isn't}} active", "nl": "Veiligheidswagen !{{is|is niet}} actief", "de": "Safety Car !{{ist|ist nicht}} aktiv", "da": "Sikkerhedsbil !{{er|er ikke}} aktiv", "es": "Coche de seguridad !{{está|no está}} activo", "fr": "Voiture de sécurité !{{est|n'est pas}} active", "it": "Safety Car !{{is|isn't}} attiva", "no": "Sikkerhetsbil !{{er|er ikke}} aktiv", "pl": "Samochód bezpieczeństwa !{{jest|nie jest}} aktywny", "pt": "Carro de segurança !{{is|isn't}} ativo", "ru": "Машина безопасности !{{активна|не активна}}", "sv": "Säkerhetsbil !{{is|isn't}} aktiv" }
+      "title": {
+        "en": "Safety car !{{is|isn't}} active",
+        "nl": "Veiligheidswagen !{{is|is niet}} actief",
+        "de": "Safety Car !{{ist|ist nicht}} aktiv",
+        "da": "Sikkerhedsbil !{{er|er ikke}} aktiv",
+        "es": "Coche de seguridad !{{está|no está}} activo",
+        "fr": "Voiture de sécurité !{{est|n'est pas}} active",
+        "it": "Safety Car !{{is|isn't}} attiva",
+        "no": "Sikkerhetsbil !{{er|er ikke}} aktiv",
+        "pl": "Samochód bezpieczeństwa !{{jest|nie jest}} aktywny",
+        "pt": "Carro de segurança !{{is|isn't}} ativo",
+        "ru": "Машина безопасности !{{активна|не активна}}",
+        "sv": "Säkerhetsbil !{{is|isn't}} aktiv"
+      }
     },
     {
       "id": "is_raining_at_track",
-      "title": { "en": "It !{{is|isn't}} raining at the track", "nl": "Het !{{regent|regent niet}} op het circuit", "de": "Es !{{regnet|regnet nicht}} an der Strecke", "da": "Det !{{regner|regner ikke}} på banen", "es": "!{{Está|No está}} lloviendo en la pista", "fr": "Il !{{pleut|ne pleut pas}} sur la piste", "it": "!{{Sta|Non sta}} piovendo sulla pista", "no": "Det !{{regner|regner ikke}} på banen", "pl": "Na torze !{{pada|nie pada}} deszcz", "pt": "!{{Está|Não está}} a chover na pista", "ru": "!{{Идёт|Не идёт}} дождь на трассе", "sv": "Det !{{regnar|regnar inte}} på banan" }
+      "title": {
+        "en": "It !{{is|isn't}} raining at the track",
+        "nl": "Het !{{regent|regent niet}} op het circuit",
+        "de": "Es !{{regnet|regnet nicht}} an der Strecke",
+        "da": "Det !{{regner|regner ikke}} på banen",
+        "es": "!{{Está|No está}} lloviendo en la pista",
+        "fr": "Il !{{pleut|ne pleut pas}} sur la piste",
+        "it": "!{{Sta|Non sta}} piovendo sulla pista",
+        "no": "Det !{{regner|regner ikke}} på banen",
+        "pl": "Na torze !{{pada|nie pada}} deszcz",
+        "pt": "!{{Está|Não está}} a chover na pista",
+        "ru": "!{{Идёт|Не идёт}} дождь на трассе",
+        "sv": "Det !{{regnar|regnar inte}} på banan"
+      }
     }
   ],
   "actions": []

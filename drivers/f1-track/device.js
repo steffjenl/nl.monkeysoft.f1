@@ -58,18 +58,19 @@ class F1TrackDevice extends Homey.Device {
     await this._setCapSafe('alarm_generic.red_flag',    status === 'RED');
 
     const driver = this.driver;
+    const circuit_name = this.getCapabilityValue('f1_circuit_name') ?? '';
 
     if (status !== prev) {
-      await driver._trackStatusChanged.trigger(this, { status }, {});
+      await driver._trackStatusChanged.trigger(this, { status, circuit_name }, {});
 
-      if (status === 'SC'     && prev !== 'SC')     await driver._safetyCarDeployed.trigger(this, {}, {});
-      if (prev  === 'SC'     && status !== 'SC')   await driver._safetyCarRecalled.trigger(this, {}, {});
-      if (status === 'VSC'   && prev !== 'VSC')    await driver._vscDeployed.trigger(this, {}, {});
-      if (prev  === 'VSC'    && status !== 'VSC')  await driver._vscRecalled.trigger(this, {}, {});
-      if (status === 'YELLOW' && prev !== 'YELLOW') await driver._yellowFlagShown.trigger(this, {}, {});
-      if (prev  === 'YELLOW' && status !== 'YELLOW') await driver._yellowFlagEnded.trigger(this, {}, {});
-      if (status === 'RED')  await driver._redFlagShown.trigger(this, {}, {});
-      if (status === 'CLEAR' && prev !== null) await driver._greenFlag.trigger(this, {}, {});
+      if (status === 'SC'     && prev !== 'SC')     await driver._safetyCarDeployed.trigger(this, { circuit_name }, {});
+      if (prev  === 'SC'     && status !== 'SC')   await driver._safetyCarRecalled.trigger(this, { circuit_name }, {});
+      if (status === 'VSC'   && prev !== 'VSC')    await driver._vscDeployed.trigger(this, { circuit_name }, {});
+      if (prev  === 'VSC'    && status !== 'VSC')  await driver._vscRecalled.trigger(this, { circuit_name }, {});
+      if (status === 'YELLOW' && prev !== 'YELLOW') await driver._yellowFlagShown.trigger(this, { circuit_name }, {});
+      if (prev  === 'YELLOW' && status !== 'YELLOW') await driver._yellowFlagEnded.trigger(this, { circuit_name }, {});
+      if (status === 'RED')  await driver._redFlagShown.trigger(this, { circuit_name }, {});
+      if (status === 'CLEAR' && prev !== null) await driver._greenFlag.trigger(this, { circuit_name }, {});
 
       this._prevStatus = status;
     }
@@ -111,7 +112,7 @@ class F1TrackDevice extends Homey.Device {
       const prev = this.getCapabilityValue('f1_lap_count');
       await this._setCapSafe('f1_lap_count', current);
       if (current !== prev) {
-        await this.driver._newLapStarted.trigger(this, { lap_number: current }, {});
+        await this.driver._newLapStarted.trigger(this, { lap_number: current, circuit_name: this.getCapabilityValue('f1_circuit_name') ?? '' }, {});
       }
     }
   }

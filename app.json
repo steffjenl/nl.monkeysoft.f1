@@ -19,18 +19,18 @@
     "sv": "Formel 1 Live Timing"
   },
   "description": {
-    "en": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations.",
-    "nl": "Haal Formule 1 live-data in huis: trackstatus, race control, coureurstijden, pitstops en weer — allemaal als Homey-automatiseringen.",
-    "de": "Hol dir Formel-1-Live-Daten ins Smarthome: Streckenstatus, Rennkontrolle, Fahrerzeiten, Boxenstopps und Wetter — alles als Homey-Automationen.",
-    "da": "Bring Formel 1 live-data hjem: banestatus, race control, kørertider, depotstopp og vejr — alt som Homey-automatiseringer.",
-    "es": "Lleva los datos en vivo de la Fórmula 1 a tu hogar: estado de la pista, control de carrera, tiempos de pilotos, paradas en boxes y tiempo meteorológico — todo como automatizaciones Homey.",
-    "fr": "Intégrez les données en direct de la Formule 1 dans votre maison : statut de la piste, direction de course, chrono des pilotes, arrêts aux stands et météo — tout en automatisations Homey.",
-    "it": "Porta i dati in diretta della Formula 1 in casa tua: stato della pista, direzione gara, tempi dei piloti, soste ai box e meteo — tutto come automazioni Homey.",
-    "no": "Bring Formel 1 live-data inn i hjemmet: banestatus, race control, førertider, depåstopp og vær — alt som Homey-automatiseringer.",
-    "pl": "Przenieś dane na żywo Formuły 1 do swojego domu: status toru, dyrekcja wyścigu, czasy kierowców, pit stopy i pogoda — wszystko jako automatyzacje Homey.",
-    "pt": "Leve os dados em direto da Fórmula 1 para a sua casa: estado da pista, direção de corrida, tempos dos pilotos, paragens nos boxes e tempo meteorológico — tudo como automatizações Homey.",
-    "ru": "Добавьте данные Формулы 1 в реальном времени в свой умный дом: статус трассы, дирекция гонки, хронометраж гонщиков, пит-стопы и погода — всё в виде автоматизаций Homey.",
-    "sv": "Ta in Formel 1-data i realtid i ditt smarta hem: banstatus, race control, förartider, depåstopp och väder — allt som Homey-automatiseringar."
+    "en": "Bring Formula 1 live data into your Homey automations.",
+    "nl": "Haal Formule 1 live-data in je Homey-automatiseringen.",
+    "de": "Bring Formel-1-Live-Daten in deine Homey-Automatisierungen.",
+    "da": "Bring Formel 1 live-data ind i dine Homey-automatiseringer.",
+    "es": "Lleva los datos en vivo de la Fórmula 1 a tus automatizaciones de Homey.",
+    "fr": "Intégrez les données en direct de la Formule 1 dans vos automatisations Homey.",
+    "it": "Porta i dati in diretta della Formula 1 nelle tue automazioni Homey.",
+    "no": "Bring Formel 1 live-data inn i dine Homey-automatiseringer.",
+    "pl": "Przenieś dane na żywo Formuły 1 do swoich automatyzacji Homey.",
+    "pt": "Leve os dados em direto da Fórmula 1 para as suas automatizações Homey.",
+    "ru": "Добавьте данные Формулы 1 в реальном времени в автоматизации Homey.",
+    "sv": "Ta in Formel 1-data i realtid i dina Homey-automatiseringar."
   },
   "category": [
     "tools"
@@ -43,10 +43,14 @@
   "brandColor": "#E10600",
   "author": {
     "name": "MonkeySoft",
-    "email": "info@monkeysoft.nl"
+    "email": "hallo@monkeysoft.nl"
   },
   "contributing": {
-    "donate": {}
+    "donate": {
+      "paypal": {
+        "username": "steffjenl"
+      }
+    }
   },
   "tags": {
     "en": [
@@ -135,6 +139,22 @@
     ]
   },
   "homeyCommunityTopicId": 0,
+  "source": "https://github.com/steffjenl/nl.monkeysoft.f1",
+  "homepage": "https://monkeysoft.nl",
+  "bugs": {
+    "url": "https://github.com/steffjenl/nl.monkeysoft.f1/issues"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Stephan Eizinga",
+        "email": "hallo@monkeysoft.nl"
+      }
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
   "flow": {
     "triggers": [
       {
@@ -369,6 +389,24 @@
               "ru": "Статус",
               "sv": "Status"
             }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
           }
         ],
         "args": [
@@ -414,6 +452,24 @@
               "ru": "Тип сессии",
               "sv": "Sessionstyp"
             }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
           }
         ],
         "args": [
@@ -440,6 +496,26 @@
           "ru": "Сессия завершилась",
           "sv": "Session avslutad"
         },
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -518,6 +594,24 @@
               "ru": "Категория",
               "sv": "Kategori"
             }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
           }
         ],
         "args": [
@@ -561,6 +655,24 @@
               "pt": "Parte da qualificação (Q1/Q2/Q3)",
               "ru": "Часть квалификации (Q1/Q2/Q3)",
               "sv": "Kvalificeringsdel (Q1/Q2/Q3)"
+            }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
             }
           }
         ],
@@ -624,6 +736,24 @@
               "ru": "Время круга",
               "sv": "Varvtid"
             }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
           }
         ],
         "args": [
@@ -668,6 +798,24 @@
               "ru": "Статус",
               "sv": "Status"
             }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
           }
         ],
         "args": [
@@ -695,6 +843,26 @@
           "sv": "Säkerhetsbil utplacerad"
         },
         "highlight": true,
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -720,6 +888,26 @@
           "sv": "Säkerhetsbil återkallad"
         },
         "highlight": true,
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -745,6 +933,26 @@
           "sv": "Virtuell säkerhetsbil utplacerad"
         },
         "highlight": true,
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -769,6 +977,26 @@
           "ru": "Виртуальная машина безопасности вернулась",
           "sv": "Virtuell säkerhetsbil återkallad"
         },
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -794,6 +1022,26 @@
           "sv": "Röd flagg visad"
         },
         "highlight": true,
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -819,6 +1067,26 @@
           "sv": "Gul flagg visad"
         },
         "highlight": true,
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -843,6 +1111,26 @@
           "ru": "Жёлтый флаг снят",
           "sv": "Gul flagg avslutad"
         },
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -867,6 +1155,26 @@
           "ru": "Зелёный флаг — трасса свободна",
           "sv": "Grön flagg — banan fri"
         },
+        "tokens": [
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -908,6 +1216,24 @@
               "pt": "Número da volta",
               "ru": "Номер круга",
               "sv": "Varvnummer"
+            }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
             }
           }
         ],
