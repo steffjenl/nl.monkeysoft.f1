@@ -1,6 +1,6 @@
 {
   "id": "nl.monkeysoft.f1",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "name": {
@@ -46,7 +46,7 @@
   },
   "contributing": {
     "donate": {
-        "paypal": {
+      "paypal": {
         "username": "steffjenl"
       }
     }
