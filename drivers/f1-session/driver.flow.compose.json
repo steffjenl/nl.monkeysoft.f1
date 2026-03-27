@@ -295,6 +295,102 @@
       ]
     },
     {
+      "id": "session_starting_soon",
+      "title": {
+        "en": "Session starts in... minutes",
+        "nl": "Sessie begint over... minuten",
+        "de": "Session startet in ... Minuten",
+        "da": "Session starter om... minutter",
+        "es": "La sesión comienza en... minutos",
+        "fr": "La session commence dans... minutes",
+        "it": "La sessione inizia tra... minuti",
+        "no": "Sesjonen starter om... minutter",
+        "pl": "Sesja zaczyna się za... minut",
+        "pt": "A sessão começa em... minutos",
+        "ru": "Сессия начнётся через... минут",
+        "sv": "Session startar om... minuter"
+      },
+      "titleFormatted": {
+        "en": "Session starts in [[minutes]] minutes",
+        "nl": "Sessie begint over [[minutes]] minuten",
+        "de": "Session startet in [[minutes]] Minuten",
+        "da": "Session starter om [[minutes]] minutter",
+        "es": "La sesión comienza en [[minutes]] minutos",
+        "fr": "La session commence dans [[minutes]] minutes",
+        "it": "La sessione inizia tra [[minutes]] minuti",
+        "no": "Sesjonen starter om [[minutes]] minutter",
+        "pl": "Sesja zaczyna się za [[minutes]] minut",
+        "pt": "A sessão começa em [[minutes]] minutos",
+        "ru": "Сессия начнётся через [[minutes]] минут",
+        "sv": "Session startar om [[minutes]] minuter"
+      },
+      "args": [
+        {
+          "name": "minutes",
+          "type": "number",
+          "min": 1,
+          "max": 1440,
+          "placeholder": { "en": "15", "nl": "15" }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "minutes_until",
+          "type": "number",
+          "title": {
+            "en": "Minutes until start",
+            "nl": "Minuten tot start",
+            "de": "Minuten bis zum Start",
+            "da": "Minutter til start",
+            "es": "Minutos hasta el inicio",
+            "fr": "Minutes avant le début",
+            "it": "Minuti all'inizio",
+            "no": "Minutter til start",
+            "pl": "Minut do startu",
+            "pt": "Minutos até ao início",
+            "ru": "Минут до старта",
+            "sv": "Minuter till start"
+          }
+        },
+        {
+          "name": "circuit_name",
+          "type": "string",
+          "title": {
+            "en": "Circuit",
+            "nl": "Circuit",
+            "de": "Strecke",
+            "da": "Bane",
+            "es": "Circuito",
+            "fr": "Circuit",
+            "it": "Circuito",
+            "no": "Bane",
+            "pl": "Tor",
+            "pt": "Circuito",
+            "ru": "Трасса",
+            "sv": "Bana"
+          }
+        },
+        {
+          "name": "session_type",
+          "type": "string",
+          "title": {
+            "en": "Session type",
+            "nl": "Sessietype",
+            "de": "Sessiontyp",
+            "da": "Sessionstype",
+            "es": "Tipo de sesión",
+            "fr": "Type de session",
+            "it": "Tipo di sessione",
+            "no": "Sesjonstype",
+            "pl": "Typ sesji",
+            "pt": "Tipo de sessão",
+            "ru": "Тип сессии",
+            "sv": "Sessionstyp"
+          }
+        }
+      ]
+    },
+    {
       "id": "fastest_lap_updated",
       "title": {
         "en": "Fastest lap updated",

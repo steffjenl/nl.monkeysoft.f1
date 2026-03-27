@@ -24,7 +24,9 @@
     "f1_race_control_flag",
     "f1_race_control_category",
     "f1_fastest_lap_time",
-    "f1_fastest_lap_driver"
+    "f1_fastest_lap_driver",
+    "f1_session_scheduled_date",
+    "f1_session_scheduled_time"
   ],
   "capabilitiesOptions": {
     "f1_clock_remaining": {

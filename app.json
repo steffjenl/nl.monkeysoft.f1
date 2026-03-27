@@ -685,6 +685,110 @@
         ]
       },
       {
+        "id": "session_starting_soon",
+        "title": {
+          "en": "Session starts in... minutes",
+          "nl": "Sessie begint over... minuten",
+          "de": "Session startet in ... Minuten",
+          "da": "Session starter om... minutter",
+          "es": "La sesión comienza en... minutos",
+          "fr": "La session commence dans... minutes",
+          "it": "La sessione inizia tra... minuti",
+          "no": "Sesjonen starter om... minutter",
+          "pl": "Sesja zaczyna się za... minut",
+          "pt": "A sessão começa em... minutos",
+          "ru": "Сессия начнётся через... минут",
+          "sv": "Session startar om... minuter"
+        },
+        "titleFormatted": {
+          "en": "Session starts in [[minutes]] minutes",
+          "nl": "Sessie begint over [[minutes]] minuten",
+          "de": "Session startet in [[minutes]] Minuten",
+          "da": "Session starter om [[minutes]] minutter",
+          "es": "La sesión comienza en [[minutes]] minutos",
+          "fr": "La session commence dans [[minutes]] minutes",
+          "it": "La sessione inizia tra [[minutes]] minuti",
+          "no": "Sesjonen starter om [[minutes]] minutter",
+          "pl": "Sesja zaczyna się za [[minutes]] minut",
+          "pt": "A sessão começa em [[minutes]] minutos",
+          "ru": "Сессия начнётся через [[minutes]] минут",
+          "sv": "Session startar om [[minutes]] minuter"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=f1-session"
+          },
+          {
+            "name": "minutes",
+            "type": "number",
+            "min": 1,
+            "max": 1440,
+            "placeholder": {
+              "en": "15",
+              "nl": "15"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "minutes_until",
+            "type": "number",
+            "title": {
+              "en": "Minutes until start",
+              "nl": "Minuten tot start",
+              "de": "Minuten bis zum Start",
+              "da": "Minutter til start",
+              "es": "Minutos hasta el inicio",
+              "fr": "Minutes avant le début",
+              "it": "Minuti all'inizio",
+              "no": "Minutter til start",
+              "pl": "Minut do startu",
+              "pt": "Minutos até ao início",
+              "ru": "Минут до старта",
+              "sv": "Minuter till start"
+            }
+          },
+          {
+            "name": "circuit_name",
+            "type": "string",
+            "title": {
+              "en": "Circuit",
+              "nl": "Circuit",
+              "de": "Strecke",
+              "da": "Bane",
+              "es": "Circuito",
+              "fr": "Circuit",
+              "it": "Circuito",
+              "no": "Bane",
+              "pl": "Tor",
+              "pt": "Circuito",
+              "ru": "Трасса",
+              "sv": "Bana"
+            }
+          },
+          {
+            "name": "session_type",
+            "type": "string",
+            "title": {
+              "en": "Session type",
+              "nl": "Sessietype",
+              "de": "Sessiontyp",
+              "da": "Sessionstype",
+              "es": "Tipo de sesión",
+              "fr": "Type de session",
+              "it": "Tipo di sessione",
+              "no": "Sesjonstype",
+              "pl": "Typ sesji",
+              "pt": "Tipo de sessão",
+              "ru": "Тип сессии",
+              "sv": "Sessionstyp"
+            }
+          }
+        ]
+      },
+      {
         "id": "fastest_lap_updated",
         "title": {
           "en": "Fastest lap updated",
@@ -2109,7 +2213,9 @@
         "f1_race_control_flag",
         "f1_race_control_category",
         "f1_fastest_lap_time",
-        "f1_fastest_lap_driver"
+        "f1_fastest_lap_driver",
+        "f1_session_scheduled_date",
+        "f1_session_scheduled_time"
       ],
       "capabilitiesOptions": {
         "f1_clock_remaining": {
@@ -2832,6 +2938,48 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/f1_race_control_message.svg"
+    },
+    "f1_session_scheduled_date": {
+      "type": "string",
+      "title": {
+        "en": "Scheduled Date",
+        "nl": "Geplande datum",
+        "de": "Geplantes Datum",
+        "da": "Planlagt dato",
+        "es": "Fecha programada",
+        "fr": "Date prévue",
+        "it": "Data prevista",
+        "no": "Planlagt dato",
+        "pl": "Planowana data",
+        "pt": "Data agendada",
+        "ru": "Запланированная дата",
+        "sv": "Planerat datum"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_session_type.svg"
+    },
+    "f1_session_scheduled_time": {
+      "type": "string",
+      "title": {
+        "en": "Scheduled Time (UTC)",
+        "nl": "Geplande starttijd (UTC)",
+        "de": "Geplante Startzeit (UTC)",
+        "da": "Planlagt starttid (UTC)",
+        "es": "Hora de inicio programada (UTC)",
+        "fr": "Heure de début prévue (UTC)",
+        "it": "Orario previsto (UTC)",
+        "no": "Planlagt starttid (UTC)",
+        "pl": "Planowany czas startu (UTC)",
+        "pt": "Hora de início agendada (UTC)",
+        "ru": "Запланированное время (UTC)",
+        "sv": "Planerad starttid (UTC)"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/f1_session_type.svg"
     },
     "f1_session_status": {
       "type": "enum",

@@ -6,6 +6,20 @@ const { SESSION_STATUS } = require('../../lib/constants');
 // Extrapolated clock ticks every second when running
 const CLOCK_INTERVAL_MS = 1000;
 
+// How often to check minutes-until-start when a session is upcoming
+const SCHEDULE_CHECK_INTERVAL_MS = 60_000;
+
+// Mapping from session device type → Jolpica race object key(s)
+const SESSION_JOLPICA_KEY = {
+  'Race':              null,                              // top-level race date/time
+  'Qualifying':        ['Qualifying'],
+  'Practice 1':        ['FirstPractice'],
+  'Practice 2':        ['SecondPractice'],
+  'Practice 3':        ['ThirdPractice'],
+  'Sprint':            ['Sprint'],
+  'Sprint Qualifying': ['SprintQualifying', 'SprintShootout'],
+};
+
 class F1SessionDevice extends Homey.Device {
 
   async onInit() {
@@ -21,24 +35,126 @@ class F1SessionDevice extends Homey.Device {
     this._clockRemaining = 0;   // seconds
     this._clockElapsed   = 0;   // seconds
     this._clockLastSync  = null; // Date.now() when last synced from stream
+    this._scheduledMs    = null; // epoch ms of next scheduled session
+    this._scheduleTimer  = null; // interval that fires every minute to check countdown
 
     await this.homey.app.deviceConnected();
     const lc = this.homey.app.getLiveTimingClient();
 
     this._unsubs.push(
-      lc.subscribe('SessionStatus',      this._onSessionStatus.bind(this)),
       lc.subscribe('SessionInfo',        this._onSessionInfo.bind(this)),
+      lc.subscribe('SessionStatus',      this._onSessionStatus.bind(this)),
       lc.subscribe('ExtrapolatedClock',  this._onExtrapolatedClock.bind(this)),
       lc.subscribe('RaceControlMessages', this._onRaceControlMessages.bind(this)),
       lc.subscribe('TimingData',         this._onTimingDataForFastestLap.bind(this)),
     );
+
+    if (this._targetType) {
+      await this._loadSchedule();
+    }
   }
 
   async onDeleted() {
     this._stopClockTimer();
+    this._stopScheduleTimer();
     for (const unsub of this._unsubs) unsub();
     this._unsubs = [];
     await this.homey.app.deviceDisconnected();
+  }
+
+  // ─── Schedule loading ────────────────────────────────────────────────────────
+
+  async _loadSchedule() {
+    try {
+      const data = await this.homey.app.getJolpicaClient().getSchedule();
+      const race = this._findNextRaceForType(data, this._targetType);
+      if (!race) {
+        this.log('No upcoming session found for:', this._targetType);
+        return;
+      }
+
+      const ms = this._getSessionMs(race, this._targetType);
+      if (!ms) return;
+
+      this._scheduledMs = ms;
+
+      const dt = new Date(ms);
+      const dateStr = dt.toISOString().split('T')[0];
+      const hh = dt.getUTCHours().toString().padStart(2, '0');
+      const mm = dt.getUTCMinutes().toString().padStart(2, '0');
+      const timeStr = `${hh}:${mm} UTC`;
+
+      await this._setCapSafe('f1_session_scheduled_date', dateStr);
+      await this._setCapSafe('f1_session_scheduled_time', timeStr);
+
+      this._startScheduleTimer();
+    } catch (err) {
+      this.error('_loadSchedule failed:', err.message);
+    }
+  }
+
+  /** Find the first race in the schedule where the target session type is still in the future. */
+  _findNextRaceForType(scheduleData, sessionType) {
+    const races = scheduleData?.MRData?.RaceTable?.Races ?? [];
+    const now   = Date.now();
+    for (const race of races) {
+      const ms = this._getSessionMs(race, sessionType);
+      if (ms && ms > now) return race;
+    }
+    return null;
+  }
+
+  /** Extract session start time (epoch ms) for the given type from a Jolpica race object. */
+  _getSessionMs(race, sessionType) {
+    let date, time;
+    if (sessionType === 'Race') {
+      date = race.date;
+      time = race.time ?? '00:00:00Z';
+    } else {
+      const keys = SESSION_JOLPICA_KEY[sessionType] ?? [];
+      for (const key of keys) {
+        if (race[key]?.date) {
+          date = race[key].date;
+          time = race[key].time ?? '00:00:00Z';
+          break;
+        }
+      }
+    }
+    if (!date) return null;
+    return new Date(`${date}T${time}`).getTime();
+  }
+
+  _startScheduleTimer() {
+    this._stopScheduleTimer();
+    if (!this._scheduledMs) return;
+    this._scheduleTimer = this.homey.setInterval(async () => {
+      await this._checkScheduleTick();
+    }, SCHEDULE_CHECK_INTERVAL_MS);
+  }
+
+  _stopScheduleTimer() {
+    if (this._scheduleTimer) {
+      this.homey.clearInterval(this._scheduleTimer);
+      this._scheduleTimer = null;
+    }
+  }
+
+  async _checkScheduleTick() {
+    if (!this._scheduledMs) return;
+    const minutesUntil = Math.round((this._scheduledMs - Date.now()) / 60_000);
+
+    if (minutesUntil >= 0) {
+      await this.driver._sessionStartingSoon.trigger(
+        this,
+        { minutes_until: minutesUntil, circuit_name: this._circuitName, session_type: this._targetType ?? '' },
+        { minutes: minutesUntil }
+      );
+    } else {
+      // Session has started — stop timer and reload for the next one
+      this._stopScheduleTimer();
+      this._scheduledMs = null;
+      await this._loadSchedule();
+    }
   }
 
   // ─── SessionStatus ───────────────────────────────────────────────────────────

@@ -12,6 +12,8 @@ class F1SessionDriver extends Homey.Driver {
     this._raceControlMessageRcvd   = this.homey.flow.getDeviceTriggerCard('race_control_message_received');
     this._qualifyingPartChanged    = this.homey.flow.getDeviceTriggerCard('qualifying_part_changed');
     this._fastestLapUpdated        = this.homey.flow.getDeviceTriggerCard('fastest_lap_updated');
+    this._sessionStartingSoon      = this.homey.flow.getDeviceTriggerCard('session_starting_soon');
+    this._sessionStartingSoon.registerRunListener((args, state) => args.minutes === state.minutes);
 
     // Conditions
     this.homey.flow.getConditionCard('session_is_live')

@@ -1,0 +1,21 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Scheduled Time (UTC)",
+    "nl": "Geplande starttijd (UTC)",
+    "de": "Geplante Startzeit (UTC)",
+    "da": "Planlagt starttid (UTC)",
+    "es": "Hora de inicio programada (UTC)",
+    "fr": "Heure de début prévue (UTC)",
+    "it": "Orario previsto (UTC)",
+    "no": "Planlagt starttid (UTC)",
+    "pl": "Planowany czas startu (UTC)",
+    "pt": "Hora de início agendada (UTC)",
+    "ru": "Запланированное время (UTC)",
+    "sv": "Planerad starttid (UTC)"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_session_type.svg"
+}

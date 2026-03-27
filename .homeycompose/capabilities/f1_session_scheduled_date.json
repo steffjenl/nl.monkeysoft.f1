@@ -1,0 +1,21 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Scheduled Date",
+    "nl": "Geplande datum",
+    "de": "Geplantes Datum",
+    "da": "Planlagt dato",
+    "es": "Fecha programada",
+    "fr": "Date prévue",
+    "it": "Data prevista",
+    "no": "Planlagt dato",
+    "pl": "Planowana data",
+    "pt": "Data agendada",
+    "ru": "Запланированная дата",
+    "sv": "Planerat datum"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/f1_session_type.svg"
+}
