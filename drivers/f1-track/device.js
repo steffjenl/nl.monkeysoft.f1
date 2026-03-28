@@ -14,10 +14,11 @@ class F1TrackDevice extends Homey.Device {
     const lc = this.homey.app.getLiveTimingClient();
 
     this._unsubs.push(
-      lc.subscribe('SessionInfo',  this._onSessionInfo.bind(this)),
-      lc.subscribe('TrackStatus', this._onTrackStatus.bind(this)),
-      lc.subscribe('WeatherData', this._onWeatherData.bind(this)),
-      lc.subscribe('LapCount',    this._onLapCount.bind(this)),
+      lc.subscribe('SessionInfo',    this._onSessionInfo.bind(this)),
+      lc.subscribe('SessionStatus',  this._onSessionStatus.bind(this)),
+      lc.subscribe('TrackStatus',    this._onTrackStatus.bind(this)),
+      lc.subscribe('WeatherData',    this._onWeatherData.bind(this)),
+      lc.subscribe('LapCount',       this._onLapCount.bind(this)),
     );
   }
 
@@ -38,6 +39,26 @@ class F1TrackDevice extends Homey.Device {
 
     if (circuit) await this._setCapSafe('f1_circuit_name', circuit);
     if (meeting) await this._setCapSafe('f1_meeting_name', meeting);
+  }
+
+  // ─── SessionStatus ───────────────────────────────────────────────────────────
+
+  async _onSessionStatus(data) {
+    if (!data) return;
+    const raw = data.Status ?? data.SessionStatus?.Status;
+    if (!raw) return;
+
+    // When no session is active, reset live-only capabilities to neutral values
+    // to avoid showing stale data from a previous race weekend.
+    if (raw === 'Inactive') {
+      await this._setCapSafe('f1_track_status',        'CLEAR');
+      await this._setCapSafe('alarm_generic.safety_car',  false);
+      await this._setCapSafe('alarm_generic.vsc',         false);
+      await this._setCapSafe('alarm_generic.yellow_flag', false);
+      await this._setCapSafe('alarm_generic.red_flag',    false);
+      await this._setCapSafe('f1_lap_count',              0);
+      this._prevStatus = null;
+    }
   }
 
   // ─── TrackStatus ────────────────────────────────────────────────────────────
