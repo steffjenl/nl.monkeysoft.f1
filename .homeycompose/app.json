@@ -1,6 +1,6 @@
 {
   "id": "nl.monkeysoft.f1",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "compatibility": ">=12.0.0",
   "sdk": 3,
   "name": {
@@ -137,7 +137,7 @@
       "livetiming"
     ]
   },
-  "homeyCommunityTopicId": 0,
+  "homeyCommunityTopicId": 153042,
   "source": "https://github.com/steffjenl/nl.monkeysoft.f1",
   "homepage": "https://monkeysoft.nl",
   "bugs": {
