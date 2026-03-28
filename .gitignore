@@ -2,3 +2,4 @@ node_modules/
 .homeybuild/
 .DS_Store
 drivers/f1-car/assets/images/Thumbs.db
+env.json
