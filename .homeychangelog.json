@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Add track name tokens"
+  },
+  "1.0.4": {
+    "en": "Fix: Session and Track info not updates"
   }
 }
