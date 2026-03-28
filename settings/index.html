@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="settings.css">
+  <script type="text/javascript" src="/manager/webserver/assets/js/jquery.js"></script>
+  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+</head>
+<body>
+
+<!-- Tab navigation -->
+<div class="tab">
+  <button class="tablinks" id="defaultOpen" onclick="setPage(event, 'ttl')">
+    <span data-i18n="settings.tab.cache"></span>
+  </button>
+  <button class="tablinks" onclick="setPage(event, 'status')">
+    <span data-i18n="settings.tab.status"></span>
+  </button>
+  <button class="tablinks" onclick="setPage(event, 'account')">
+    <span data-i18n="settings.tab.account"></span>
+  </button>
+</div>
+
+<!-- ── Cache TTL tab ─────────────────────────────────────────────────── -->
+<div id="ttl" class="tabcontent">
+  <fieldset class="homey-form-fieldset">
+    <legend class="homey-form-legend" data-i18n="settings.cache.legend"></legend>
+
+    <div class="field row">
+      <label class="homey-form-label" for="ttl_schedule" data-i18n="settings.cache.schedule"></label>
+      <input class="homey-form-input" id="ttl_schedule" type="number" min="1" max="168" value="24">
+      <div class="input-hint" data-i18n="settings.cache.hint_hours"></div>
+    </div>
+
+    <div class="field row">
+      <label class="homey-form-label" for="ttl_standings" data-i18n="settings.cache.standings"></label>
+      <input class="homey-form-input" id="ttl_standings" type="number" min="1" max="168" value="24">
+      <div class="input-hint" data-i18n="settings.cache.hint_hours"></div>
+    </div>
+
+    <div class="field row">
+      <label class="homey-form-label" for="ttl_last_race" data-i18n="settings.cache.last_race"></label>
+      <input class="homey-form-input" id="ttl_last_race" type="number" min="1" max="168" value="24">
+      <div class="input-hint" data-i18n="settings.cache.hint_hours"></div>
+    </div>
+
+    <div class="field row">
+      <label class="homey-form-label" for="ttl_season" data-i18n="settings.cache.season"></label>
+      <input class="homey-form-input" id="ttl_season" type="number" min="1" max="168" value="6">
+      <div class="input-hint" data-i18n="settings.cache.hint_hours"></div>
+    </div>
+
+    <div class="field row">
+      <label class="homey-form-label" for="ttl_sprint" data-i18n="settings.cache.sprint"></label>
+      <input class="homey-form-input" id="ttl_sprint" type="number" min="1" max="168" value="24">
+      <div class="input-hint" data-i18n="settings.cache.hint_hours"></div>
+    </div>
+  </fieldset>
+
+  <div class="field row">
+    <button id="btn_save_ttl" class="homey-button-primary-full" data-i18n="settings.cache.save"></button>
+  </div>
+</div>
+
+<!-- ── Status tab ────────────────────────────────────────────────────── -->
+<div id="status" class="tabcontent">
+  <div class="status-grid">
+    <div class="status-card">
+      <div class="status-label" data-i18n="settings.status.connection"></div>
+      <div class="status-value">
+        <span id="dot_signalr" class="status-dot"></span>
+        <span id="val_signalr">—</span>
+      </div>
+    </div>
+
+    <div class="status-card">
+      <div class="status-label" data-i18n="settings.status.reconnects"></div>
+      <div class="status-value" id="val_reconnect_count">—</div>
+    </div>
+
+    <div class="status-card">
+      <div class="status-label" data-i18n="settings.status.last_message"></div>
+      <div class="status-value" id="val_last_message">—</div>
+    </div>
+
+    <div class="status-card">
+      <div class="status-label" data-i18n="settings.status.reconnect_state"></div>
+      <div class="status-value" id="val_reconnect_state">—</div>
+    </div>
+  </div>
+
+  <div class="status-refresh" id="status_refreshed_at"></div>
+</div>
+
+<!-- ── Account tab ──────────────────────────────────────────────────── -->
+<div id="account" class="tabcontent">
+
+  <!-- Auth status card -->
+  <div class="auth-status-card" id="auth_status_card">
+    <div class="auth-badge" id="auth_badge">
+      <span class="auth-dot" id="auth_dot"></span>
+      <span id="auth_label" data-i18n="settings.account.not_connected"></span>
+    </div>
+    <div class="auth-info" id="auth_info" style="display:none">
+      <div class="auth-info-row">
+        <span class="auth-info-label" data-i18n="settings.account.product"></span>
+        <span class="auth-info-value" id="auth_product">—</span>
+      </div>
+      <div class="auth-info-row">
+        <span class="auth-info-label" data-i18n="settings.account.expires"></span>
+        <span class="auth-info-value" id="auth_expires">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="field row" style="margin-top: 16px;">
+    <button id="btn_connect" class="homey-button-primary-full"
+            data-i18n="settings.account.connect"></button>
+  </div>
+
+  <div class="field row">
+    <button id="btn_logout" class="btn-secondary-full"
+            data-i18n="settings.account.logout"></button>
+  </div>
+
+  <p class="auth-hint" data-i18n="settings.account.hint"></p>
+</div>
+
+<script type="text/javascript">
+  // ── TTL defaults (hours) ────────────────────────────────────────────────
+  var TTL_DEFAULTS = {
+    SCHEDULE:  24,
+    STANDINGS: 24,
+    LAST_RACE: 24,
+    SEASON:     6,
+    SPRINT:    24,
+  };
+
+  // F1 auth relay URL — the popup login page
+  var F1_AUTH_RELAY_URL = 'https://f1login.monkeysoft.nl';
+
+  // Kept at module scope so setPage() can call them
+  var _Homey = null;
+
+  function applyStatus(data) {
+    if (!data) return;
+
+    var dot = document.getElementById('dot_signalr');
+    var val = document.getElementById('val_signalr');
+
+    if (data.connected) {
+      dot.className = 'status-dot connected';
+      val.textContent = _Homey ? _Homey.__('settings.status.connected') : 'Connected';
+    } else if (data.reconnecting) {
+      dot.className = 'status-dot reconnecting';
+      val.textContent = _Homey ? _Homey.__('settings.status.reconnecting') : 'Reconnecting…';
+    } else {
+      dot.className = 'status-dot disconnected';
+      val.textContent = _Homey ? _Homey.__('settings.status.disconnected') : 'Disconnected';
+    }
+
+    document.getElementById('val_reconnect_count').textContent =
+      data.reconnectCount != null ? data.reconnectCount : '—';
+
+    document.getElementById('val_last_message').textContent =
+      data.lastMessageAt ? new Date(data.lastMessageAt).toLocaleString() : '—';
+
+    document.getElementById('val_reconnect_state').textContent = data.reconnecting
+      ? (_Homey ? _Homey.__('settings.status.yes') : 'Yes')
+      : (_Homey ? _Homey.__('settings.status.no')  : 'No');
+
+    document.getElementById('status_refreshed_at').textContent =
+      (_Homey ? _Homey.__('settings.status.refreshed_at') : 'Updated at') +
+      ' ' + new Date().toLocaleTimeString();
+  }
+
+  function applyAuthStatus(data) {
+    var dot   = document.getElementById('auth_dot');
+    var label = document.getElementById('auth_label');
+    var info  = document.getElementById('auth_info');
+
+    if (data && data.authenticated) {
+      dot.className   = 'auth-dot connected';
+      label.textContent = data.product || (_Homey ? _Homey.__('settings.account.connected') : 'Connected');
+      document.getElementById('auth_product').textContent = data.product || '—';
+      document.getElementById('auth_expires').textContent = data.expires
+        ? new Date(data.expires).toLocaleDateString()
+        : '—';
+      info.style.display = 'block';
+    } else {
+      dot.className   = 'auth-dot disconnected';
+      label.textContent = _Homey ? _Homey.__('settings.account.not_connected') : 'Not connected';
+      info.style.display = 'none';
+    }
+  }
+
+  function loadStatus() {
+    if (!_Homey) return;
+    _Homey.get('f1:signalrStatus', function(err, result) {
+      if (err) return;
+      applyStatus(result);
+    });
+  }
+
+  function loadAuthStatus() {
+    if (!_Homey) return;
+    _Homey.get('f1auth:status', function(err, result) {
+      if (err) return;
+      applyAuthStatus(result);
+    });
+  }
+
+  function onHomeyReady(Homey) {
+    _Homey = Homey;
+
+    // ── i18n ────────────────────────────────────────────────────────────
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var t = Homey.__(key);
+      if (t && t !== key) el.textContent = t;
+    });
+
+    // ── Cache TTL tab ────────────────────────────────────────────────────
+    Homey.get('f1:ttl', function(err, stored) {
+      var vals = stored || {};
+      document.getElementById('ttl_schedule').value  = vals.SCHEDULE  || TTL_DEFAULTS.SCHEDULE;
+      document.getElementById('ttl_standings').value = vals.STANDINGS || TTL_DEFAULTS.STANDINGS;
+      document.getElementById('ttl_last_race').value = vals.LAST_RACE || TTL_DEFAULTS.LAST_RACE;
+      document.getElementById('ttl_season').value    = vals.SEASON    || TTL_DEFAULTS.SEASON;
+      document.getElementById('ttl_sprint').value    = vals.SPRINT    || TTL_DEFAULTS.SPRINT;
+    });
+
+    document.getElementById('btn_save_ttl').addEventListener('click', function() {
+      var ttl = {
+        SCHEDULE:  parseInt(document.getElementById('ttl_schedule').value,  10) || TTL_DEFAULTS.SCHEDULE,
+        STANDINGS: parseInt(document.getElementById('ttl_standings').value, 10) || TTL_DEFAULTS.STANDINGS,
+        LAST_RACE: parseInt(document.getElementById('ttl_last_race').value, 10) || TTL_DEFAULTS.LAST_RACE,
+        SEASON:    parseInt(document.getElementById('ttl_season').value,    10) || TTL_DEFAULTS.SEASON,
+        SPRINT:    parseInt(document.getElementById('ttl_sprint').value,    10) || TTL_DEFAULTS.SPRINT,
+      };
+      Homey.set('f1:ttl', ttl, function(err) {
+        if (err) return Homey.alert(err);
+        Homey.alert(Homey.__('settings.cache.saved'), 'info');
+      });
+    });
+
+    // ── Status tab ───────────────────────────────────────────────────────
+
+    // Load current status immediately on page open
+    loadStatus();
+
+    // Realtime updates pushed from app.js via homey.emit()
+    Homey.on('nl.monkeysoft.f1.signalr.status', function(data) {
+      applyStatus(data);
+    });
+
+    // ── Account tab ──────────────────────────────────────────────────────
+
+    loadAuthStatus();
+
+    // Real-time auth status updates from app.js
+    Homey.on('nl.monkeysoft.f1.auth.status', function(data) {
+      applyAuthStatus(data);
+    });
+
+    // Receive token posted back from the popup relay page
+    window.addEventListener('message', function(event) {
+      if (!event.data || event.data.type !== 'f1auth:token') return;
+      var token = event.data.subscriptionToken;
+      if (!token || typeof token !== 'string') return;
+      Homey.set('f1auth:token', token, function(err) {
+        if (err) return Homey.alert(err);
+        // app.js will broadcast the new status via f1auth:status
+      });
+    });
+
+    document.getElementById('btn_connect').addEventListener('click', function() {
+      var popup = window.open(
+        F1_AUTH_RELAY_URL,
+        'f1auth',
+        'width=480,height=640,popup=1,resizable=1'
+      );
+      if (!popup) {
+        Homey.alert(_Homey.__('settings.account.popup_blocked'));
+      }
+    });
+
+    document.getElementById('btn_logout').addEventListener('click', function() {
+      Homey.set('f1auth:token', null, function(err) {
+        if (err) return Homey.alert(err);
+        applyAuthStatus(null);
+      });
+    });
+
+    // ── Open default tab ─────────────────────────────────────────────────
+    document.getElementById('defaultOpen').click();
+
+    Homey.ready();
+  }
+
+  function setPage(evt, tabPage) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName('tabcontent');
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = 'none';
+    }
+
+    tablinks = document.getElementsByClassName('tablinks');
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(' active', '');
+    }
+
+    document.getElementById(tabPage).style.display = 'block';
+    evt.currentTarget.className += ' active';
+
+    if (tabPage === 'status') {
+      loadStatus();
+    }
+    if (tabPage === 'account') {
+      loadAuthStatus();
+    }
+  }
+</script>
+</body>
+</html>

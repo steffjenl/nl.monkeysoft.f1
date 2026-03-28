@@ -22,7 +22,14 @@
     "f1_tyre_compound",
     "f1_tyre_laps",
     "alarm_generic.pit_active",
-    "f1_pit_count"
+    "f1_pit_count",
+    "f1_car_speed",
+    "f1_car_rpm",
+    "f1_car_gear",
+    "f1_car_throttle",
+    "f1_car_brake",
+    "f1_car_drs",
+    "f1_car_on_track"
   ],
   "capabilitiesOptions": {
     "alarm_generic.pit_active": {

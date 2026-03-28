@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Konto"
+    },
+    "account": {
+      "not_connected": "Ikke forbundet",
+      "connected": "Forbundet",
+      "product": "Abonnement",
+      "expires": "Udløber",
+      "connect": "Opret forbindelse til F1 TV Pro",
+      "logout": "Log ud",
+      "hint": "Kræver et aktivt F1 TV Pro-abonnement. Tilslut din konto for at låse op for live-telemetri: hastighed, omdrejninger, gear, speeder, bremse og DRS.",
+      "popup_blocked": "Pop-up blev blokeret. Tillad pop-ups for denne side og prøv igen."
+    },
+    "cache": {
+      "legend": "Cache-varigheder",
+      "schedule": "Løbskalender",
+      "standings": "Stillinger (kører & konstruktør)",
+      "last_race": "Seneste løbsresultater",
+      "season": "Sæsonresultater",
+      "sprint": "Sprintresultater",
+      "hint_hours": "timer",
+      "save": "Gem",
+      "saved": "Cache-indstillinger gemt."
+    },
+    "status": {
+      "connection": "SignalR-forbindelse",
+      "reconnects": "Genforbindelsesforsøg",
+      "last_message": "Sidst modtaget besked",
+      "reconnect_state": "Genforbinder",
+      "connected": "Forbundet",
+      "disconnected": "Afbrudt",
+      "reconnecting": "Genforbinder…",
+      "yes": "Ja",
+      "no": "Nej",
+      "refreshed_at": "Opdateret kl."
+    }
+  },
   "app": {
     "name": "Formel 1 Live Timing",
     "description": "Bring Formel 1 live-data hjem: banestatus, race control, kørertider, depotstopp og vejr — alt som Homey-automatiseringer."

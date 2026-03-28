@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F1 TV Pro — Connect to Homey</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #242424;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: #aaa;
+      margin: 0 0 32px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: #bbb;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #f0f0f0;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: #E10600; }
+    input[type=password] { letter-spacing: 1px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #E10600;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .btn:hover:not(:disabled) { background: #b80500; }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    .status {
+      margin-top: 20px;
+      font-size: 13px;
+      min-height: 20px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: none;
+    }
+    .status.error   { background: rgba(225,6,0,0.15); color: #ff6b6b; display: block; }
+    .status.success { background: rgba(39,174,96,0.15); color: #6bcb8b; display: block; }
+    .status.info    { background: rgba(52,152,219,0.15); color: #7ec8e3; display: block; }
+    .divider {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 28px 0;
+    }
+    .legal {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .legal a { color: #888; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🏎</div>
+  <h1>Connect F1 TV Pro</h1>
+  <p class="subtitle">
+    Sign in with your F1 TV Pro account to unlock live telemetry
+    (car speed, RPM, gear, throttle, brake, DRS) in your Homey automations.
+  </p>
+
+  <form id="loginForm" autocomplete="on">
+    <div class="form-group">
+      <label for="email">F1 account email</label>
+      <input id="email" type="email" name="email" autocomplete="email"
+             placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password"
+             autocomplete="current-password" placeholder="••••••••" required>
+    </div>
+    <button class="btn" type="submit" id="btnLogin">Connect with F1 TV Pro</button>
+  </form>
+
+  <div id="status" class="status"></div>
+
+  <hr class="divider">
+  <p class="legal">
+    Your credentials are sent directly to the official Formula 1 API
+    (<code>api.formula1.com</code>) and are never stored by Homey or MonkeySoft.
+    This page has no backend; the token is passed to the Homey app via
+    <code>postMessage</code> and stored locally on your Homey.
+    <br><br>
+    Requires an active <a href="https://www.f1tv.formula1.com/" target="_blank" rel="noreferrer">F1 TV Pro</a> subscription.
+  </p>
+</div>
+
+<script>
+  'use strict';
+
+  var F1_AUTH_URL  = 'https://api.formula1.com/v2/account/subscriber/authenticate/by-password';
+  var F1_API_KEY   = 'fom-website';
+
+  function showStatus(msg, type) {
+    var el = document.getElementById('status');
+    el.textContent = msg;
+    el.className   = 'status ' + (type || 'info');
+  }
+
+  function hideStatus() {
+    document.getElementById('status').className = 'status';
+  }
+
+  function setLoading(on) {
+    var btn = document.getElementById('btnLogin');
+    btn.disabled    = on;
+    btn.textContent = on ? 'Connecting…' : 'Connect with F1 TV Pro';
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    hideStatus();
+
+    var email    = document.getElementById('email').value.trim();
+    var password = document.getElementById('password').value;
+
+    if (!email || !password) {
+      showStatus('Please fill in both fields.', 'error');
+      return;
+    }
+
+    setLoading(true);
+    showStatus('Authenticating…', 'info');
+
+    fetch(F1_AUTH_URL, {
+      method:  'POST',
+      headers: {
+        'apiKey':       F1_API_KEY,
+        'Content-Type': 'application/json',
+        'Accept':       'application/json',
+      },
+      body: JSON.stringify({
+        Login:    email,
+        Password: password,
+      }),
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      setLoading(false);
+
+      if (data.error) {
+        showStatus('Login failed: ' + (data.message || data.error), 'error');
+        return;
+      }
+
+      // The API returns subscriptionToken (JWT) in data.data.subscriptionToken
+      var token = (data.data || data).subscriptionToken;
+      if (!token) {
+        showStatus('Authentication succeeded but no subscription token was returned. '
+          + 'Make sure you have an active F1 TV Pro subscription.', 'error');
+        return;
+      }
+
+      showStatus('✓ Connected! You can close this window.', 'success');
+      document.getElementById('password').value = '';
+
+      // Send token to the Homey settings page that opened this popup
+      if (window.opener && !window.opener.closed) {
+        try {
+          window.opener.postMessage({ type: 'f1auth:token', subscriptionToken: token }, '*');
+        } catch (_) {}
+      }
+
+      setTimeout(function() { window.close(); }, 2000);
+    })
+    .catch(function(err) {
+      setLoading(false);
+      showStatus('Network error: ' + err.message + '. Check your internet connection.', 'error');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Car Speed",
+    "nl": "Auto snelheid",
+    "de": "Fahrzeuggeschwindigkeit",
+    "da": "Bilhastighed",
+    "es": "Velocidad del coche",
+    "fr": "Vitesse de la voiture",
+    "it": "Velocità auto",
+    "no": "Bilhastighet",
+    "pl": "Prędkość auta",
+    "pt": "Velocidade do carro",
+    "ru": "Скорость автомобиля",
+    "sv": "Bilhastighet"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": {
+    "en": "km/h"
+  },
+  "min": 0,
+  "max": 400,
+  "step": 1
+}

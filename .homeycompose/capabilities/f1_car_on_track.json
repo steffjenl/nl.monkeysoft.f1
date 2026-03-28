@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "On Track",
+    "nl": "Op de baan",
+    "de": "Auf der Strecke",
+    "da": "På banen",
+    "es": "En pista",
+    "fr": "En piste",
+    "it": "In pista",
+    "no": "På banen",
+    "pl": "Na torze",
+    "pt": "Na pista",
+    "ru": "На трассе",
+    "sv": "På banan"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

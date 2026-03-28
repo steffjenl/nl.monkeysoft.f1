@@ -2,5 +2,45 @@
   "app": {
     "name": "Formula 1 Live Timing",
     "description": "Bring Formula 1 live data into your home: track status, race control, driver timing, pit stops and weather — all as Homey automations."
+  },
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Account"
+    },
+    "account": {
+      "not_connected": "Not connected",
+      "connected": "Connected",
+      "product": "Subscription",
+      "expires": "Expires",
+      "connect": "Connect with F1 TV Pro",
+      "logout": "Log out",
+      "hint": "Requires an active F1 TV Pro subscription. Connect your account to unlock live telemetry: speed, RPM, gear, throttle, brake and DRS.",
+      "popup_blocked": "Pop-up was blocked. Please allow pop-ups for this page and try again."
+    },
+    "cache": {
+      "legend": "Cache durations",
+      "schedule": "Race schedule",
+      "standings": "Standings (driver & constructor)",
+      "last_race": "Last race results",
+      "season": "Season results",
+      "sprint": "Sprint results",
+      "hint_hours": "hours",
+      "save": "Save",
+      "saved": "Cache settings saved."
+    },
+    "status": {
+      "connection": "SignalR connection",
+      "reconnects": "Reconnect attempts",
+      "last_message": "Last message received",
+      "reconnect_state": "Reconnecting",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "reconnecting": "Reconnecting…",
+      "yes": "Yes",
+      "no": "No",
+      "refreshed_at": "Updated at"
+    }
   }
 }

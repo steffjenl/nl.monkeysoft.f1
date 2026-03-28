@@ -77,5 +77,7 @@ Requires Homey CLI (`npm i -g homey`) and a Homey device on your network.
 
 ## Credits
 
-Inspired by the [F1 Sensor](https://github.com/Nicxe/f1_sensor) Home Assistant integration by Nicxe.
+Inspired by the [F1 Sensor](https://github.com/Nicxe/f1_sensor) Home Assistant integration by Nicxe. And by [Fast-F1](https://github.com/theOehrly/Fast-F1) A python package for accessing and analyzing Formula 1 results, schedules, timing data and telemetry.
 
+## Notice
+Formula 1 for Homey is unofficial and are not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.

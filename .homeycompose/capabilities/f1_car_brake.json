@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Braking",
+    "nl": "Remmen",
+    "de": "Bremsen",
+    "da": "Bremsning",
+    "es": "Frenando",
+    "fr": "Freinage",
+    "it": "In frenata",
+    "no": "Bremsing",
+    "pl": "Hamowanie",
+    "pt": "A travar",
+    "ru": "Торможение",
+    "sv": "Bromsning"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

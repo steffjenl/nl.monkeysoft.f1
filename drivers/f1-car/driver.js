@@ -11,8 +11,16 @@ class F1CarDriver extends Homey.Driver {
     this._lapCompleted     = this.homey.flow.getDeviceTriggerCard('driver_lap_completed');
     this._positionChanged  = this.homey.flow.getDeviceTriggerCard('driver_position_changed');
     this._fastestLap       = this.homey.flow.getDeviceTriggerCard('driver_fastest_lap');
+    this._drsActivated     = this.homey.flow.getDeviceTriggerCard('drs_activated');
+    this._wentOffTrack     = this.homey.flow.getDeviceTriggerCard('driver_went_off_track');
+    this._onTrackAgain     = this.homey.flow.getDeviceTriggerCard('driver_on_track_again');
 
     // Conditions
+    this.homey.flow.getConditionCard('driver_is_on_track')
+      .registerRunListener((args) => {
+        return !!args.device.getCapabilityValue('f1_car_on_track');
+      });
+
     this.homey.flow.getConditionCard('driver_is_in_pit')
       .registerRunListener((args) => {
         return !!args.device.getCapabilityValue('alarm_generic.pit_active');

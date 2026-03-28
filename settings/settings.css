@@ -1,0 +1,216 @@
+/* ── Tab navigation ──────────────────────────────────────────────────────── */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.tab button {
+  background-color: #f0f0f0;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 18px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #E10600;
+  color: white;
+  font-weight: bold;
+}
+
+/* ── Tab content ────────────────────────────────────────────────────────── */
+.tabcontent {
+  display: none;
+  padding: 16px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* ── Form layout ────────────────────────────────────────────────────────── */
+.field.row {
+  margin-bottom: 12px;
+}
+
+.homey-form-fieldset {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.homey-form-legend {
+  font-weight: bold;
+  padding: 0 4px;
+}
+
+.homey-form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #444;
+}
+
+.homey-form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=number].homey-form-input {
+  max-width: 160px;
+}
+
+.input-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.homey-button-primary-full {
+  width: 100%;
+  padding: 10px;
+  background-color: #E10600;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.homey-button-primary-full:hover {
+  background-color: #b80500;
+}
+
+/* ── Status tab ─────────────────────────────────────────────────────────── */
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.status-card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.status-card .status-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.status-card .status-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: #ccc;
+  vertical-align: middle;
+}
+
+.status-dot.connected    { background: #27ae60; }
+.status-dot.disconnected { background: #c0392b; }
+.status-dot.reconnecting { background: #e67e22; }
+
+.status-refresh {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #aaa;
+  text-align: right;
+}
+
+/* ── Account / F1 TV Pro tab ─────────────────────────────────────────────── */
+.auth-status-card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 8px;
+}
+
+.auth-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #222;
+}
+
+.auth-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  flex-shrink: 0;
+}
+
+.auth-dot.connected    { background: #27ae60; }
+.auth-dot.disconnected { background: #aaa; }
+
+.auth-info {
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.auth-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.auth-info-label { color: #888; }
+.auth-info-value { color: #333; font-weight: bold; }
+
+.btn-secondary-full {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 0;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-secondary-full:hover {
+  background-color: #f5f5f5;
+  border-color: #aaa;
+}
+
+.auth-hint {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 20px;
+  line-height: 1.5;
+}

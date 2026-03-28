@@ -1,0 +1,26 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Engine RPM",
+    "nl": "Motor toerental",
+    "de": "Motordrehzahl",
+    "da": "Motoromdrejninger",
+    "es": "RPM del motor",
+    "fr": "Régime moteur",
+    "it": "Giri motore",
+    "no": "Motor turtall",
+    "pl": "Obroty silnika",
+    "pt": "RPM do motor",
+    "ru": "Обороты двигателя",
+    "sv": "Motorvarvtal"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": {
+    "en": "RPM"
+  },
+  "min": 0,
+  "max": 20000,
+  "step": 1
+}

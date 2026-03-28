@@ -1,0 +1,25 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "DRS",
+    "nl": "DRS",
+    "de": "DRS",
+    "da": "DRS",
+    "es": "DRS",
+    "fr": "DRS",
+    "it": "DRS",
+    "no": "DRS",
+    "pl": "DRS",
+    "pt": "DRS",
+    "ru": "DRS",
+    "sv": "DRS"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "inactive",  "title": { "en": "Inactive",  "nl": "Inactief",   "de": "Inaktiv",     "da": "Inaktiv",     "es": "Inactivo",    "fr": "Inactif",    "it": "Inattivo",   "no": "Inaktiv",    "pl": "Nieaktywny", "pt": "Inativo",    "ru": "Неактивно",   "sv": "Inaktiv"   } },
+    { "id": "available", "title": { "en": "Available", "nl": "Beschikbaar","de": "Verfügbar",   "da": "Tilgængelig", "es": "Disponible",  "fr": "Disponible", "it": "Disponibile","no": "Tilgjengelig","pl": "Dostępny",  "pt": "Disponível", "ru": "Доступно",    "sv": "Tillgänglig"} },
+    { "id": "active",    "title": { "en": "Active",    "nl": "Actief",     "de": "Aktiv",       "da": "Aktiv",       "es": "Activo",      "fr": "Actif",      "it": "Attivo",     "no": "Aktiv",      "pl": "Aktywny",    "pt": "Ativo",      "ru": "Активно",     "sv": "Aktiv"     } }
+  ]
+}

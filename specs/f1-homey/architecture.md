@@ -8,39 +8,57 @@ Data is sourced from two upstream systems:
 
 | Source | Protocol | URL |
 |---|---|---|
-| F1 Live Timing | SignalR 2.x (classic ASP.NET) over WebSocket | `https://livetiming.formula1.com/signalr` |
+| F1 Live Timing | SignalR Core over WebSocket (`@microsoft/signalr`) | `https://livetiming.formula1.com/signalrcore` |
 | Jolpica (Ergast-compatible REST) | HTTPS/JSON | `https://api.jolpi.ca/ergast/f1/` |
+
+Authenticated telemetry streams (`CarData.z`, `Position.z`) require an F1 TV Pro subscription token managed by `F1AuthClient`.
 
 ---
 
 ## High-Level Diagram
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   Homey App Process                  │
-│                                                      │
-│  ┌──────────────────────┐  ┌──────────────────────┐ │
-│  │  LiveTimingClient    │  │   JolpicaClient       │ │
-│  │  (lib/LiveTiming     │  │   (lib/Jolpica        │ │
-│  │   Client.js)         │  │    Client.js)         │ │
-│  │  SignalR subscriber  │  │  TTL-cached HTTP GET  │ │
-│  └──────────┬───────────┘  └──────────────────────┘ │
-│             │ pub/sub per stream                     │
-│  ┌──────────▼──────────────────────────────────────┐ │
-│  │ Devices                                         │ │
-│  │  F1TrackDevice   ← TrackStatus, WeatherData,    │ │
-│  │                     LapCount                    │ │
-│  │  F1SessionDevice ← SessionStatus, SessionInfo,  │ │
-│  │                     ExtrapolatedClock,          │ │
-│  │                     RaceControlMessages,        │ │
-│  │                     TimingData (fastest lap)    │ │
-│  │  F1CarDevice     ← DriverList, TimingData,      │ │
-│  │                     TyreStintSeries, TopThree   │ │
-│  └─────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│                    Homey App Process                      │
+│                                                           │
+│  ┌──────────────────┐  ┌──────────────┐  ┌────────────┐  │
+│  │ LiveTimingClient │  │ JolpicaClient│  │F1AuthClient│  │
+│  │  @microsoft/     │  │  TTL-cached  │  │ JWT token  │  │
+│  │  signalr Core    │  │  HTTP GET    │  │ lifecycle  │  │
+│  └────────┬─────────┘  └──────────────┘  └─────┬──────┘  │
+│           │ pub/sub per stream                  │token    │
+│           │◄────────────────────────────────────┘         │
+│  ┌────────▼─────────────────────────────────────────────┐ │
+│  │ Devices                                              │ │
+│  │  F1TrackDevice   ← TrackStatus, WeatherData,         │ │
+│  │                     LapCount                         │ │
+│  │  F1SessionDevice ← SessionStatus, SessionInfo,       │ │
+│  │                     ExtrapolatedClock,               │ │
+│  │                     RaceControlMessages              │ │
+│  │  F1CarDevice     ← TimingData, TyreStintSeries,      │ │
+│  │                     CarData.z*, Position.z*          │ │
+│  │                     (* F1 TV Pro required)           │ │
+│  └──────────────────────────────────────────────────────┘ │
+└──────────────────────────────────────────────────────────┘
          ↑                          ↑
-F1 Live Timing (SignalR)    Jolpica REST (HTTP)
+F1 Live Timing (SignalR Core)   Jolpica REST (HTTP)
 ```
+
+---
+
+## F1 TV Pro Authentication
+
+Users with an F1 TV Pro subscription can unlock live telemetry streams. Authentication uses a popup-based relay flow:
+
+1. User clicks "Connect with F1 TV Pro" in the **Account** settings tab.
+2. A popup opens the relay page (`auth/index.html`) which posts credentials to the F1 API (`api.formula1.com`).
+3. The relay page calls `window.opener.postMessage({ type: 'f1auth:token', subscriptionToken })`.
+4. The settings page receives the JWT and stores it via `Homey.set('f1auth:token', jwt)`.
+5. `F1AuthClient` (watching settings changes) emits `tokenChanged(jwt)`.
+6. `app.js` calls `liveClient.setAuthToken(jwt)` → triggers a SignalR reconnect with `accessTokenFactory`.
+7. The server now delivers `CarData.z` and `Position.z` streams.
+
+The JWT is parsed (no signature verification) to extract expiry and subscription product name. An expiry timer fires `tokenExpired` 5 minutes before the token expires.
 
 ---
 

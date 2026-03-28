@@ -4,6 +4,50 @@ All custom capabilities are defined in `.homeycompose/capabilities/`. They follo
 
 ---
 
+## Live Telemetry Capabilities (F1 TV Pro required)
+
+These capabilities are populated from the `CarData.z` and `Position.z` SignalR Core streams. They deliver data only when the user has connected an active F1 TV Pro subscription via the Account settings tab.
+
+### `f1_car_speed`
+- **Type**: `number`
+- **Units**: km/h
+- **Source**: `CarData.z` → channel `0`
+- **Description**: Current car speed in km/h.
+
+### `f1_car_rpm`
+- **Type**: `number`
+- **Units**: RPM
+- **Source**: `CarData.z` → channel `2`
+- **Description**: Engine RPM.
+
+### `f1_car_gear`
+- **Type**: `number`
+- **Source**: `CarData.z` → channel `3`
+- **Description**: Current gear (0 = neutral, 1–8).
+
+### `f1_car_throttle`
+- **Type**: `number`
+- **Units**: %
+- **Source**: `CarData.z` → channel `4`
+- **Description**: Throttle application (0–100).
+
+### `f1_car_brake`
+- **Type**: `boolean`
+- **Source**: `CarData.z` → channel `5`
+- **Description**: `true` when brakes are applied.
+
+### `f1_car_drs`
+- **Type**: `boolean`
+- **Source**: `CarData.z` → channel `45`
+- **Description**: `true` when DRS is open (values 12 or 14 in the raw feed). Triggers the `drs_activated` flow trigger on rising edge.
+
+### `f1_car_on_track`
+- **Type**: `boolean`
+- **Source**: `Position.z` → `Status` field (`"OnTrack"`)
+- **Description**: `true` when the driver is on the circuit. Triggers `driver_went_off_track` / `driver_on_track_again` on changes.
+
+---
+
 ## Enum Capabilities
 
 ### `f1_track_status`

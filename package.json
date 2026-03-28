@@ -10,7 +10,8 @@
     "lint": "homey app validate"
   },
   "dependencies": {
-    "signalr-no-jquery": "^0.1.2"
+    "@microsoft/signalr": "^10.0.0",
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "homey": "latest"

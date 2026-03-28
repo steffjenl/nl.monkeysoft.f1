@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Konto"
+    },
+    "account": {
+      "not_connected": "Nie połączono",
+      "connected": "Połączono",
+      "product": "Subskrypcja",
+      "expires": "Wygasa",
+      "connect": "Połącz z F1 TV Pro",
+      "logout": "Wyloguj",
+      "hint": "Wymaga aktywnej subskrypcji F1 TV Pro. Połącz swoje konto, aby odblokować telemetrię na żywo: prędkość, obroty, bieg, gaz, hamulec i DRS.",
+      "popup_blocked": "Wyskakujące okno zostało zablokowane. Zezwól na wyskakujące okna dla tej strony i spróbuj ponownie."
+    },
+    "cache": {
+      "legend": "Czasy pamięci podręcznej",
+      "schedule": "Kalendarz wyścigów",
+      "standings": "Klasyfikacje (kierowcy i konstruktorzy)",
+      "last_race": "Ostatnie wyniki wyścigu",
+      "season": "Wyniki sezonu",
+      "sprint": "Wyniki sprintu",
+      "hint_hours": "godziny",
+      "save": "Zapisz",
+      "saved": "Ustawienia pamięci podręcznej zapisane."
+    },
+    "status": {
+      "connection": "Połączenie SignalR",
+      "reconnects": "Próby ponownego połączenia",
+      "last_message": "Ostatnia odebrana wiadomość",
+      "reconnect_state": "Ponowne łączenie",
+      "connected": "Połączono",
+      "disconnected": "Rozłączono",
+      "reconnecting": "Łączenie…",
+      "yes": "Tak",
+      "no": "Nie",
+      "refreshed_at": "Zaktualizowano o"
+    }
+  },
   "app": {
     "name": "Formuła 1 Live Timing",
     "description": "Przenieś dane na żywo Formuły 1 do swojego domu: status toru, dyrekcja wyścigu, czasy kierowców, pit stopy i pogoda — wszystko jako automatyzacje Homey."

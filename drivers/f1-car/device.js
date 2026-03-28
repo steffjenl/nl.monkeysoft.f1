@@ -6,6 +6,12 @@ const Homey = require('homey');
  * F1CarDevice — represents a single F1 driver/car.
  * The racing number is stored in device data (set during pairing)
  * and used to filter live timing stream data.
+ *
+ * Subscribes to:
+ *  - TimingData      (position, lap times, pit state)
+ *  - TyreStintSeries (compound, tyre age)
+ *  - CarData.z       (speed, RPM, gear, throttle, brake, DRS) — requires F1 TV Pro
+ *  - Position.z      (on-track status, X/Y/Z) — requires F1 TV Pro
  */
 class F1CarDevice extends Homey.Device {
 
@@ -14,6 +20,8 @@ class F1CarDevice extends Homey.Device {
     this._racingNumber = String(this.getData().racingNumber);
     this._prevPosition = null;
     this._prevInPit    = false;
+    this._prevOnTrack  = null;
+    this._prevDrs      = false;
     this._unsubs       = [];
 
     await this.homey.app.deviceConnected();
@@ -22,6 +30,8 @@ class F1CarDevice extends Homey.Device {
     this._unsubs.push(
       lc.subscribe('TimingData',      this._onTimingData.bind(this)),
       lc.subscribe('TyreStintSeries', this._onTyreStintSeries.bind(this)),
+      lc.subscribe('CarData.z',       this._onCarData.bind(this)),
+      lc.subscribe('Position.z',      this._onPositionData.bind(this)),
     );
   }
 
@@ -105,6 +115,49 @@ class F1CarDevice extends Homey.Device {
     if (latest.TotalLaps !== undefined) this._setCapSafe('f1_tyre_laps', parseInt(latest.TotalLaps, 10) || 0);
   }
 
+  // ─── CarData.z (live telemetry — F1 TV Pro) ──────────────────────────────────
+  // Payload from LiveTimingClient: { driverNumber, Speed, RPM, nGear, Throttle, Brake, DRS }
+
+  async _onCarData(payload) {
+    if (!payload || payload.driverNumber !== this._racingNumber) return;
+
+    if (payload.Speed    !== undefined) await this._setCapSafe('f1_car_speed',    payload.Speed);
+    if (payload.RPM      !== undefined) await this._setCapSafe('f1_car_rpm',      payload.RPM);
+    if (payload.nGear    !== undefined) await this._setCapSafe('f1_car_gear',     payload.nGear);
+    if (payload.Throttle !== undefined) await this._setCapSafe('f1_car_throttle', payload.Throttle);
+    if (payload.Brake    !== undefined) await this._setCapSafe('f1_car_brake',    !!payload.Brake);
+
+    // DRS: 0=inactive, 8/10=available (not open), 12/14=active (open)
+    if (payload.DRS !== undefined) {
+      const drsActive = payload.DRS >= 10 && payload.DRS % 2 === 0 && payload.DRS >= 12;
+      await this._setCapSafe('f1_car_drs', drsActive);
+      if (drsActive && !this._prevDrs) {
+        await this.driver._drsActivated.trigger(this, {}, {});
+      }
+      this._prevDrs = drsActive;
+    }
+  }
+
+  // ─── Position.z (on-track status — F1 TV Pro) ────────────────────────────────
+  // Payload from LiveTimingClient: { driverNumber, Status, X, Y, Z }
+  // Status: 'OnTrack' | 'OffTrack' | 'Stopped'
+
+  async _onPositionData(payload) {
+    if (!payload || payload.driverNumber !== this._racingNumber) return;
+
+    if (payload.Status !== undefined) {
+      const onTrack = payload.Status === 'OnTrack';
+      await this._setCapSafe('f1_car_on_track', onTrack);
+      if (onTrack !== this._prevOnTrack) {
+        if (this._prevOnTrack !== null) {
+          if (!onTrack) await this.driver._wentOffTrack.trigger(this, {}, {});
+          else           await this.driver._onTrackAgain.trigger(this, {}, {});
+        }
+        this._prevOnTrack = onTrack;
+      }
+    }
+  }
+
   // ─── Utility ────────────────────────────────────────────────────────────────
 
   async _setCapSafe(cap, value) {
@@ -117,6 +170,8 @@ class F1CarDevice extends Homey.Device {
   }
 
 }
+
+module.exports = F1CarDevice;
 
 module.exports = F1CarDevice;
 

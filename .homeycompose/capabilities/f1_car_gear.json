@@ -1,0 +1,23 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Gear",
+    "nl": "Versnelling",
+    "de": "Gang",
+    "da": "Gear",
+    "es": "Marcha",
+    "fr": "Rapport",
+    "it": "Marcia",
+    "no": "Gir",
+    "pl": "Bieg",
+    "pt": "Marcha",
+    "ru": "Передача",
+    "sv": "Växel"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "min": 0,
+  "max": 8,
+  "step": 1
+}

@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Account"
+    },
+    "account": {
+      "not_connected": "Niet verbonden",
+      "connected": "Verbonden",
+      "product": "Abonnement",
+      "expires": "Verloopt op",
+      "connect": "Verbinden met F1 TV Pro",
+      "logout": "Uitloggen",
+      "hint": "Vereist een actief F1 TV Pro-abonnement. Verbind je account om live telemetrie te ontgrendelen: snelheid, toeren, versnelling, gas, rem en DRS.",
+      "popup_blocked": "Pop-up werd geblokkeerd. Sta pop-ups toe voor deze pagina en probeer opnieuw."
+    },
+    "cache": {
+      "legend": "Cache-duur",
+      "schedule": "Racekalender",
+      "standings": "Stand (rijder & constructor)",
+      "last_race": "Laatste race resultaten",
+      "season": "Seizoensresultaten",
+      "sprint": "Sprintresultaten",
+      "hint_hours": "uur",
+      "save": "Opslaan",
+      "saved": "Cache-instellingen opgeslagen."
+    },
+    "status": {
+      "connection": "SignalR-verbinding",
+      "reconnects": "Herverbindingspogingen",
+      "last_message": "Laatste ontvangen bericht",
+      "reconnect_state": "Herverbinden",
+      "connected": "Verbonden",
+      "disconnected": "Verbroken",
+      "reconnecting": "Herverbinden…",
+      "yes": "Ja",
+      "no": "Nee",
+      "refreshed_at": "Bijgewerkt om"
+    }
+  },
   "app": {
     "name": "Formule 1 Live Timing",
     "description": "Haal Formule 1 live-data in huis: trackstatus, race control, coureurstijden, pitstops en weer — allemaal als Homey-automatiseringen."

@@ -29,9 +29,25 @@
       "tokens": [
         { "name": "lap_time", "type": "string", "title": { "en": "Lap time", "nl": "Rondetijd", "de": "Rundenzeit", "da": "Omgangstid", "es": "Tiempo de vuelta", "fr": "Temps au tour", "it": "Tempo sul giro", "no": "Rundetid", "pl": "Czas okrążenia", "pt": "Tempo de volta", "ru": "Время круга", "sv": "Varvtid" } }
       ]
+    },
+    {
+      "id": "drs_activated",
+      "title": { "en": "DRS activated", "nl": "DRS geactiveerd", "de": "DRS aktiviert", "da": "DRS aktiveret", "es": "DRS activado", "fr": "DRS activé", "it": "DRS attivato", "no": "DRS aktivert", "pl": "DRS aktywowany", "pt": "DRS ativado", "ru": "DRS активирован", "sv": "DRS aktiverat" }
+    },
+    {
+      "id": "driver_went_off_track",
+      "title": { "en": "Driver went off track", "nl": "Coureur reed van de baan", "de": "Fahrer verließ die Strecke", "da": "Køreren forlod banen", "es": "El piloto salió de la pista", "fr": "Le pilote est sorti de la piste", "it": "Il pilota è uscito dalla pista", "no": "Kjøreren forlot banen", "pl": "Kierowca zjechał z toru", "pt": "O piloto saiu da pista", "ru": "Гонщик покинул трассу", "sv": "Föraren lämnade banan" }
+    },
+    {
+      "id": "driver_on_track_again",
+      "title": { "en": "Driver is back on track", "nl": "Coureur is terug op de baan", "de": "Fahrer ist zurück auf der Strecke", "da": "Køreren er tilbage på banen", "es": "El piloto ha vuelto a la pista", "fr": "Le pilote est revenu sur la piste", "it": "Il pilota è tornato in pista", "no": "Kjøreren er tilbake på banen", "pl": "Kierowca wrócił na tor", "pt": "O piloto voltou à pista", "ru": "Гонщик вернулся на трассу", "sv": "Föraren är tillbaka på banan" }
     }
   ],
   "conditions": [
+    {
+      "id": "driver_is_on_track",
+      "title": { "en": "Driver !{{is|isn't}} on track", "nl": "Coureur !{{is|is niet}} op de baan", "de": "Fahrer !{{ist|ist nicht}} auf der Strecke", "da": "Køreren !{{er|er ikke}} på banen", "es": "El piloto !{{está|no está}} en pista", "fr": "Le pilote !{{est|n'est pas}} en piste", "it": "Il pilota !{{is|isn't}} in pista", "no": "Kjøreren !{{er|er ikke}} på banen", "pl": "Kierowca !{{jest|nie jest}} na torze", "pt": "O piloto !{{está|não está}} na pista", "ru": "Гонщик !{{на|не на}} трассе", "sv": "Föraren !{{is|isn't}} på banan" }
+    },
     {
       "id": "driver_is_in_pit",
       "title": { "en": "Driver !{{is|isn't}} in pit", "nl": "Coureur !{{is|is niet}} in de pitstraat", "de": "Fahrer !{{ist|ist nicht}} in der Box", "da": "Kører !{{er|er ikke}} i depotet", "es": "Piloto !{{está|no está}} en el pit", "fr": "Pilote !{{est|n'est pas}} dans les stands", "it": "Pilota !{{is|isn't}} ai box", "no": "Fører !{{er|er ikke}} i depået", "pl": "Kierowca !{{jest|nie jest}} w boksach", "pt": "Piloto !{{está|não está}} nos boxes", "ru": "Гонщик !{{в|не в}} пит-лейне", "sv": "Förare !{{is|isn't}} i depån" }
@@ -71,3 +87,4 @@
   ],
   "actions": []
 }
+

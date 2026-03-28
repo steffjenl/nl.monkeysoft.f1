@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Konto"
+    },
+    "account": {
+      "not_connected": "Nicht verbunden",
+      "connected": "Verbunden",
+      "product": "Abonnement",
+      "expires": "Läuft ab am",
+      "connect": "Mit F1 TV Pro verbinden",
+      "logout": "Abmelden",
+      "hint": "Erfordert ein aktives F1 TV Pro-Abonnement. Verbinde dein Konto, um Live-Telemetrie freizuschalten: Geschwindigkeit, Drehzahl, Gang, Gas, Bremse und DRS.",
+      "popup_blocked": "Popup wurde blockiert. Bitte erlaube Popups für diese Seite und versuche es erneut."
+    },
+    "cache": {
+      "legend": "Cache-Zeiten",
+      "schedule": "Rennkalender",
+      "standings": "Wertung (Fahrer & Konstrukteur)",
+      "last_race": "Letztes Rennergebnis",
+      "season": "Saisoner gebnisse",
+      "sprint": "Sprintersgebnisse",
+      "hint_hours": "Stunden",
+      "save": "Speichern",
+      "saved": "Cache-Einstellungen gespeichert."
+    },
+    "status": {
+      "connection": "SignalR-Verbindung",
+      "reconnects": "Verbindungsversuche",
+      "last_message": "Letzte empfangene Nachricht",
+      "reconnect_state": "Erneut verbinden",
+      "connected": "Verbunden",
+      "disconnected": "Getrennt",
+      "reconnecting": "Verbinde…",
+      "yes": "Ja",
+      "no": "Nein",
+      "refreshed_at": "Aktualisiert um"
+    }
+  },
   "app": {
     "name": "Formel 1 Live Timing",
     "description": "Hol dir Formel-1-Live-Daten ins Smarthome: Streckenstatus, Rennkontrolle, Fahrerzeiten, Boxenstopps und Wetter — alles als Homey-Automationen."

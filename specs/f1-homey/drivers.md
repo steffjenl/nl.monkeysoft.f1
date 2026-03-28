@@ -86,33 +86,42 @@ The `ExtrapolatedClock` stream delivers updates roughly every second during a li
 
 ---
 
-## F1 Car Data (`f1-car`)
+## F1 Car (`f1-car`)
 
-**Purpose**: Tracks all driver positions, tyre compounds, pit stops, and fastest lap across the field.
+**Purpose**: Tracks all driver positions, tyre compounds, pit stops, fastest lap, and live telemetry across the field.
 
-**Device name**: `F1 Car Data`  
+**Device name**: `F1 Car`  
 **Device data ID**: `f1-car`
 
 ### Capabilities
 
-| Capability | Type | Description |
-|---|---|---|
-| `f1_drivers_json` | string (JSON) | Full driver state map — see [data-schemas.md](data-schemas.md) |
-| `f1_fastest_lap_time` | string | Fastest lap time in field |
-| `f1_fastest_lap_driver` | string | Driver number holding fastest lap |
-| `alarm_generic.pit_active` | boolean | A driver is currently in pit |
-| `f1_tyre_compound.p1` | enum | P1 driver tyre compound |
-| `f1_tyre_compound.p2` | enum | P2 driver tyre compound |
-| `f1_tyre_compound.p3` | enum | P3 driver tyre compound |
+| Capability | Type | Description | Requires F1 TV Pro |
+|---|---|---|---|
+| `f1_drivers_json` | string (JSON) | Full driver state map — see [data-schemas.md](data-schemas.md) | No |
+| `f1_fastest_lap_time` | string | Fastest lap time in field | No |
+| `f1_fastest_lap_driver` | string | Driver number holding fastest lap | No |
+| `alarm_generic.pit_active` | boolean | A driver is currently in pit | No |
+| `f1_tyre_compound.p1` | enum | P1 driver tyre compound | No |
+| `f1_tyre_compound.p2` | enum | P2 driver tyre compound | No |
+| `f1_tyre_compound.p3` | enum | P3 driver tyre compound | No |
+| `f1_car_speed` | number | Speed in km/h | Yes |
+| `f1_car_rpm` | number | Engine RPM | Yes |
+| `f1_car_gear` | number | Current gear (0 = neutral) | Yes |
+| `f1_car_throttle` | number | Throttle position 0–100% | Yes |
+| `f1_car_brake` | number | Brake applied 0 or 1 | Yes |
+| `f1_car_drs` | number | DRS status value (12/14 = open) | Yes |
+| `f1_car_on_track` | boolean | Driver is on track (not off track/stopped) | Yes |
 
 ### Subscribed Streams
 
-| Stream | Data used |
-|---|---|
-| `DriverList` | `Tla` (short name), `TeamName`, `RacingNumber` |
-| `TimingData` | `Lines[n]`: Position, LastLapTime, BestLapTime, GapToLeader, InPit, NumberOfPitStops, Sectors |
-| `TyreStintSeries` | Latest stint per driver: `Compound`, `TotalLaps` |
-| `TopThree` | `Lines` — top 3 positions for `top_three_updated` trigger |
+| Stream | Data used | Requires F1 TV Pro |
+|---|---|---|
+| `DriverList` | `Tla` (short name), `TeamName`, `RacingNumber` | No |
+| `TimingData` | `Lines[n]`: Position, LastLapTime, BestLapTime, GapToLeader, InPit, NumberOfPitStops, Sectors | No |
+| `TyreStintSeries` | Latest stint per driver: `Compound`, `TotalLaps` | No |
+| `TopThree` | `Lines` — top 3 positions for `top_three_updated` trigger | No |
+| `CarData.z` | Per-driver channel map: Speed, RPM, Gear, Throttle, Brake, DRS | Yes |
+| `Position.z` | Per-driver position and on-track status | Yes |
 
 ### State Management
 
@@ -121,5 +130,7 @@ The `ExtrapolatedClock` stream delivers updates roughly every second during a li
 1. `DriverList` populates `ShortName` and `TeamName`
 2. `TimingData` delivers **incremental deltas** — only changed fields are present; the device merges these into the existing state
 3. `TyreStintSeries` updates `TyreCompound` and `TyreLaps` per driver
+4. `CarData.z` updates live telemetry values and fires `drs_activated` trigger on DRS state change
+5. `Position.z` updates `f1_car_on_track` capability and fires `driver_went_off_track` / `driver_on_track_again` triggers
 
-After each update, the entire map is serialised to JSON and written to `f1_drivers_json`.
+After each public-data update, the entire map is serialised to JSON and written to `f1_drivers_json`.

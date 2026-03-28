@@ -54,24 +54,31 @@ _★ highlighted (shows in device overview)_
 
 ---
 
-## F1 Car Data — Flow Cards
+## F1 Car — Flow Cards
 
 ### Triggers
 
 | Card ID | Title | Tokens |
 |---|---|---|
-| `driver_entered_pit` | Driver entered pit lane | `driver_number`, `driver_name` |
-| `driver_exited_pit` | Driver exited pit lane | `driver_number`, `driver_name` |
-| `fastest_lap_set` | New fastest lap set ★ | `driver_number`, `driver_name`, `lap_time` |
-| `position_change` | Driver position changed | `driver_number`, `driver_name`, `position` |
-| `top_three_updated` | Top 3 positions updated | `p1_driver`, `p2_driver`, `p3_driver` |
+| `driver_entered_pit` | Entered pit lane | — |
+| `driver_exited_pit` | Exited pit lane | — |
+| `driver_lap_completed` | Completed a lap | `lap_time: string`, `position: number` |
+| `driver_position_changed` | Position changed | `position: number` |
+| `driver_fastest_lap` | Set personal best lap | `lap_time: string` |
+| `drs_activated` ★ | DRS activated (F1 TV Pro) | — |
+| `driver_went_off_track` | Driver went off track (F1 TV Pro) | — |
+| `driver_on_track_again` | Driver is back on track (F1 TV Pro) | — |
+
+_★ only fires when F1 TV Pro token is present_
 
 ### Conditions
 
 | Card ID | Title | Args |
 |---|---|---|
-| `driver_is_in_pit` | Driver is/isn't in pit | `driver_number: text` |
-| `driver_tyre_compound_is` | Driver tyre compound is/isn't | `driver_number: text`, `compound` dropdown |
+| `driver_is_on_track` | Driver is/isn't on track | — |
+| `driver_is_in_pit` | Driver is/isn't in pit | — |
+| `driver_tyre_compound_is` | Tyre compound is/isn't | `compound` dropdown |
+| `driver_position_is_in_top` | Position is/isn't in top N | `top_n: number` |
 
 ---
 
@@ -103,7 +110,7 @@ THEN  Phone: Send notification "The race has started!"
 ### Announce fastest lap
 
 ```
-WHEN  [F1 Car Data] New fastest lap set
+WHEN  [F1 Car] New fastest lap set
 THEN  Google Home: Say "Fastest lap by driver [lap_time] seconds"
 ```
 

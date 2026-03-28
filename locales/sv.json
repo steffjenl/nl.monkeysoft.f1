@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Status",
+      "account": "Konto"
+    },
+    "account": {
+      "not_connected": "Inte ansluten",
+      "connected": "Ansluten",
+      "product": "Prenumeration",
+      "expires": "Löper ut",
+      "connect": "Anslut med F1 TV Pro",
+      "logout": "Logga ut",
+      "hint": "Kräver en aktiv F1 TV Pro-prenumeration. Anslut ditt konto för att låsa upp live-telemetri: hastighet, varvtal, växel, gas, broms och DRS.",
+      "popup_blocked": "Pop-up blockerades. Tillåt pop-ups för den här sidan och försök igen."
+    },
+    "cache": {
+      "legend": "Cache-varaktigheter",
+      "schedule": "Tävlingskalender",
+      "standings": "Ställningar (förare & konstruktör)",
+      "last_race": "Senaste tävlingsresultat",
+      "season": "Säsongsresultat",
+      "sprint": "Sprintresultat",
+      "hint_hours": "timmar",
+      "save": "Spara",
+      "saved": "Cache-inställningar sparade."
+    },
+    "status": {
+      "connection": "SignalR-anslutning",
+      "reconnects": "Återanslutningsförsök",
+      "last_message": "Senast mottaget meddelande",
+      "reconnect_state": "Återansluter",
+      "connected": "Ansluten",
+      "disconnected": "Frånkopplad",
+      "reconnecting": "Återansluter…",
+      "yes": "Ja",
+      "no": "Nej",
+      "refreshed_at": "Uppdaterad kl."
+    }
+  },
   "app": {
     "name": "Formel 1 Live Timing",
     "description": "Ta in Formel 1-data i realtid i ditt smarta hem: banstatus, race control, förartider, depåstopp och väder — allt som Homey-automatiseringar."

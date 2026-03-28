@@ -245,3 +245,99 @@ This is the JSON stored in the `f1_drivers_json` capability. It is a map from ra
 | `TyreCompound` | string | Current tyre compound |
 | `TyreLaps` | number | Laps on current set |
 | `Sectors` | string[] | Last sector times [S1, S2, S3] |
+
+---
+
+## CarData.z _(F1 TV Pro)_
+
+Delivered as a compressed stream. The raw value is a base64-encoded zlib-deflate (raw) payload that decompresses to JSON.
+
+```json
+{
+  "Entries": [
+    {
+      "Utc": "2024-07-07T13:01:23.456Z",
+      "Cars": {
+        "1": {
+          "Channels": {
+            "0": 312,
+            "2": 10800,
+            "3": 7,
+            "4": 95,
+            "5": 0,
+            "45": 12
+          }
+        },
+        "44": {
+          "Channels": {
+            "0": 298,
+            "2": 10650,
+            "3": 6,
+            "4": 82,
+            "5": 0,
+            "45": 0
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+`Entries` is an array; each entry covers one timestamp. The last entry in the array reflects the most recent sample.
+
+### Channel Map
+
+| Channel | Capability | Unit | Notes |
+|---|---|---|---|
+| `0` | `f1_car_speed` | km/h | Integer |
+| `2` | `f1_car_rpm` | RPM | Integer |
+| `3` | `f1_car_gear` | gear | 0 = neutral, 1–8 = gear |
+| `4` | `f1_car_throttle` | % | 0–100 |
+| `5` | `f1_car_brake` | — | 0 = off, 1 = on |
+| `45` | `f1_car_drs` | — | 0=off, 8=eligible, 10=eligible+, 12=open, 14=open |
+
+**DRS active**: values `12` and `14` (≥ 12 and even). The `drs_activated` flow trigger fires on the rising edge (previous value < 12, new value ≥ 12).
+
+---
+
+## Position.z _(F1 TV Pro)_
+
+Delivered as a compressed stream. Same base64 + zlib-deflate (raw) encoding as `CarData.z`.
+
+```json
+{
+  "Position": [
+    {
+      "Timestamp": "13:01:23.456",
+      "Entries": {
+        "1": {
+          "Status": "OnTrack",
+          "X": -3456,
+          "Y": 1234,
+          "Z": 45
+        },
+        "44": {
+          "Status": "OffTrack",
+          "X": -3200,
+          "Y": 980,
+          "Z": 40
+        }
+      }
+    }
+  ]
+}
+```
+
+`Position` is an array of timestamped snapshots. The last entry reflects the most recent sample.
+
+### Fields
+
+| Field | Type | Description |
+|---|---|---|
+| `Status` | string | `"OnTrack"`, `"OffTrack"`, or `"Stopped"` |
+| `X` | number | X coordinate on track map |
+| `Y` | number | Y coordinate on track map |
+| `Z` | number | Altitude |
+
+**`f1_car_on_track` capability**: `true` when `Status === "OnTrack"`. The `driver_went_off_track` trigger fires on `OnTrack → OffTrack/Stopped` transition; `driver_on_track_again` fires on the reverse.

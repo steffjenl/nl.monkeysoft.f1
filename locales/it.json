@@ -1,4 +1,44 @@
 {
+  "settings": {
+    "tab": {
+      "cache": "Cache TTL",
+      "status": "Stato",
+      "account": "Account"
+    },
+    "account": {
+      "not_connected": "Non connesso",
+      "connected": "Connesso",
+      "product": "Abbonamento",
+      "expires": "Scade il",
+      "connect": "Connetti con F1 TV Pro",
+      "logout": "Disconnetti",
+      "hint": "Richiede un abbonamento F1 TV Pro attivo. Connetti il tuo account per sbloccare la telemetria in diretta: velocità, giri, marcia, gas, freno e DRS.",
+      "popup_blocked": "Il pop-up è stato bloccato. Consenti i pop-up per questa pagina e riprova."
+    },
+    "cache": {
+      "legend": "Durate della cache",
+      "schedule": "Calendario gare",
+      "standings": "Classifiche (piloti e costruttori)",
+      "last_race": "Ultimi risultati di gara",
+      "season": "Risultati stagionali",
+      "sprint": "Risultati sprint",
+      "hint_hours": "ore",
+      "save": "Salva",
+      "saved": "Impostazioni cache salvate."
+    },
+    "status": {
+      "connection": "Connessione SignalR",
+      "reconnects": "Tentativi di riconnessione",
+      "last_message": "Ultimo messaggio ricevuto",
+      "reconnect_state": "Riconnessione",
+      "connected": "Connesso",
+      "disconnected": "Disconnesso",
+      "reconnecting": "Riconnessione…",
+      "yes": "Sì",
+      "no": "No",
+      "refreshed_at": "Aggiornato alle"
+    }
+  },
   "app": {
     "name": "Formula 1 Live Timing",
     "description": "Porta i dati in diretta della Formula 1 in casa tua: stato della pista, direzione gara, tempi dei piloti, soste ai box e meteo — tutto come automazioni Homey."

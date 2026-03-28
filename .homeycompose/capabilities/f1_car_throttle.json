@@ -1,0 +1,26 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Throttle",
+    "nl": "Gasstand",
+    "de": "Gaspedal",
+    "da": "Gas",
+    "es": "Acelerador",
+    "fr": "Accélérateur",
+    "it": "Gas",
+    "no": "Gass",
+    "pl": "Gaz",
+    "pt": "Acelerador",
+    "ru": "Газ",
+    "sv": "Gas"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 100,
+  "step": 1
+}
