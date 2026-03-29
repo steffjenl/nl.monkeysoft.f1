@@ -304,36 +304,46 @@ class F1SessionDevice extends Homey.Device {
     if (!data) return;
     if (this._targetType && this._liveSessionType !== this._targetType) return;
     const td = data.TimingData ?? data;
+
+    // Qualifying: BestLapTimes at top level
     const bestTimes = td.BestLapTimes;
-    if (!bestTimes) return;
-
-    // Find overall fastest
-    let bestTime = null;
-    let bestDriver = null;
-
-    for (const [driverNum, driverData] of Object.entries(bestTimes)) {
-      const t = driverData?.Value;
-      if (!t) continue;
-      if (!bestTime || this._compareTimes(t, bestTime) < 0) {
-        bestTime   = t;
-        bestDriver = driverNum;
+    if (bestTimes) {
+      let bestTime = null;
+      let bestDriver = null;
+      for (const [driverNum, driverData] of Object.entries(bestTimes)) {
+        const t = driverData?.Value;
+        if (!t) continue;
+        if (!bestTime || this._compareTimes(t, bestTime) < 0) {
+          bestTime   = t;
+          bestDriver = driverNum;
+        }
       }
+      if (bestTime) await this._emitFastestLap(bestDriver, bestTime);
+      return;
     }
 
-    if (bestTime) {
-      const prevTime   = this.getCapabilityValue('f1_fastest_lap_time');
-      const prevDriver = this.getCapabilityValue('f1_fastest_lap_driver');
-
-      await this._setCapSafe('f1_fastest_lap_time',   bestTime);
-      await this._setCapSafe('f1_fastest_lap_driver', bestDriver ?? '');
-
-      if (bestTime !== prevTime || bestDriver !== prevDriver) {
-        await this.driver._fastestLapUpdated.trigger(this, {
-          driver:       bestDriver ?? '',
-          time:         bestTime,
-          circuit_name: this._circuitName,
-        }, {});
+    // Race: OverallFastest flag on LastLapTime inside Lines
+    const lines = td.Lines;
+    if (!lines) return;
+    for (const [driverNum, line] of Object.entries(lines)) {
+      if (line?.LastLapTime?.OverallFastest && line.LastLapTime.Value) {
+        await this._emitFastestLap(driverNum, line.LastLapTime.Value);
+        return;
       }
+    }
+  }
+
+  async _emitFastestLap(driverNum, time) {
+    const prevTime   = this.getCapabilityValue('f1_fastest_lap_time');
+    const prevDriver = this.getCapabilityValue('f1_fastest_lap_driver');
+    await this._setCapSafe('f1_fastest_lap_time',   time);
+    await this._setCapSafe('f1_fastest_lap_driver', driverNum ?? '');
+    if (time !== prevTime || driverNum !== prevDriver) {
+      await this.driver._fastestLapUpdated.trigger(this, {
+        driver:       driverNum ?? '',
+        time,
+        circuit_name: this._circuitName,
+      }, {});
     }
   }
 

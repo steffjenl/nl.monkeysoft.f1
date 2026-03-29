@@ -101,7 +101,7 @@ class F1CarDevice extends Homey.Device {
 
   _onTyreStintSeries(data) {
     if (!data) return;
-    const series = data.TyreStintSeries ?? data;
+    const series = data.Stints ?? data;
     if (typeof series !== 'object') return;
 
     const stints = series[this._racingNumber];
@@ -170,8 +170,6 @@ class F1CarDevice extends Homey.Device {
   }
 
 }
-
-module.exports = F1CarDevice;
 
 module.exports = F1CarDevice;
 
