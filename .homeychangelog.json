@@ -16,5 +16,8 @@
   },
   "1.0.5": {
     "en": "Support Topic ID"
+  },
+  "1.0.6": {
+    "en": "Using now new SignlR Core connection"
   }
 }
