@@ -107,8 +107,15 @@ class F1CarDevice extends Homey.Device {
     const stints = series[this._racingNumber];
     if (!stints || typeof stints !== 'object') return;
 
-    const keys   = Object.keys(stints).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
-    const latest = stints[keys[keys.length - 1]];
+    // Snapshot format: array of stints [{Compound,TotalLaps,...}, ...]
+    // Live update format: object with stint index as key {"1":{TotalLaps:n}, ...}
+    let latest;
+    if (Array.isArray(stints)) {
+      latest = stints[stints.length - 1];
+    } else {
+      const keys = Object.keys(stints).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+      latest = stints[keys[keys.length - 1]];
+    }
     if (!latest) return;
 
     if (latest.Compound)              this._setCapSafe('f1_tyre_compound', latest.Compound);

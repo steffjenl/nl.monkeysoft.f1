@@ -10,8 +10,10 @@ class F1App extends Homey.App {
   async onInit() {
     this.log('Formula 1 Live Timing app initialising…');
 
+    const debugMode = Homey.env.DEBUG === 'true';
+
     // Shared clients — all drivers access these via this.homey.app.*
-    this._liveClient    = new LiveTimingClient(this.homey);
+    this._liveClient    = new LiveTimingClient(this.homey, debugMode);
     this._jolpicaClient = new JolpicaClient(this.homey);
     this._authClient    = new F1AuthClient(this.homey);
 
