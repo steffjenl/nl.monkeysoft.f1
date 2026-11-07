@@ -22,5 +22,8 @@
   },
   "1.0.7": {
     "en": "Removed Plus functionality because must first create paid reverse proxy services."
+  },
+  "1.0.8": {
+    "en": "Update package deps"
   }
 }
