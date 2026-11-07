@@ -23,17 +23,17 @@ class F1TrackDriver extends Homey.Driver {
 
     // Conditions
     this.homey.flow.getConditionCard('track_status_is')
-      .registerRunListener((args, state) => {
+      .registerRunListener((args) => {
         return args.device.getCapabilityValue('f1_track_status') === args.status;
       });
 
     this.homey.flow.getConditionCard('safety_car_is_active')
-      .registerRunListener((args, state) => {
+      .registerRunListener((args) => {
         return !!args.device.getCapabilityValue('alarm_generic.safety_car');
       });
 
     this.homey.flow.getConditionCard('is_raining_at_track')
-      .registerRunListener((args, state) => {
+      .registerRunListener((args) => {
         return !!args.device.getCapabilityValue('alarm_generic.rainfall');
       });
   }

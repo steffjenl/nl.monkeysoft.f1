@@ -7,14 +7,17 @@
     "node": ">=18"
   },
   "scripts": {
-    "lint": "homey app validate"
+    "lint": "eslint .",
+    "validate": "homey app validate --level publish"
   },
   "dependencies": {
     "@microsoft/signalr": "^10.0.0",
     "ws": "^8.20.0"
   },
   "devDependencies": {
-    "homey": "latest"
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0"
   },
   "keywords": [
     "homey",
